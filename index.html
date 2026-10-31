@@ -5839,6 +5839,7 @@ function closeMarket(db){
   for(const R of Object.values(db.regions)){const ts=activeTeams(db,R.id,1);R.teams=ts.length;if(ts.length)R.strength=Math.round(avg(ts.map(t=>teamStrength(db,t.id))))}
   rep.retired.slice(0,3).forEach(r=>news(db,`${db.players[r.pid].name} 은퇴 (${r.age}세)`));
   expireCurrentAIMarketOffers(db);
+  w.preseasonStartedOn=db.worldDate;
   w.phase='preseason';
   }catch(error){undo();throw error}
 }
@@ -13726,12 +13727,14 @@ function waitingNegotiationResponses(db,ownedOnly=false){
     .filter(n=>!ownedOnly||!manualNegotiationError(db,n))
     .sort((a,b)=>String(a.response.dueAt).localeCompare(String(b.response.dueAt))||String(a.id).localeCompare(String(b.id)));
 }
+const seasonProjectionRequests=new WeakSet(),seasonStartFloors=new WeakMap();
 function negotiationContactDeadline(db,n){
   const w=db.world,cw=w?.contractWindow,market=negotiationMarketDeadline(n),earlier=date=>market&&market<date?market:date;
   if(w?.phase==='offseason'&&['renewal','early_fa'].includes(n.kind)&&cw?.stage==='exclusive')return earlier(cw.outsideContactDate+'T00:00:00.000Z');
   if(!['initial_roster','market','preseason'].includes(w?.phase))return market;
   // 기존 시즌 작성자를 격리된 상태에서 실행해 실제 편성의 개최일을 읽는다.
-  const copy=JSON.parse(JSON.stringify(db));startWorldSeason(copy,managedTeamId(copy),w.seed);
+  const copy=JSON.parse(JSON.stringify(db));seasonProjectionRequests.add(copy);
+  try{startWorldSeason(copy,managedTeamId(copy),w.seed)}finally{seasonProjectionRequests.delete(copy)}
   const starts=Object.values(copy.world.seasons).flatMap(s=>s.days.flatMap(d=>d.matches.map(m=>{
     if(!m.localDate||!m.timeZone)throw Error('공식 경기의 개최일과 시간대를 확인할 수 없습니다');
     return venueToUtc(m.localDate,'00:00',m.timeZone);
@@ -14086,7 +14089,10 @@ function officialPeerPeriodSteps(db,steps){
 const officialWorldSeasonBeforePeerPeriods=startWorldSeason;
 startWorldSeason=function(db,...args){
   const prior=db.world?.phase==='preseason'?db.world:null;
-  const result=officialWorldSeasonBeforePeerPeriods(db,...args),w=db.world;
+  const floor=prior?(seasonProjectionRequests.has(db)?prior.preseasonStartedOn:db.worldDate):null;
+  if(freeAgencyDateValid(floor))seasonStartFloors.set(db,floor);
+  let result;try{result=officialWorldSeasonBeforePeerPeriods(db,...args)}finally{seasonStartFloors.delete(db)}
+  const w=db.world;
   if(prior?.negotiations)w.negotiations=prior.negotiations;
   if(prior?.recruitment)w.recruitment=prior.recruitment;
   if(prior?.negotiationClock)w.negotiationClock=prior.negotiationClock;
@@ -14100,7 +14106,8 @@ advanceStep=function(db){
   // 완료 경기의 실제 UTC 종료일 이후부터 기존 단계 간격을 센다.
   // 원래 편성/결과는 유지하고 실제 기록이 없는 이전 저장에는 시간을 추정하지 않는다.
   let through=db.world.lastDate;
-  if(db.world.step===-1&&freeAgencyDateValid(db.worldDate)&&db.worldDate>through)through=db.worldDate;
+  const floor=seasonStartFloors.get(db);
+  if(db.world.step===-1&&floor&&floor>through)through=floor;
   for(const season of Object.values(db.world.seasons||{}))if(season.done)for(const day of season.days||[])for(const match of day.matches||[]){
     if(!match.res||!match.gameTime)continue;
     const record=officialGameTimeRecord(match,match.res.games||[]);

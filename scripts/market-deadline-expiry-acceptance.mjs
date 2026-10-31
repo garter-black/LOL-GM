@@ -129,6 +129,11 @@ const result=await runEngineFixture(String.raw`(()=>{
  {
   let {db}=fixture(2027);const date='2028-02-15';db.worldDate=date;
   runOffseason(db);closeMarket(db);db=unpackDB(packDB(db));
+  check(db.world.preseasonStartedOn===date,'preseason start date not saved');
+  const p=Object.values(db.players).find(p=>!p.retired&&!p.team);mInterest(db,p.id);mEvaluateTarget(db,p.id);
+  const opened=startNegotiation(db,p.id,'fa');check(opened.ok,'late preseason FA negotiation');
+  const deadline=negotiationContactDeadline(db,opened.neg),later=unpackDB(packDB(db));later.worldDate=addDays(date,1);
+  check(deadline>date+'T00:00:00.000Z'&&negotiationContactDeadline(later,later.world.negotiations[opened.neg.id])===deadline,'late preseason forecast deadline moved with current date');
   startWorldSeason(db,managedTeamId(db),'late-season-calendar');
   const days=Object.values(db.world.seasons).flatMap(s=>s.days.map(d=>d.date)).sort();
   check(days.length>0&&days[0]>=date,'late next season scheduled in the past '+JSON.stringify({date,first:days[0]}));

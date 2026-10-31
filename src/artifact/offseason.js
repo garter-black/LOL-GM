@@ -181,6 +181,7 @@ function closeMarket(db){
   for(const R of Object.values(db.regions)){const ts=activeTeams(db,R.id,1);R.teams=ts.length;if(ts.length)R.strength=Math.round(avg(ts.map(t=>teamStrength(db,t.id))))}
   rep.retired.slice(0,3).forEach(r=>news(db,`${db.players[r.pid].name} 은퇴 (${r.age}세)`));
   expireCurrentAIMarketOffers(db);
+  w.preseasonStartedOn=db.worldDate;
   w.phase='preseason';
   }catch(error){undo();throw error}
 }
