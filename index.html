@@ -14090,6 +14090,8 @@ const officialWorldSeasonBeforePeerPeriods=startWorldSeason;
 startWorldSeason=function(db,...args){
   const prior=db.world?.phase==='preseason'?db.world:null;
   const floor=prior?(seasonProjectionRequests.has(db)?prior.preseasonStartedOn:db.worldDate):null;
+  const late=freeAgencyDateValid(floor)&&floor>`${db.year}-01-07`,undo=late?pendingAnnualUndo(db):null;
+  try{
   if(freeAgencyDateValid(floor))seasonStartFloors.set(db,floor);
   let result;try{result=officialWorldSeasonBeforePeerPeriods(db,...args)}finally{seasonStartFloors.delete(db)}
   const w=db.world;
@@ -14098,7 +14100,12 @@ startWorldSeason=function(db,...args){
   if(prior?.negotiationClock)w.negotiationClock=prior.negotiationClock;
   const original=new Map(w.steps.map((step,index)=>[step,index])),prefix=w.steps.slice(0,w.step+1);
   w.steps=[...prefix,...officialPeerPeriodSteps(db,w.steps.slice(w.step+1)).map((step,index)=>step.kind==='league'&&original.get(step)!==prefix.length+index?{...step,patchSeedStep:original.get(step)}:step)];
+  if(late)for(const s of Object.values(w.seasons||{}))for(const day of s.days||[])for(const match of day.matches||[]){
+    if(!match.utcAt||globalTransferMarketState(match.utcAt.slice(0,10)).open)
+      throw Error('늦은 시즌 시작 일정이 이적시장과 겹치거나 경기 시각이 유효하지 않습니다');
+  }
   return result;
+  }catch(error){if(undo)undo();throw error}
 };
 // 화면/진행의 단계 번호와 기존 패치 난수 입력을 분리한다. 기간 묶음만으로 패치 내용을 다시 뽑지 않는다.
 const officialAdvanceStepBeforePeerPeriods=advanceStep;

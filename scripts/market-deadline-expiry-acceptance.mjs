@@ -141,6 +141,13 @@ const result=await runEngineFixture(String.raw`(()=>{
   check(matches.length>0&&matches.every(m=>typeof m.utcAt==='string'&&m.utcAt>=date+'T00:00:00.000Z'),'late next season has past UTC fixture');
   const restored=unpackDB(packDB(db));check(Object.values(restored.world.seasons).flatMap(s=>s.days.map(d=>d.date)).sort()[0]===days[0],'late schedule save restore');
  }
+ {
+  let {db}=fixture(2027);db.worldDate='2028-11-20';runOffseason(db);closeMarket(db);db=unpackDB(packDB(db));
+  const before=packDB(db),world=db.world,team=managedTeam(db);let blocked=false;
+  try{startWorldSeason(db,team.id,'late-market-overlap')}catch(e){blocked=e.message.includes('이적시장')}
+  const overlap=Object.values(db.world.seasons||{}).flatMap(s=>s.days.filter(d=>globalTransferMarketState(d.date).open).map(d=>d.date));
+  check(blocked&&packDB(db)===before&&db.world===world&&managedTeam(db)===team,'late season overlaps market or partially commits '+JSON.stringify({blocked,overlap}));
+ }
  let rollbackCases=0;
  {
   const {db,nid}=fixture(2027);db.worldDate=addDays(globalTransferMarketWindow(2027).closesOn,1);
