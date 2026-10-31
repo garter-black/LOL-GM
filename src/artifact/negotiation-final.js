@@ -769,6 +769,7 @@ advanceStep=function(db){
   // 완료 경기의 실제 UTC 종료일 이후부터 기존 단계 간격을 센다.
   // 원래 편성/결과는 유지하고 실제 기록이 없는 이전 저장에는 시간을 추정하지 않는다.
   let through=db.world.lastDate;
+  if(db.world.step===-1&&freeAgencyDateValid(db.worldDate)&&db.worldDate>through)through=db.worldDate;
   for(const season of Object.values(db.world.seasons||{}))if(season.done)for(const day of season.days||[])for(const match of day.matches||[]){
     if(!match.res||!match.gameTime)continue;
     const record=officialGameTimeRecord(match,match.res.games||[]);

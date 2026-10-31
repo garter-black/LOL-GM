@@ -126,6 +126,16 @@ const result=await runEngineFixture(String.raw`(()=>{
   check(db.worldDate===date&&db.world.phase==='market','annual close rewound restored world clock');
   const restored=unpackDB(packDB(db));check(restored.worldDate===date,'monotonic annual clock did not survive restore');
  }
+ {
+  let {db}=fixture(2027);const date='2028-02-15';db.worldDate=date;
+  runOffseason(db);closeMarket(db);db=unpackDB(packDB(db));
+  startWorldSeason(db,managedTeamId(db),'late-season-calendar');
+  const days=Object.values(db.world.seasons).flatMap(s=>s.days.map(d=>d.date)).sort();
+  check(days.length>0&&days[0]>=date,'late next season scheduled in the past '+JSON.stringify({date,first:days[0]}));
+  const matches=Object.values(db.world.seasons).flatMap(s=>s.days.flatMap(d=>d.matches));
+  check(matches.length>0&&matches.every(m=>typeof m.utcAt==='string'&&m.utcAt>=date+'T00:00:00.000Z'),'late next season has past UTC fixture');
+  const restored=unpackDB(packDB(db));check(Object.values(restored.world.seasons).flatMap(s=>s.days.map(d=>d.date)).sort()[0]===days[0],'late schedule save restore');
+ }
  let rollbackCases=0;
  {
   const {db,nid}=fixture(2027);db.worldDate=addDays(globalTransferMarketWindow(2027).closesOn,1);
