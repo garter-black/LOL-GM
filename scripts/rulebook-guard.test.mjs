@@ -10,7 +10,7 @@ test('published rulebook has unique, sourced rules and working local links',()=>
   const result=validateRulebook(original);
   assert.deepEqual(result.errors,[]);
   assert.equal(result.chapterCount,9);
-  assert(result.ruleCount>=93); // protect the reviewed baseline without blocking future approved additions
+  assert(result.ruleCount>=96); // protect the reviewed baseline without blocking future approved additions
 });
 test('duplicate ID cannot pass as a new approved clause',()=>{
   const file='docs/rulebook/20-CALENDAR.md';
@@ -43,7 +43,7 @@ test('immutable First Selection and draft policies cannot silently disappear',()
   assert.match(check(docs),/BROKEN_PIN: MATCH-002/);
 });
 test('publication version and changelog cannot silently diverge',()=>{
-  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.3.0','v9.9.9'));
+  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.4.0','v9.9.9'));
   assert.match(check(docs),/CHANGELOG: no entry/);
 });
 test('approved youth compensation and club taxonomy cannot silently regress',()=>{
@@ -52,4 +52,25 @@ test('approved youth compensation and club taxonomy cannot silently regress',()=
   assert.match(check(docs),/BROKEN_PIN: BIZ-011/);
   docs=changed(file,text=>text.replace('프로/세미프로/아마추어','프로/아마추어 고정'));
   assert.match(check(docs),/BROKEN_PIN: BIZ-012/);
+});
+test('source-depth coverage is inspectable and not mislabeled as approval verification',()=>{
+  const result=validateRulebook(original);
+  assert.equal(result.sourceDepth.directCommentLinked+result.sourceDepth.issueOnlyOrOther,result.ruleCount);
+  assert(result.sourceDepth.directCommentLinked>0);
+});
+test('a tournament-wide two-loss cap cannot replace per-bracket elimination policy',()=>{
+  const file='docs/rulebook/10-COMPETITIONS.md';
+  const docs=changed(file,text=>text.replace('대회 전체에서 2패를 초과할 수 없다는 뜻이 아니다','대회 전체 2패 제한이 적용된다'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-006/);
+});
+test('relegated parent and academy second-division collision cannot disappear',()=>{
+  const file='docs/rulebook/10-COMPETITIONS.md';
+  const docs=changed(file,text=>text.replace('산하 2군의 적법한 매각 또는 해체(R01D)','다른 2부로 자동 재배치'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-004/);
+});
+test('official international eligibility and distinct payroll bases are pinned',()=>{
+  let docs=changed('docs/rulebook/10-COMPETITIONS.md',text=>text.replace('MSI 미진출팀','MSI 진출팀'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-015/);
+  docs=changed('docs/rulebook/60-BUSINESS.md',text=>text.replace('인정 보수 상위 5명 합계','인정 보수 전체 선수단 합계'));
+  assert.match(check(docs),/BROKEN_PIN: BIZ-013/);
 });
