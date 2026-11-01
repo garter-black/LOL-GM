@@ -4,6 +4,12 @@ const result = await runEngineFixture(String.raw`(()=>{
  const check=(v,m)=>{if(!v)throw Error('OFFSEASON_CLOCK_RECOVERY '+m)};
  const cfg=defaultWorldConfig();cfg.regions=[regionCfg('NA',{teams:4,splits:1,legs:1,regularBo:1,playoffBo:1,playoffTake:2,format:'rr_po',div2:false,system:'franchise'})];cfg.internationals=[];
  let db=buildWorld(cfg);const team=activeTeams(db)[0];startCareer(db,team.id,'v2-phase-existing-season');autoBuildInitialSquad(db,team,new RNG('phase-roster'));finalizeInitialRosters(db);db.world.manage='ai';
+ for(const source of [db,unpackDB(packDB(db))]){
+  const before=packDB(source),world=source.world,players=source.players;let refused=false;
+  try{runOffseason(source)}catch(error){refused=/오프시즌/.test(error.message)}
+  check(refused&&packDB(source)===before&&source.world===world&&source.players===players,
+   'annual settlement accepted unfinished season or mutated state');
+ }
  let seasonDays=0;while(db.world.phase==='season'&&seasonDays++<500)playWorldDay(db);
  check(db.world.phase==='offseason'&&!db.world.fired,'actual compact season and current authority');db.world.manage='manual';
  const seasonEnd=db.world.contractWindow.seasonEndDate;
