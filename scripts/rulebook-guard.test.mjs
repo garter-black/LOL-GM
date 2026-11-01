@@ -71,6 +71,6 @@ test('relegated parent and academy second-division collision cannot disappear',(
 test('official international eligibility and distinct payroll bases are pinned',()=>{
   let docs=changed('docs/rulebook/10-COMPETITIONS.md',text=>text.replace('MSI 미진출팀','MSI 진출팀'));
   assert.match(check(docs),/BROKEN_PIN: COMP-015/);
-  docs=changed('docs/rulebook/60-BUSINESS.md',text=>text.replace('인정 보수 상위 5명 합계','인정 보수 전체 선수단 합계'));
+  docs=changed('docs/rulebook/60-BUSINESS.md',text=>text.replaceAll('상위 5명','전체 선수'));
   assert.match(check(docs),/BROKEN_PIN: BIZ-013/);
 });
