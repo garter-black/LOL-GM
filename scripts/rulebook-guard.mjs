@@ -36,6 +36,7 @@ export const DOCUMENTS = Object.freeze([
   'docs/rulebook-audit/STEP1_INITIAL_30_DECISION_DETAILS_2026_11_01.md',
   'docs/rulebook-audit/STEP1_ALL_ISSUE_POLICY_CLASSIFICATION_2026_11_01.md',
   'docs/rulebook-audit/STEP1_LEGACY_PR_NORMATIVE_BOUNDARY_2026_11_01.md',
+  'docs/rulebook-audit/STEP1_42_CLAUSES_SOURCE_PRECISION_QUEUE_2026_11_01.md',
   'docs/rulebook-audit/CROSS_DOCUMENT_CONFLICT_AUDIT_2026_11_01.md',
   'docs/RULEBOOK_SEMANTIC_AUDIT_2026_11_01.md',
   'AGENTS.md',
