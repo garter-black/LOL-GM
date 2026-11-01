@@ -43,7 +43,7 @@ test('immutable First Selection and draft policies cannot silently disappear',()
   assert.match(check(docs),/BROKEN_PIN: MATCH-002/);
 });
 test('publication version and changelog cannot silently diverge',()=>{
-  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.4.0','v9.9.9'));
+  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.4.1','v9.9.9'));
   assert.match(check(docs),/CHANGELOG: no entry/);
 });
 test('approved youth compensation and club taxonomy cannot silently regress',()=>{
@@ -78,4 +78,8 @@ test('general early-contact consent cannot erase the non-license buyout exceptio
   const file='docs/rulebook/30-TRANSFERS.md';
   const docs=changed(file,text=>text.replace('다만 **TRANS-005에 해당하는 프로 라이선스 미보유 팀 계약 선수는 적법한 바이아웃을 전제로 한 자유 접촉·협상 예외**','다만 모든 조기 접촉은 반드시 원팀 동의'));
   assert.match(check(docs),/BROKEN_PIN: TRANS-003/);
+});
+test('colloquial vocabulary is rejected in normative chapter prose',()=>{
+  const docs=changed('docs/rulebook/60-BUSINESS.md',text=>text.replace("고정된 '프로 구단' 분류","고정된 '프로 구단' 딱지"));
+  assert.match(check(docs),/COLLOQUIAL_STYLE/);
 });
