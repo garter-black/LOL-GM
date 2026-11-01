@@ -95,7 +95,10 @@ export function validateRulebook(docs){
     if(!agent.includes(required))add('CODEX_ENTRY',required);
   }
   if(!docs['docs/AI_RULEBOOK_GUIDE.md'].includes('비규범'))add('GUIDE_SCOPE','AI guide must not define new policy');
-  if(!docs['docs/rulebook/CHANGELOG.md'].includes('v0.2.1'))add('CHANGELOG','missing initial approved compilation');
+  // Version is a living publication marker, not a hard-coded initial release.
+  const version=docs['docs/rulebook/README.md'].match(/\*\*규정집 발행본:\*\*\s*(v\d+\.\d+\.\d+)/)?.[1];
+  if(!version)add('VERSION','rulebook README lacks a semantic publication version');
+  else if(!docs['docs/rulebook/CHANGELOG.md'].includes(' '+version))add('CHANGELOG','no entry for the current rulebook version '+version);
   return {errors,ruleCount:ids.size,chapterCount:CHAPTERS.length};
 }
 
