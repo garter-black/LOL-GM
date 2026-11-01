@@ -77,6 +77,13 @@ export function validateRulebook(docs){
       ids.set(id,{file,body});
     }
   }
+  // Editorial diagnostics only: obvious conversational expressions do not
+  // belong in the current normative chapters. Historical evidence remains intact.
+  const colloquial=/가짜|딱지|원팀|그해|그때|꾸며내|하드코딩|버프/;
+  for(const [file] of CHAPTERS){
+    const match=colloquial.exec(docs[file]);
+    if(match)add('COLLOQUIAL_STYLE',file+' contains informal wording: '+match[0]);
+  }
   for(const [id,checks] of Object.entries(POLICY_PINS)){
     const rule=ids.get(id);
     if(!rule){add('MISSING_PIN',id);continue;}
