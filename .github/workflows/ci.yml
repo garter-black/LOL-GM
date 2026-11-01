@@ -338,17 +338,25 @@ jobs:
         if: needs.changes.outputs.run_full == 'true'
         run: node scripts/ci-run.mjs perf -- npm run perf
 
+      - name: Standalone provenance and read-only publication acceptance
+        run: node --test scripts/standalone-artifact.test.mjs
+
       - name: Production build
         run: node scripts/ci-run.mjs build -- npm run build
 
       - name: Verify production artifact
         run: test -s dist/index.html && cmp -s index.html dist/index.html
 
+      - name: Record exact build provenance
+        run: node scripts/standalone-artifact.mjs record dist
+
       - name: Upload HTML preview
         uses: actions/upload-artifact@v4
         with:
           name: lol-gm-html-preview
-          path: dist/index.html
+          path: |
+            dist/index.html
+            dist/standalone-manifest.json
           if-no-files-found: error
 
       - name: Upload validation report
@@ -485,12 +493,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     permissions:
-      contents: write
+      contents: read
     steps:
       - name: Checkout validated commit
         uses: actions/checkout@v4
         with:
           ref: ${{ github.sha }}
+          persist-credentials: false
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -503,7 +512,5 @@ jobs:
           name: lol-gm-html-preview
           path: validated-standalone
 
-      - name: Sync validated standalone
-        run: |
-          cp validated-standalone/index.html index.html
-          node scripts/sync-standalone.mjs
+      - name: Verify validated standalone without changing the repository
+        run: node scripts/standalone-artifact.mjs verify validated-standalone

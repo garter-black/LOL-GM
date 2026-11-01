@@ -106,7 +106,7 @@ CI rejects:
 - smoke-test violations including patch-cache isolation, query-cache invalidation, non-mutating save packing and save round trips
 - performance-probe execution failures for series simulation, draft/system caches and indexed meta queries
 
-The generated root `index.html` is a deployment artifact. Canonical edits belong in `src/artifact/*`. Main-branch CI rebuilds it from the canonical module manifest and commits it only when the generated standalone differs.
+The generated root `index.html` is a deployment artifact. Canonical edits belong in `src/artifact/*`. CI rebuilds it from the canonical module manifest and uploads the HTML with its exact source SHA, repository, run ID, byte length and SHA-256. The historical standalone-sync job now verifies that artifact with read-only contents permission; it never commits or pushes generated files to main. Pages consumes the same successful main-run artifact, verifies provenance and rechecks current main before deployment. The existing launcher and identical online/offline HTML downloads remain. scripts/sync-standalone.mjs and its original tests are retained as historical behavior evidence, without a workflow consumer; they are not the publication path.
 
 - lineup domain: `lineup.js` owns official five-player slot assignment and validation; `p.role` is player identity, not an eligibility gate.
 - role conversion domain: `role-conversion.js` owns proposal acceptance/refusal, long-term training progress, role-use acceleration, opportunity cost and primary-role identity changes. It does not gate one-off lineup assignment.
