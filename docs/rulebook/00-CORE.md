@@ -13,7 +13,7 @@
 대회·경기·순위·선수 성장·팬덤·시장·재정의 결과를 임의의 스크립트로 확정하지 않는다. 실제 경기, 유효 계약, 관측 사건과 당시에 적용된 규칙을 원인으로 처리하며, 실제로 발생하지 않은 경기·상금 지급·출전자·결과를 공식 기록으로 생성하지 않는다. [근거 #241](https://github.com/lkh0802a/LOL-GM/issues/241), [#323](https://github.com/lkh0802a/LOL-GM/issues/323)
 
 ### CORE-005 · 선택과 결과의 재현성
-동일한 세계 상태·결정·시드에서 결과는 재현되어야 한다. 저장·불러오기·시간 진행 경로에 따라 이적·경기·원장의 사실이 달라지거나 같은 행위가 두 번 적용되지 않는다. [근거 #241](https://github.com/lkh0802a/LOL-GM/issues/241), [#239](https://github.com/lkh0802a/LOL-GM/issues/239)
+동일한 세계 상태·결정·시드에서 결과는 재현되어야 한다. 저장·불러오기·시간 진행 경로에 따라 이적·경기·원장의 사실이 달라지거나 같은 행위가 두 번 적용되지 않는다. [근거 #241](https://github.com/lkh0802a/LOL-GM/issues/241), [#239](https://github.com/lkh0802a/LOL-GM/issues/239), [#239 과거 공식 승패·로스터 불변 직접 확인](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6227432963)
 
 ### CORE-006 · 강제 불변 게임 규칙
 **World Championship 결승의 당해 연도 마지막 공식 경기 지위**, **Fearless Draft**, **First Selection**은 사무국의 일반적인 자율 제도 개편으로 폐지·우회·임의 변형할 수 없다. 실제 규칙을 변경하려면 사용자 차원의 별도 명시적 승인이 필요하다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311), [#234](https://github.com/lkh0802a/LOL-GM/issues/234) [#232 고정 규칙 직접 정정](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6456922011)
@@ -21,7 +21,7 @@
 
 
 ### CORE-007 · 세계 내부의 규정 진화와 상위 불변조건 분리
-지역·국제사무국 및 독립 개최사는 자기 권한에서 합법적인 **미래 시즌** 규정/대회 체계를 자율적으로 개편할 수 있다. 승인·사전 공표·효력 시즌·계약/일정 검증을 거쳐야 하며 CORE-002·CORE-006 등의 상위 불변조건을 변경하는 권한은 아니다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311), [#323](https://github.com/lkh0802a/LOL-GM/issues/323)
+지역·국제사무국 및 독립 개최사는 자기 권한에서 합법적인 **미래 시즌** 규정/대회 체계를 자율적으로 개편할 수 있다. 승인·사전 공표·효력 시즌·계약/일정 검증을 거쳐야 하며 CORE-002·CORE-006 등의 상위 불변조건을 변경하는 권한은 아니다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311), [#323](https://github.com/lkh0802a/LOL-GM/issues/323), [#324 정책 승인·발효 절차](https://github.com/lkh0802a/LOL-GM/issues/324)
 
 ### CORE-008 · 사전 정보와 사후 결과를 구분
 상대 구단 비공개 정보, 의료·실제 능력·잠재력, 내부 MMR, 비공개 스크림·미래 경기 결과를 사용자/AI에게 적법한 관측 없이 제공하지 않는다. 예측치는 확정 사실로 표시하지 않는다. [근거 #238](https://github.com/lkh0802a/LOL-GM/issues/238), [#280](https://github.com/lkh0802a/LOL-GM/issues/280)
