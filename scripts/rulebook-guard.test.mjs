@@ -142,7 +142,7 @@ test('adjudication source type must reflect direct comment links',()=>{
 });
 test('adjudication summary cannot overcount reviewed clauses',()=>{
   const file='docs/rulebook-audit/CLAUSE_DECISION_MATRIX_2026_11_01.md';
-  const docs=changed(file,text=>text.replace('| 관련 원문 부분대조 | 111 |','| 관련 원문 부분대조 | 110 |'));
+  const docs=changed(file,text=>text.replace('| 관련 원문 부분대조 | 112 |','| 관련 원문 부분대조 | 111 |'));
   assert.match(check(docs),/MATRIX_SUMMARY: 관련 원문 부분대조/);
 });
 
@@ -247,4 +247,15 @@ test('subsequent nonpayment cannot automatically revoke executed transfers',()=>
   const file='docs/rulebook/60-BUSINESS.md';
   const docs=changed(file,text=>text.replace('이미 완료된 이적·출전·경기 결과를 뒤늦은 미지급만으로 자동 소급 취소하지 않는다','뒤늦은 미지급이 있으면 과거 경기·이적을 자동 취소한다'));
   assert.match(check(docs),/BROKEN_PIN: BIZ-004/);
+});
+
+test('routine delegation must never override legally reserved final decisions',()=>{
+  const file='docs/rulebook/00-CORE.md';
+  const docs=changed(file,text=>text.replace('자동 집행이 법적 최종 서명권·의료 불가 판정·공식 참가 자격 검증·선수 동의를 대체해서도 안 된다','시스템이 선수 동의와 계약 최종 서명권을 무시하고 즉시 확정한다'));
+  assert.match(check(docs),/BROKEN_PIN: CORE-010/);
+});
+test('normal routine operations cannot erase real costs or world outcomes',()=>{
+  const file='docs/rulebook/00-CORE.md';
+  const docs=changed(file,text=>text.replace('실제로 발생한 활동·지급·비용·일정·계약 결과','비용과 지급을 발생하지 않은 것으로 취급한다'));
+  assert.match(check(docs),/BROKEN_PIN: CORE-010/);
 });
