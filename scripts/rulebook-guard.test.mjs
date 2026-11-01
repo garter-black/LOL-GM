@@ -37,8 +37,8 @@ test('Codex startup cannot silently drop the rulebook lookup',()=>{
   assert.match(check(docs),/CODEX_ENTRY/);
 });
 test('immutable First Selection and draft policies cannot silently disappear',()=>{
-  let docs=changed('docs/rulebook/50-MATCH.md',text=>text.replace('First Selection','Old Selection'));
+  let docs=changed('docs/rulebook/50-MATCH.md',text=>text.replaceAll('First Selection','Old Selection'));
   assert.match(check(docs),/BROKEN_PIN: MATCH-003/);
-  docs=changed('docs/rulebook/50-MATCH.md',text=>text.replace('Fearless Draft','Optional Draft'));
+  docs=changed('docs/rulebook/50-MATCH.md',text=>text.replaceAll('Fearless Draft','Optional Draft'));
   assert.match(check(docs),/BROKEN_PIN: MATCH-002/);
 });
