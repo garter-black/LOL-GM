@@ -43,7 +43,7 @@ test('immutable First Selection and draft policies cannot silently disappear',()
   assert.match(check(docs),/BROKEN_PIN: MATCH-002/);
 });
 test('publication version and changelog cannot silently diverge',()=>{
-  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.6.1','v9.9.9'));
+  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.6.2','v9.9.9'));
   assert.match(check(docs),/CHANGELOG: no entry/);
 });
 test('approved youth compensation and club taxonomy cannot silently regress',()=>{
@@ -142,7 +142,7 @@ test('adjudication source type must reflect direct comment links',()=>{
 });
 test('adjudication summary cannot overcount reviewed clauses',()=>{
   const file='docs/rulebook-audit/CLAUSE_DECISION_MATRIX_2026_11_01.md';
-  const docs=changed(file,text=>text.replace('| 관련 원문 부분대조 | 95 |','| 관련 원문 부분대조 | 94 |'));
+  const docs=changed(file,text=>text.replace('| 관련 원문 부분대조 | 102 |','| 관련 원문 부분대조 | 101 |'));
   assert.match(check(docs),/MATRIX_SUMMARY: 관련 원문 부분대조/);
 });
 
