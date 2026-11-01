@@ -23,10 +23,10 @@
 | P-06 | 14일 대신 **별도의 7일** 우선 재계약 기간 신설 | **SUPERSEDED. 2026-10-29 더 최신 결정:** **7일 독점 기간 자체도 두지 않음.** 구단 동의 없는 계약 중 외부 접촉은 불허. 과거 #311의 10-28 '최신 7일' 기록을 구현 정본으로 삼지 않음. `exclusive`라는 레거시 내부 단계명은 **7일 독점 기간 존재의 증거가 아님** | [PR #320의 2026-10-29 `docs/DECISIONS.md` 마지막 절](https://github.com/lkh0802a/LOL-GM/blob/fix/december-first-tuesday-fa-20261028/docs/DECISIONS.md) |
 | P-07 | FA만 개방 / 일반 이적시장은 따로 순차 운영 / FA 동안 경기 가능 | **SUPERSEDED.** FA·일반 계약 선수 이적 **동일 글로벌 28일 개장**. **공식 지역·국제 + 독립 지역·국제 모두 시장 열려 있는 동안 실제 경기 0건**. 28일 후 정확히 종료(끝 시각 배타). 기존 무소속 FA 연중 계약과 **프로 라이선스 미보유 구단 계약 선수의 의무 바이아웃 연중 예외**는 구분 | [#234](https://github.com/lkh0802a/LOL-GM/issues/234), [#321](https://github.com/lkh0802a/LOL-GM/issues/321), [PR #320](https://github.com/lkh0802a/LOL-GM/pull/320) |
 | P-08 | 독립 장기리그는 12/31 전까지만 종료하면 됨 / 월즈가 **모든** 대회의 마지막 경기 | **SUPERSEDED.** 독립 장기 지역·국제리그 **글로벌 FA 시작 전에 해당 회차 완주**. 독립 단기 컵은 Worlds 결승 후에도 적법한 개최 가능하나 **글로벌 28일 시장 중에는 실제 경기 불가**. 공식 일정을 독립 대회가 밀어내지 못함 | [#234](https://github.com/lkh0802a/LOL-GM/issues/234), [#323](https://github.com/lkh0802a/LOL-GM/issues/323) |
-| P-09 | 단일 큐는 개인 솔로만 / 듀오·3~5인 파티 미승인 | **SUPERSEDED.** 세계 단일 5v5 통합 큐에 1~5인 파티 허용, 남은 자리만 매칭. MMR·대기·선호 역할·파티 대칭성은 기존 승인. 다만 수치형 MMR 임계값을 임의 고정하지 않음 | [#251의 2026-10-18 사용자 직접 승인](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968), 문구 정정 [#232](https://github.com/lkh0802a/LOL-GM/issues/232), [PR #326](https://github.com/lkh0802a/LOL-GM/pull/326) |
-| P-10 | 랭크 티어 승급·강등·티어 초기화 필수 / 기본 익명 닉네임만 | **SUPERSEDED.** 공개 **RP 점수·세계 순위**, 내부 MMR 분리, 시즌 RP 소프트 리셋; 별도 티어 승강 시스템 없음. 게임 내 참가자 **가상 실명+닉네임 공개**, 숨은 실제 능력·잠재력·내부 MMR·의료 비공개 | [#140 최종](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245258798), [#190A 최종](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6246187723) |
+| P-09 | 단일 큐는 개인 솔로만 / 듀오·3~5인 파티 미승인 | **SUPERSEDED.** 세계 단일 5v5 통합 큐에 1~5인 파티 허용, 남은 자리만 매칭. MMR·대기·선호 역할·파티 대칭성은 기존 승인. 다만 수치형 MMR 임계값을 임의 고정하지 않음 | [#251의 2026-10-18 사용자 직접 승인](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968), 문구 정정 [#232](https://github.com/lkh0802a/LOL-GM/issues/232), **병합된 [PR #326](https://github.com/lkh0802a/LOL-GM/pull/326)** |
+| P-10 | 랭크 티어 승급·강등·티어 초기화 필수 / 익명 또는 실명+닉네임 병행 의무 | **SUPERSEDED.** 공개 **RP 점수·세계 순위**, 내부 MMR 분리, 시즌 RP 소프트 리셋; 별도 티어 승강 시스템 없음. **세계 인물 1명당 고유 랭크 계정 1개, 닉네임 변경 금지, 공개 계정의 소유자 식별 가능**. 이전 #190A의 별도 실명 필드·실명/닉네임 병행 공개 의무는 **사용자 즉시 재정정으로 철회**. 비공개 실제 능력·잠재력·MMR·의료는 계속 보호 | [#140 최종](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245258798), [#190A 철회·맞춤 최종안](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6246200434), [룰북 PLAYER-006](https://github.com/lkh0802a/LOL-GM/blob/docs/standalone-approved-rulebook-20261101/docs/rulebook/40-PLAYERS.md) |
 | P-11 | 1군 비로컬 등록 상한 2명은 모든 미래 시즌에도 절대 바꿀 수 없는 엔진 불변 | **INITIAL_ONLY.** 첫 세계의 당시 **2명 규정은 계속 집행**, 적법한 국제/지역 협의·공표·시즌 발효 이후에만 변경 가능. 이미 확정된 과거 시즌/선수 로컬·계약·등록은 소급 변경 불가 | [#311 10-28 숫자 잠금 완화](https://github.com/lkh0802a/LOL-GM/issues/311). `ROSTER_TRANSFER_LOCAL_RULES.md` §3 구형 '고정' 절대성 주의 |
-| P-12 | 구단이 사무국 변경안을 투표로 거부/사무국 최고경영자가 모든 세계 정책을 직접 확정 | **ACTIVE(새 승인, 미구현):** 구단의 의견 제시·협상 허용, **자동 구단 거부권은 없음**. 지역 내 운영권 자율; 국제대회 출전권/다지역 권리는 국제 경영진, 대규모 체제 개편·사무국 통폐합·대형 재정은 **혼합 이사회 승인**. 중앙 이사 의결권 과반·지역대표 참여. 무작위 파벌/해임 엔진 없음 | [#324](https://github.com/lkh0802a/LOL-GM/issues/324), [Draft PR #325](https://github.com/lkh0802a/LOL-GM/pull/325) |
+| P-12 | 구단이 사무국 변경안을 투표로 거부/사무국 최고경영자가 모든 세계 정책을 직접 확정 | **ACTIVE(새 승인, 미구현):** 구단의 의견 제시·협상 허용, **자동 구단 거부권은 없음**. 지역 내 운영권 자율; 국제대회 출전권/다지역 권리는 국제 경영진, 대규모 체제 개편·사무국 통폐합·대형 재정은 **혼합 이사회 승인**. 중앙 이사 의결권 과반·지역대표 참여. 무작위 파벌/해임 엔진 없음 | [#324](https://github.com/lkh0802a/LOL-GM/issues/324), [병합된 PR #325](https://github.com/lkh0802a/LOL-GM/pull/325) |
 
 ## 2. **아직 폐기/확정하면 안 되는 문제**
 
@@ -37,14 +37,14 @@
 | **패치 주기와 국제대회 방식의 초기 프리셋** | **INITIAL_ONLY.** 초기 14일 일반 패치·주요 패치·일부 Bo/슬롯·초기 포맷은 향후 합법적인 제도/게임 메타 변화 여지를 남김. 한 번 적용된 경기는 당시 패치·Fearless/First Selection·규정 스냅샷을 보존. [#311](https://github.com/lkh0802a/LOL-GM/issues/311). |
 | **단일 게임 코어/세계 시계·시장·부별 변경** | **IMPLEMENTATION_PENDING.** 새 5v5 코어 초기 단계, `season.js`의 구형 단계 구조, `world.js`/ `office-international.js`의 신규 2부 강제, `contract-window.js` 구형 FA 등 `main`에 옛 코드 잔존. 해당 기존 [#233](https://github.com/lkh0802a/LOL-GM/issues/233)·[#234](https://github.com/lkh0802a/LOL-GM/issues/234)·[#315](https://github.com/lkh0802a/LOL-GM/pull/315)·[#318→#320](https://github.com/lkh0802a/LOL-GM/pull/320)에서 진행. 문서 정정으로 구현 완료라 주장 금지. |
 
-## 3. 열려 있는 PR에 이미 존재하는 교정 — 중복 금지
+## 3. 관련 PR의 교정 및 현재 상태 — 중복 금지
 
 - [PR #313](https://github.com/lkh0802a/LOL-GM/pull/313): `INTERNATIONAL_OFFICE_RULES.md`의 새 지역 2부 권고·중간 국제전 조건부 병행, `LOL_GM_SPEC.md`의 1~N부. **main에는 아직 미병합**.
 - [PR #315](https://github.com/lkh0802a/LOL-GM/pull/315): 2부 권고·3부 이상 및 강제 퇴출 일부 코드 교정, **Draft·미병합**.
 - [PR #318 → #319 → #320](https://github.com/lkh0802a/LOL-GM/pull/320): 12월 글로벌 FA·시계·28일 시장으로 단계적 전환, **Draft·미병합**. 다만 이 PR의 `docs/design/INDEPENDENT_REGIONAL_ORGANIZER_ENGINE_PROJECT_2026_10_28.md` 2.1.1의 'FA 개방 뒤에도 단기 컵 가능'과 `docs/design/COMPETITION_SYSTEM_REDESIGN_NOTES_2026_10_28.md` 3.1의 **11월 17일 검사 예시**는 여전히 **후속 P-07과 문구 충돌/구형 수용 기준**이므로 최종 HEAD 검사에서 반드시 교정해야 함. 현재 PR에 다른 구현 내용까지 전부 성공했다고 오인 금지.
-- [PR #326](https://github.com/lkh0802a/LOL-GM/pull/326): 이미 확정된 랭크 파티 규정의 문구 복원. **Draft·미병합**.
-- [PR #325](https://github.com/lkh0802a/LOL-GM/pull/325): 새 이사회·경영진 분리 설계. **Draft·미병합**.
-- [PR #263](https://github.com/lkh0802a/LOL-GM/pull/263): 오래된 문서 정합화 Draft로, **새 12월 시장/2부 권고/랭크/독립 경기 금지 규정과 충돌 재검증 전 그대로 병합 금지**. 교정 내용을 후속 PR과 reconcile.
+- [PR #326](https://github.com/lkh0802a/LOL-GM/pull/326): 이미 확정된 랭크 파티 규정의 문구 복원. **병합 완료**. 신규 룰북은 병합된 내용 및 이후 명시적 정정과 의미를 대조한다.
+- [PR #325](https://github.com/lkh0802a/LOL-GM/pull/325): 새 이사회·경영진 분리 설계. **병합 완료**. 설계 기록 병합을 실제 사무국 엔진 구현 완료로 보지 않는다.
+- [PR #263](https://github.com/lkh0802a/LOL-GM/pull/263): 구형 문서 정합화 초안은 **미병합 종료**. 이 PR의 과거 문구를 새 12월 시장·2부 권고·랭크·28일 경기 금지 정본으로 복구하지 않는다.
 - [#257](https://github.com/lkh0802a/LOL-GM/issues/257)는 중복 이슈를 만들지 않는 단일 추적 위치.
 
 ## 4. Codex/개발자 작업 체크
