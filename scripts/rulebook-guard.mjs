@@ -105,8 +105,8 @@ export function validateRulebook(docs){
   const matrixIds=new Set();
   const matrixStatusCounts=new Map();
   let matrixDirect=0;
-  for(const line of matrix.split('\\n')){
-    const m=line.match(/^\\| ([A-Z]+-\\d{3}) \\|/);
+  for(const line of matrix.split('\n')){
+    const m=line.match(/^\| ([A-Z]+-\d{3}) \|/);
     if(!m)continue;
     const id=m[1];
     const cells=line.split('|').map(part=>part.trim());
@@ -115,7 +115,7 @@ export function validateRulebook(docs){
     const rule=ids.get(id);
     if(!rule){add('MATRIX_ORPHAN',id);continue;}
     const declared=cells[4];
-    const actual=/issues\\/\\d+#issuecomment-\\d+/.test(rule.body)?'댓글 직접 링크':'이슈·기타';
+    const actual=/issues\/\d+#issuecomment-\d+/.test(rule.body)?'댓글 직접 링크':'이슈·기타';
     if(declared!==actual)add('MATRIX_SOURCE_DEPTH',id+' expected '+actual+' found '+declared);
     if(actual==='댓글 직접 링크')matrixDirect++;
     const status=cells[5];
@@ -132,13 +132,13 @@ export function validateRulebook(docs){
     ['후속 대체 확인·교정 필요','**후속 대체 확인·교정 필요**'],
   ];
   for(const [label,status] of summaries){
-    const line=matrix.split('\\n').find(l=>l.startsWith('| '+label+' |'));
+    const line=matrix.split('\n').find(l=>l.startsWith('| '+label+' |'));
     const declared=line?Number(line.split('|')[2].trim()):NaN;
     if(!Number.isInteger(declared)||declared!==(matrixStatusCounts.get(status)||0)){
       add('MATRIX_SUMMARY',label+' '+declared+' / '+(matrixStatusCounts.get(status)||0));
     }
   }
-  const depthLine=matrix.split('\\n').find(l=>l.startsWith('| 직접 댓글 링크 포함 |'));
+  const depthLine=matrix.split('\n').find(l=>l.startsWith('| 직접 댓글 링크 포함 |'));
   const declaredDirect=depthLine?Number(depthLine.split('|')[2].trim()):NaN;
   if(declaredDirect!==matrixDirect)add('MATRIX_DEPTH_SUMMARY',declaredDirect+' / '+matrixDirect);
 
