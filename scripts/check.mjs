@@ -10,6 +10,7 @@ await import('./match-core-foundation-acceptance.mjs');
 await import('./match-core-input-acceptance.mjs');
 await import('./codex-space-preflight-acceptance.mjs');
 await import('./codex-impact-map-acceptance.mjs');
+await import('./no-inworld-technical-incident-acceptance.mjs');
 await import('./observer-information-acceptance.mjs');
 await import('./historical-identity-acceptance.mjs');
 await import('./worlds-identity-acceptance.mjs');

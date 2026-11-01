@@ -14,7 +14,7 @@
     "validate:systems": "node scripts/validate-system-snapshot.mjs",
     "regression": "node scripts/verify-club-home-evidence.mjs && node scripts/club-home-acceptance.mjs && node scripts/verify-pending-handoff-evidence.mjs && node scripts/pending-handoff-acceptance.mjs && node scripts/verify-official-ui-evidence.mjs && node scripts/official-ui-authority-acceptance.mjs && node scripts/verify-season-progress-evidence.mjs && node scripts/season-progress-acceptance.mjs && node scripts/verify-unemployed-season-evidence.mjs && node scripts/unemployed-season-acceptance.mjs && node scripts/unemployed-season-ui-acceptance.mjs && node scripts/verify-season-history-evidence.mjs && node scripts/season-history-compaction-acceptance.mjs && node scripts/regression.mjs",
     "career:acceptance": "node scripts/career-acceptance.mjs",
-    "check:static": "node --test scripts/ci-run.test.mjs scripts/sync-standalone.test.mjs scripts/mutation-ownership.test.mjs && node scripts/check.mjs",
+    "check:static": "node --test scripts/ci-run.test.mjs scripts/sync-standalone.test.mjs scripts/mutation-ownership.test.mjs scripts/codex-development-preflight.test.mjs scripts/codex-change-risk.test.mjs && node scripts/check.mjs",
     "check:ui-finance-contracts": "node scripts/ui-finance-contracts-runner.mjs && node scripts/verify-club-recruitment-evidence.mjs && node scripts/verify-shortlist-comparison-evidence.mjs",
     "check:agent-negotiation-parity": "node scripts/agent-negotiation-parity-acceptance.mjs",
     "check:calendar-scouting": "node scripts/calendar-scouting-runner.mjs && node scripts/remote-scrim-acceptance.mjs && node scripts/scouting-coverage-cost-acceptance.mjs && node scripts/scrim-observer-acceptance.mjs",
@@ -27,7 +27,8 @@
     "dev:ui-v2": "node scripts/dev-ui-v2.mjs",
     "check:ui-v2": "node scripts/check-ui-v2.mjs",
     "check:space": "node scripts/codex-space-preflight.mjs",
-    "precheck": "node scripts/codex-space-preflight.mjs"
+    "precheck": "node scripts/codex-space-preflight.mjs",
+    "check:development": "node --test scripts/codex-development-preflight.test.mjs scripts/codex-change-risk.test.mjs"
   },
   "engines": {
     "node": ">=20"

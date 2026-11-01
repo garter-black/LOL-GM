@@ -27,6 +27,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
+          persist-credentials: false
       - name: Reject superseded validation
         env:
           GH_TOKEN: ${{ github.token }}
@@ -44,6 +45,11 @@ jobs:
           path: validated-standalone
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ github.token }}
+      - name: Verify exact successful-run artifact provenance
+        env:
+          STANDALONE_HEAD: ${{ github.event.workflow_run.head_sha }}
+          STANDALONE_RUN_ID: ${{ github.event.workflow_run.id }}
+        run: node scripts/standalone-artifact.mjs verify validated-standalone
       - name: Build game launcher and offline download
         run: node scripts/build-play-site.mjs validated-standalone/index.html _site
       - uses: actions/configure-pages@v5
@@ -52,6 +58,13 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+      - name: Recheck current main immediately before publication
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VALIDATED_HEAD: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          current_head=$(gh api "repos/${GITHUB_REPOSITORY}/branches/main" --jq .commit.sha)
+          test "$current_head" = "$VALIDATED_HEAD" || { echo "Main advanced during site assembly; refusing stale publication."; exit 1; }
       - name: Publish verified game
         id: deployment
         uses: actions/deploy-pages@v4

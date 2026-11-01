@@ -1,8 +1,18 @@
 name: Long daily-clock careers
 
 on:
+  schedule:
+    # Weekly playtest: Monday 07:00 Asia/Seoul. Development remains in Codex.
+    - cron: '0 22 * * 0'
+    # Quarterly maintenance evidence only; no source writes or automatic cleanup.
+    - cron: '0 21 1 1,4,7,10 *'
   workflow_dispatch:
     inputs:
+      task:
+        description: Existing career playtest or quarterly evidence audit
+        type: choice
+        options: [career, maintenance]
+        default: career
       seasons:
         description: Seasons per seed (100 for D11 evidence)
         type: number
@@ -17,10 +27,12 @@ concurrency:
 
 jobs:
   daily-career:
+    if: (github.event_name == 'workflow_dispatch' && inputs.task != 'maintenance') || github.event.schedule == '0 22 * * 0'
     runs-on: ubuntu-latest
     timeout-minutes: 125
     strategy:
       fail-fast: false
+      max-parallel: 1
       matrix:
         seed: [daily-1, daily-2, daily-3]
     steps:
@@ -30,7 +42,7 @@ jobs:
           node-version: 22
       - name: Actual daily clock, official drafts and saved phases
         env:
-          CAREER_SEASONS: ${{ inputs.seasons }}
+          CAREER_SEASONS: ${{ github.event_name == 'schedule' && 2 || inputs.seasons }}
           CAREER_SEED: ${{ matrix.seed }}
           CAREER_MEMORY_MB: 1536
           CAREER_RSS_MB: 4096
@@ -47,3 +59,46 @@ jobs:
           retention-days: 3
           if-no-files-found: error
           compression-level: 1
+
+  maintenance-audit:
+    if: (github.event_name == 'workflow_dispatch' && inputs.task == 'maintenance') || github.event.schedule == '0 21 1 1,4,7,10 *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Capture exact source and reference candidates
+        run: |
+          set -euo pipefail
+          mkdir -p reports
+          git rev-parse HEAD > reports/head.txt
+          node scripts/codex-impact-map.mjs --file src/artifact/engine.js --json --no-cache > reports/engine-references.json
+          node scripts/codex-impact-map.mjs --file src/artifact/ui-market.js --json --no-cache > reports/legacy-market-references.json
+          node --input-type=module -e 'import {writeFileSync} from "node:fs"; writeFileSync("reports/audit-scope.json",JSON.stringify({status:"EVIDENCE_ONLY",automaticDeletion:false,referenceCandidatesAreNotProofOfDisuse:true,saveCompatibilityAudit:"NOT_RUN",runtimeCoverage:"NOT_RUN",unusedDependencyAudit:"NOT_RUN",beforeAfterOptimization:"NOT_RUN",next:"Review #240/#257; any cleanup requires separate branch and PR"},null,2));'
+      - name: Measure the existing build without changing thresholds
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json,os,pathlib,resource,subprocess,time
+          out=pathlib.Path(os.environ.get('BUILD_METRICS_DIR','reports'))
+          out.mkdir(parents=True,exist_ok=True)
+          start=time.perf_counter()
+          with (out/'build.log').open('w') as log:
+              result=subprocess.run(['npm','run','build'],stdout=log,stderr=subprocess.STDOUT)
+          usage=resource.getrusage(resource.RUSAGE_CHILDREN)
+          (out/'build-resources.json').write_text(json.dumps({'elapsedMs':(time.perf_counter()-start)*1000,'userSeconds':usage.ru_utime,'systemSeconds':usage.ru_stime,'maxChildRssKiB':usage.ru_maxrss,'exitCode':result.returncode,'scope':'Linux RUSAGE_CHILDREN for the existing build; not game or browser runtime memory'},indent=2))
+          raise SystemExit(result.returncode)
+          PY
+          git diff --exit-code -- index.html
+      - name: Preserve maintenance evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quarterly-maintenance-evidence
+          path: reports/
+          retention-days: 7
+          if-no-files-found: error
