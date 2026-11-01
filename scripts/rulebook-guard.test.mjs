@@ -83,3 +83,14 @@ test('colloquial vocabulary is rejected in normative chapter prose',()=>{
   const docs=changed('docs/rulebook/60-BUSINESS.md',text=>text.replace("고정된 '프로 구단' 분류","고정된 '프로 구단' 딱지"));
   assert.match(check(docs),/COLLOQUIAL_STYLE/);
 });
+
+test('in-game copy cannot be replaced by development-meta text',()=>{
+  const file='docs/rulebook/80-EXPERIENCE.md';
+  const docs=changed(file,text=>text.replace('게임 세계 밖의 개발·설계 메타 설명','게임 안에 개발·설계 메타 설명'));
+  assert.match(check(docs),/BROKEN_PIN: UI-009/);
+});
+test('reopening an unsent draft cannot revoke signed contracts or committed payments',()=>{
+  const file='docs/rulebook/80-EXPERIENCE.md';
+  const docs=changed(file,text=>text.replace('이미 제출된 유효 제안, 실제 당사자 합의, 최종 서명, 확정된 지급 및 경과한 세계 시간','미제출 협상 내용'));
+  assert.match(check(docs),/BROKEN_PIN: UI-010/);
+});
