@@ -1,7 +1,7 @@
 # 20. 세계 일정과 시즌 경계
 
 ### CAL-001 · 글로벌 선수 시장 개장
-매년 **12월 첫째 화요일 00:00 UTC**에 선수 FA와 일반 계약 선수 이적시장을 **동시에** 개장한다. 특정 날짜를 매년 하드코딩하지 않는다. [근거 #234](https://github.com/lkh0802a/LOL-GM/issues/234), [#321](https://github.com/lkh0802a/LOL-GM/issues/321)
+매년 **12월 첫째 화요일 00:00 UTC**에 선수 FA와 일반 계약 선수 이적시장을 **동시에** 개장한다. 개장일은 해당 연도 달력에 따라 산정하며, 특정 연도의 날짜를 고정값으로 사용하지 않는다. [근거 #234](https://github.com/lkh0802a/LOL-GM/issues/234), [#321](https://github.com/lkh0802a/LOL-GM/issues/321)
 
 ### CAL-002 · 28일간 하나의 시장
 CAL-001로 시작하는 세계 통합 시장은 **정확히 28일**, 종료 시각 배타로 운영한다. 별도 FA/일반 이적 순차 개장 방식을 사용하지 않는다. [근거 #234](https://github.com/lkh0802a/LOL-GM/issues/234), [#323](https://github.com/lkh0802a/LOL-GM/issues/323)
