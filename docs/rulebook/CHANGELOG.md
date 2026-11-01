@@ -15,6 +15,7 @@
 - **COMP-006 (적용 범위 교정):** 공식 캘린더의 싱글/더블 허용은 **개별 엘리미네이션 브래킷의 탈락 조건**을 정하는 규칙이다. 서로 다른 스위스·조별·엘리미네이션 단계에서 발생한 패배 횟수를 합쳐 **대회 전체 2패 제한**을 적용한다는 뜻이 아니다. 정상 결승은 한 번만 진행하여 무패 결승 진출팀도 추가 reset을 받지 않는다. 양측 실격으로 우승자가 없는 결승의 실제 판정도 보호한다. [최신 싱글/더블 해석](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6340237032), [결승 reset 금지](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6340164667), [양측 실격 우승자 없음](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6381690538).
 - **COMP-004 (누락된 충돌 해결):** 모팀·산하 2군 1부 동시 참가 제한만 적힌 문구에, 모구단 강등으로 발생하는 **동일 2부 충돌 시 산하팀 적법 매각/해체(R01D)**를 연결. [사용자 R01D 승인](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6247461134), [후속 유지 확인](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6337287799).
 - **COMP-015 신규 이관:** 7개 공식 국제대회의 표시명/권역컵 MSI 미진출 선발 및 World Championship→Masters→Open **출전 자격 선정 순서**와 중복 방지. [최신 승인](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6460414410).
+- **TRANS-003 범위 교정:** 계약 중 원소속 구단 동의를 요하는 **일반 조기 접촉**과, 프로 라이선스 **미보유 팀** 계약 선수의 **상시 자유 접촉·적법 바이아웃 예외**를 분명히 구별. 모든 계약 선수를 일률적으로 차단하는 표현을 정정. [기존 예외의 명시 승인 #321](https://github.com/lkh0802a/LOL-GM/issues/321).
 - **BIZ-013 신규 이관:** 샐러리캡·사치세 상위 5인 vs 플로어 실제 부담 전체 선수 급여의 상이한 산정 대상. [사용자 승인](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6337472531).
 - **BIZ-014 신규 이관:** 다구단 소유 허용과 소유 그룹 유한 재원·실제 인수/지원 거래의 양립. [사용자 승인](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6337472531).
 
