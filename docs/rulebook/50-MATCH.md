@@ -7,7 +7,7 @@
 시리즈에 적용되는 **Fearless Draft의 유효 규칙과 이전 세트 챔피언 사용 이력**은 영구 보존한다. 사무국·대회 포맷 AI·패치가 임의 해제하거나 우회할 수 없다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311), [#234](https://github.com/lkh0802a/LOL-GM/issues/234) [Fearless 고정 범위 사용자 정정](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6456922011)
 
 ### MATCH-003 · First Selection 불변
-**First Selection**의 유효한 선후 선택권과 밴픽 적용 절차도 일반적인 사무국 변경 대상이 아니다. 당시 시리즈·세트에서 확정된 권리와 드래프트 결과를 보존한다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311) [First Selection 고정 범위 사용자 정정](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6456922011)
+**First Selection**의 유효한 선후 선택권과 밴픽 적용 절차도 일반적인 사무국 변경 대상이 아니다. 당시 시리즈·세트에서 확정된 권리와 드래프트 결과를 보존한다. 실제 사용자 감독의 수동 밴픽 결정에는 현실 시간 카운트다운을 강제하지 않는다. 확정된 밴픽의 게임 세계 내 소요시간·대회 적법성·Fearless·선택권과 기록·저장은 유지하며, 입력 중이라는 이유로 자동 기권이나 허구의 기술 사고를 만들지 않는다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311), [First Selection 고정 범위 사용자 정정](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6456922011), [#251 218A 사용자 선택](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6246141985)
 
 ### MATCH-004 · 세트 사이 선수 교체
 Bo3·Bo5에서 **세트 사이** 합법적인 등록 선수 교체는 허용하지만, **진행 중인 한 세트에서 선수 교체는 불허**한다. [근거 #251 #21A 재확인](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968)
