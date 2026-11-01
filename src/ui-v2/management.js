@@ -70,7 +70,7 @@ function v2Continue(){
  if(V2.db.world.pendingOfficial)return v2OfficialOpen();
  if(waitingNegotiationResponses(V2.db,true).length)return v2ContractAction(()=>advanceToNegotiationResponse(V2.db));
  if(['market','preseason'].includes(V2.db.world.phase))return v2ReviewSeasonTransition();
- if(V2.db.world.phase==='offseason')return v2ReviewContractDay();
+ if(V2.db.world.phase==='offseason')return V2.db.world.contractWindow?.stage==='fa'?v2ReviewOffseasonAction('day'):v2ReviewContractDay();
  if(V2.db.world.phase==='initial_roster'){const errors=initialOrganizationErrors(V2.db,v2Team());if(errors.length)return v2Tell(errors.join(' · '));return v2Mutate(()=>{finalizeInitialRosters(V2.db);return '선수단을 확정했습니다'});}
  if(V2.db.world.phase!=='season')return v2Tell('현재 단계의 계약 기간·결산 절차를 먼저 확인하세요');
  return v2ContractAction(()=>{const out=playWorldDay(V2.db);return {...out,ok:!!out,msg:out?.msg||(V2.db.world.pendingOfficial?'공식 경기 준비가 필요합니다. 진행을 멈췄습니다.':'현재 날짜까지 진행했습니다')}});
