@@ -19,6 +19,7 @@ export const DOCUMENTS = Object.freeze([
   'docs/rulebook/README.md',
   'docs/rulebook/CHANGELOG.md',
   'docs/AI_RULEBOOK_GUIDE.md',
+  'docs/RULEBOOK_MIGRATION_AUDIT.md',
   'AGENTS.md',
 ]);
 
