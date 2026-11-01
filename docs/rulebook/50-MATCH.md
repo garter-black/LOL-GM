@@ -4,10 +4,10 @@
 공식 경기·독립 대회·스크림·랭크의 실제 결과는 유효한 게임/경기 원본과 규정에서 확정한다. 경기 승패를 고정된 OVR 기반 확률이나 임의로 생성한 경기 결과로 대체하거나 복수의 경기 엔진이 동일한 결과를 독립적으로 확정하도록 해서는 안 된다. 선수 행동·전술·자원·전투·건물/승리조건의 실제 효과를 반영한다. [근거 #233](https://github.com/lkh0802a/LOL-GM/issues/233), [#241](https://github.com/lkh0802a/LOL-GM/issues/241)
 
 ### MATCH-002 · Fearless Draft 불변
-시리즈에 적용되는 **Fearless Draft의 유효 규칙과 이전 세트 챔피언 사용 이력**은 영구 보존한다. 사무국·대회 포맷 AI·패치가 임의 해제하거나 우회할 수 없다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311), [#234](https://github.com/lkh0802a/LOL-GM/issues/234)
+시리즈에 적용되는 **Fearless Draft의 유효 규칙과 이전 세트 챔피언 사용 이력**은 영구 보존한다. 사무국·대회 포맷 AI·패치가 임의 해제하거나 우회할 수 없다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311), [#234](https://github.com/lkh0802a/LOL-GM/issues/234) [Fearless 고정 범위 사용자 정정](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6456922011)
 
 ### MATCH-003 · First Selection 불변
-**First Selection**의 유효한 선후 선택권과 밴픽 적용 절차도 일반적인 사무국 변경 대상이 아니다. 당시 시리즈·세트에서 확정된 권리와 드래프트 결과를 보존한다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311)
+**First Selection**의 유효한 선후 선택권과 밴픽 적용 절차도 일반적인 사무국 변경 대상이 아니다. 당시 시리즈·세트에서 확정된 권리와 드래프트 결과를 보존한다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311) [First Selection 고정 범위 사용자 정정](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6456922011)
 
 ### MATCH-004 · 세트 사이 선수 교체
 Bo3·Bo5에서 **세트 사이** 합법적인 등록 선수 교체는 허용하지만, **진행 중인 한 세트에서 선수 교체는 불허**한다. [근거 #251 #21A 재확인](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968)
@@ -28,7 +28,7 @@ Bo3·Bo5에서 **세트 사이** 합법적인 등록 선수 교체는 허용하�
 감독·AI 구단의 전술·상대 준비·밴픽은 실제 합법 정보, 선수 숙련·활동, 당시 패치와 팀 자원·상대 관측에 근거한다. 사전에 알 수 없는 향후 경기 결과, 타 구단의 비공개 스크림 정보 또는 근거 없이 확정된 승률 보정값을 입력으로 사용하지 않는다. [근거 #235](https://github.com/lkh0802a/LOL-GM/issues/235), [#280](https://github.com/lkh0802a/LOL-GM/issues/280)
 
 ### MATCH-010 · 가상 시스템/방송 기술 사고 이벤트 배제
-세계의 대회 운영·가상 게임 패치와 별개로 **가상 기술/방송 시스템 사고, 핑 장애, 퍼즈/리메이크 및 개인 심판 캐릭터**를 흥미 유발을 목적으로 하는 무작위 사고 이벤트로 생성하지 않는다. 실존 계약·선수/구단 참가·등록 위반과 정당한 규정상 기권 등은 별도 실제 사건으로 처리한다. [근거 #242 2026-10-25 기술 사고 전면 제외](https://github.com/lkh0802a/LOL-GM/issues/242), [#251](https://github.com/lkh0802a/LOL-GM/issues/251)
+세계의 대회 운영·가상 게임 패치와 별개로 **가상 기술/방송 시스템 사고, 핑 장애, 퍼즈/리메이크 및 개인 심판 캐릭터**를 흥미 유발을 목적으로 하는 무작위 사고 이벤트로 생성하지 않는다. 실존 계약·선수/구단 참가·등록 위반과 정당한 규정상 기권 등은 별도 실제 사건으로 처리한다. [근거 #242 2026-10-25 기술 사고 전면 제외](https://github.com/lkh0802a/LOL-GM/issues/242), [#251](https://github.com/lkh0802a/LOL-GM/issues/251) [기술 사고·퍼즈·리메이크 최종 철회](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244903948)
 
 ### MATCH-011 · 별도 주장 직책 시스템 제외
 선수의 **독립 주장(captain) 직책·임면 UI·주장 전용 사기/관계/팀워크 보너스·주장 이벤트 시스템은 도입하지 않는다**. 전술 지시, 경기의 실제 커뮤니케이션·주요 오더, 선수 성향·코칭·팀워크의 효과는 기존 시스템의 유효한 사건·상태 정보를 통하여 처리하며 주장 전용 보너스로 중복 계산하지 않는다. [근거 #251 주장 시스템 최종 철회](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244600843)
