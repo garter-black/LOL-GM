@@ -10,7 +10,7 @@ test('published rulebook has unique, sourced rules and working local links',()=>
   const result=validateRulebook(original);
   assert.deepEqual(result.errors,[]);
   assert.equal(result.chapterCount,9);
-  assert(result.ruleCount>=85);
+  assert.equal(result.ruleCount,93);
 });
 test('duplicate ID cannot pass as a new approved clause',()=>{
   const file='docs/rulebook/20-CALENDAR.md';
@@ -41,4 +41,8 @@ test('immutable First Selection and draft policies cannot silently disappear',()
   assert.match(check(docs),/BROKEN_PIN: MATCH-003/);
   docs=changed('docs/rulebook/50-MATCH.md',text=>text.replaceAll('Fearless Draft','Optional Draft'));
   assert.match(check(docs),/BROKEN_PIN: MATCH-002/);
+});
+test('publication version and changelog cannot silently diverge',()=>{
+  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.3.0','v9.9.9'));
+  assert.match(check(docs),/CHANGELOG: no entry/);
 });
