@@ -301,3 +301,17 @@ test('approval-audit link cannot silently point to a nonexistent file',()=>{
   const docs=changed(file,text=>text.replace('STEP1_APPROVAL_EFFECT_AUDIT_2026_11_01.md','missing-approval-audit.md'));
   assert.match(check(docs),/BROKEN_LOCAL_LINK/);
 });
+
+test('protected international events cannot disappear under a growth or low-audience policy',()=>{
+  const file='docs/rulebook/10-COMPETITIONS.md';
+  for(const [before,after] of [
+    ['정체성과 행사 연속성은 영구 보장','정체성과 행사 연속성은 보장하지 않는다'],
+    ['저흥행만을 이유로 자동 폐지할 수 없다','저흥행이면 자동 폐지한다'],
+    ['영구 최대 개수가 아니다','영구 최대 개수다'],
+    ['참가 방식·규모·세부 형식을 재편','참가 방식·규모·세부 형식은 고정'],
+  ]){
+    const docs=changed(file,text=>text.replace(before,after));
+    assert.notEqual(docs[file],original[file]);
+    assert.match(check(docs),/BROKEN_PIN: COMP-012/);
+  }
+});
