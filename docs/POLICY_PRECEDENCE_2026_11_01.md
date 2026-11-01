@@ -32,10 +32,12 @@
 
 | 사안 | 상태 및 이유 |
 |---|---|
-| **시즌 중 계약 선수 이적 허용 범위** | **UNRESOLVED.** 구형 `ROSTER_TRANSFER_LOCAL_RULES.md` §4.2의 지역 창, 세계 28일 통합 계약 선수 시장, 기존 FA 연중 영입, 프로 라이선스 미보유 팀의 바이아웃은 **대상·효력 시계가 다름**. 사용자 승인 없이 시즌 중 창을 일괄 폐지하거나 2차 글로벌 시장을 추가하지 않음. 관할·기존 계약·시즌 등록과 함께 [#224](https://github.com/lkh0802a/LOL-GM/issues/224)/[#234](https://github.com/lkh0802a/LOL-GM/issues/234)/[#321](https://github.com/lkh0802a/LOL-GM/issues/321)에서 실제 적용 관계 확인. |
+| **시즌 중 지역별 계약 선수 이적창** | **ACTIVE(2026-11-01 직접 후속 승인, 구현 미검증).** 공식 국제대회 기간을 **우선 개장 시점**으로 사용하되 국제대회마다 의무 개장하거나 전 지역에 동일 시각·횟수·기간을 강제하지 않는다. 지역사무국이 사전 공표한 유효한 창에서 해당 지역 구단의 계약 선수 완전이적·임대 영입 가능. 타지역 영입은 **영입 지역의 개장**뿐 아니라 원소속 구단의 계약상 동의 또는 적법한 바이아웃·선수 동의·재정·관련 이적/등록 규정을 충족해야 한다. 국제대회 진행 중 협상·계약과 실제 대회 등록/명단 잠금은 별도 판정. 12월 **세계 통합 28일 선수 시장**(기간 중 네 종류 대회 실경기 금지), 무소속 FA의 연중 계약, 프로 라이선스 미보유 팀 계약자의 연중 바이아웃 예외와 병존한다. [#328 TRANS-011](https://github.com/lkh0802a/LOL-GM/blob/docs/standalone-approved-rulebook-20261101/docs/rulebook/30-TRANSFERS.md); 과거 [#224](https://github.com/lkh0802a/LOL-GM/issues/224)/[#234](https://github.com/lkh0802a/LOL-GM/issues/234)/[#321](https://github.com/lkh0802a/LOL-GM/issues/321). **실제 지역 최초 개장일/횟수·운영 세부는 확정 상수가 아님.** |
 | **1~N부 소속 vs 조직 1군·2군** | **ACTIVE 핵심 구분 / IMPLEMENTATION_PENDING.** 소유 2군·Academy는 클럽 조직이고 정식 2부·3부는 참가 리그 계층. 소유 2군이 3부 참가해도 자동 승격권 없음. 1부 동일 구단/산하팀 이해충돌 금지는 기존 확정 유지. 구체적 등록·재정·승강은 [#311](https://github.com/lkh0802a/LOL-GM/issues/311). |
 | **패치 주기와 국제대회 방식의 초기 프리셋** | **INITIAL_ONLY.** 초기 14일 일반 패치·주요 패치·일부 Bo/슬롯·초기 포맷은 향후 합법적인 제도/게임 메타 변화 여지를 남김. 한 번 적용된 경기는 당시 패치·Fearless/First Selection·규정 스냅샷을 보존. [#311](https://github.com/lkh0802a/LOL-GM/issues/311). |
 | **단일 게임 코어/세계 시계·시장·부별 변경** | **IMPLEMENTATION_PENDING.** 새 5v5 코어 초기 단계, `season.js`의 구형 단계 구조, `world.js`/ `office-international.js`의 신규 2부 강제, `contract-window.js` 구형 FA 등 `main`에 옛 코드 잔존. 해당 기존 [#233](https://github.com/lkh0802a/LOL-GM/issues/233)·[#234](https://github.com/lkh0802a/LOL-GM/issues/234)·[#315](https://github.com/lkh0802a/LOL-GM/pull/315)·[#318→#320](https://github.com/lkh0802a/LOL-GM/pull/320)에서 진행. 문서 정정으로 구현 완료라 주장 금지. |
+
+**후속 승인 정정(2026-11-01):** 최초 이 문서의 U-01 '지역별 시즌 중 계약 선수 이적창 UNRESOLVED'는 사용자 후속 대화 승인에 따라 **개장 권한·시점·허용 거래 범위가 해결**되었다. 다만 관할 사무국이 정하는 개별 시각·횟수·등록 마감 및 실제 코드 상태는 별도. 구형 문서에는 여전히 한 지역 창만 열리면 원소속 권리·국제대회 명단을 무조건 우회하는 듯한 표현이 있을 수 있으므로 최신 [TRANS-011](https://github.com/lkh0802a/LOL-GM/blob/docs/standalone-approved-rulebook-20261101/docs/rulebook/30-TRANSFERS.md) 기준으로 대조한다.
 
 ## 3. 관련 PR의 교정 및 현재 상태 — 중복 금지
 
