@@ -139,7 +139,69 @@ export function validateRulebook(docs){
     }
     matrixStatusCounts.set(status,(matrixStatusCounts.get(status)||0)+1);
   }
-  for(const id of ids.keys())if(!matrixIds.has(id))add('MATRIX_MISSING',id);
+  // Chapter headings are human-facing totals and must not drift from IDs.\n  for(const [,prefix] of CHAPTERS){\n    const m=matrix.match(new RegExp('^### '+prefix+' — (\\d+)개 조항
+  if(matrixIds.size!==ids.size)add('MATRIX_COUNT','matrix '+matrixIds.size+' / rules '+ids.size);
+  const summaries=[
+    ['관련 원문 부분대조','관련 원문 부분대조'],
+    ['세부 판정 대기','세부 판정 대기'],
+    ['후속 대체 확인·교정 필요','**후속 대체 확인·교정 필요**'],
+  ];
+  for(const [label,status] of summaries){
+    const line=matrix.split('\n').find(l=>l.startsWith('| '+label+' |'));
+    const declared=line?Number(line.split('|')[2].trim()):NaN;
+    if(!Number.isInteger(declared)||declared!==(matrixStatusCounts.get(status)||0)){
+      add('MATRIX_SUMMARY',label+' '+declared+' / '+(matrixStatusCounts.get(status)||0));
+    }
+  }
+  const depthLine=matrix.split('\n').find(l=>l.startsWith('| 직접 댓글 링크 포함 |'));
+  const declaredDirect=depthLine?Number(depthLine.split('|')[2].trim()):NaN;
+  if(declaredDirect!==matrixDirect)add('MATRIX_DEPTH_SUMMARY',declaredDirect+' / '+matrixDirect);
+
+  // Existing AGENTS.md intentionally links many legacy documents outside
+  // this limited rulebook fixture; only validate relative links authored here.
+  for(const file of [...CHAPTERS.map(([path])=>path),'docs/rulebook/README.md','docs/rulebook/CHANGELOG.md','docs/AI_RULEBOOK_GUIDE.md']){
+    const content=docs[file];
+    for(const match of content.matchAll(/\[[^\]\n]+\]\(([^)\s]+)(?:\s+[^)]*)?\)/g)){
+      const target=match[1].split('#')[0];
+      if(!target||/^(?:https?:\/\/|mailto:)/i.test(target))continue;
+      if(target.startsWith('/')||target.startsWith('..'+posix.sep+'..'+posix.sep)){
+        // One parent level (e.g. ../AI_RULEBOOK_GUIDE.md) is legitimate;
+        // the normalized destination must remain in the repository.
+      }
+      const joined=posix.normalize(posix.join(posix.dirname(file),target));
+      if(joined==='..'||joined.startsWith('../')||joined.startsWith('/'))add('LINK_ESCAPE',file+' -> '+target);
+      else if(!(joined in docs))add('BROKEN_LOCAL_LINK',file+' -> '+joined);
+    }
+  }
+
+  // Provenance depth is reported as a metric, not a proxy for approval validity:
+  // issue-level citations can still be valid but require more precise adjudication.
+  const sourceDepth = {
+    directCommentLinked: [...ids.values()].filter(({body}) => /issues\/\d+#issuecomment-\d+/.test(body)).length,
+    issueOnlyOrOther: [...ids.values()].filter(({body}) => !/issues\/\d+#issuecomment-\d+/.test(body)).length,
+  };
+  const agent=docs['AGENTS.md'];
+  for(const required of ['## 규정집 필수 참조','docs/rulebook/README.md','docs/AI_RULEBOOK_GUIDE.md','npm run check:rulebook']){
+    if(!agent.includes(required))add('CODEX_ENTRY',required);
+  }
+  if(!docs['docs/AI_RULEBOOK_GUIDE.md'].includes('비규범'))add('GUIDE_SCOPE','AI guide must not define new policy');
+  // Version is a living publication marker, not a hard-coded initial release.
+  const version=docs['docs/rulebook/README.md'].match(/\*\*규정집 발행본:\*\*\s*(v\d+\.\d+\.\d+)/)?.[1];
+  if(!version)add('VERSION','rulebook README lacks a semantic publication version');
+  else if(!docs['docs/rulebook/CHANGELOG.md'].includes(' '+version))add('CHANGELOG','no entry for the current rulebook version '+version);
+  return {errors,ruleCount:ids.size,chapterCount:CHAPTERS.length,sourceDepth};
+}
+
+if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
+  const result=validateRulebook(readDocuments());
+  if(result.errors.length){
+    for(const error of result.errors)console.error('rulebook: '+error);
+    process.exitCode=1;
+  }else{
+    console.log('rulebook: PASS '+result.ruleCount+' documented clauses across '+result.chapterCount+' chapters; '+result.sourceDepth.directCommentLinked+' direct-comment-linked; '+result.sourceDepth.issueOnlyOrOther+' issue-level/other-linked. IDs, links, Codex entrypoint and policy pins verified (DOCUMENT CHECK ONLY; SOURCE LINKS DO NOT VERIFY APPROVAL)');
+  }
+}
+, 'm'));\n    const actual=[...ids.keys()].filter(id=>id.startsWith(prefix+'-')).length;\n    if(!m||Number(m[1])!==actual)add('MATRIX_CHAPTER_COUNT',prefix+' '+(m?.[1]??'missing')+' / '+actual);\n  }\n  for(const id of ids.keys())if(!matrixIds.has(id))add('MATRIX_MISSING',id);
   if(matrixIds.size!==ids.size)add('MATRIX_COUNT','matrix '+matrixIds.size+' / rules '+ids.size);
   const summaries=[
     ['관련 원문 부분대조','관련 원문 부분대조'],
