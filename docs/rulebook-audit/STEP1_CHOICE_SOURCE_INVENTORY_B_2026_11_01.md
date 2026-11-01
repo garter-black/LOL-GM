@@ -19,27 +19,27 @@
 | R1-001 | `1B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R1-002 | `2B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R1-003 | `3B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R1-004 | `4A` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | **사용자 추가 의견 있음: 원안 문자 자동 승인 금지** · 동일 댓글의 후속 해석 및 다음 수정 대조 필요 |
-| R1-005 | `5B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
+| R1-004 | `4A` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | **4A 원안 미승인·주최측 실제 출장/체류 지원 맞춤안** ([동일 원문](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940)) |
+| R1-005 | `5B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | **철회·랜덤 항공편/이동 지연 부재** ([최종 후속](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244903948)); 정상 이동 시간은 유지 |
 | R1-006 | `6B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R1-007 | `7C` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R1-008 | `8C` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R1-009 | `9B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R1-010 | `10B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R1-011 | `11C` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | **사용자 추가 의견 있음: 원안 문자 자동 승인 금지** · 동일 댓글의 후속 해석 및 다음 수정 대조 필요 |
-| R1-012 | `12B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | **사용자 추가 의견 있음: 원안 문자 자동 승인 금지** · 동일 댓글의 후속 해석 및 다음 수정 대조 필요 |
-| R1-013 | `13B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | **사용자 추가 의견 있음: 원안 문자 자동 승인 금지** · 동일 댓글의 후속 해석 및 다음 수정 대조 필요 |
+| R1-011 | `11C` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | **초기 미승인 → 후속 11C 명시 승인** ([후속](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968)): 최대 5인 파티 허용 (PLAYER-002) |
+| R1-012 | `12B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | **초기 미승인 → 후속 12B 명시 승인** ([후속](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968)): 주·부 포지션 및 제한적 자동 배정 |
+| R1-013 | `13B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | **초기 미승인 → 후속 13B 명시 승인** ([후속](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968)): 대기시간에 따른 MMR 범위 점진 확대 |
 | R1-014 | `14B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R1-015 | `15B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R1-016 | `16B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R1-017 | `17B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | **사용자 추가 의견 있음: 원안 문자 자동 승인 금지** · 동일 댓글의 후속 해석 및 다음 수정 대조 필요 |
+| R1-017 | `17B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | **17B 원안 미승인·맞춤안 승인:** 스크림 Bo3/5 전 세트, 공식 대회 선착 2/3승 종료 ([#251 원문](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940)) |
 | R1-018 | `18B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R1-019 | `19B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R1-020 | `20A` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R1-021 | `21B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | **사용자 추가 의견 있음: 원안 문자 자동 승인 금지** · 동일 댓글의 후속 해석 및 다음 수정 대조 필요 |
+| R1-021 | `21B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | **21B 신기능 미승인 → 21A 기존 규칙 재확인** ([후속](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968)): 세트 사이만 교체 가능 |
 | R1-022 | `22B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R1-023 | `23B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R1-024 | `24B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
+| R1-024 | `24B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | **부분 철회·주장 직책/지정/사기 버프 금지**, 실제 오더·소통은 존속 ([최신 정정](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244600843)); MATCH-011 |
 | R1-025 | `25B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R1-026 | `26B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R1-027 | `27B` | [#251 6244329940](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244329940) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
@@ -51,14 +51,14 @@
 
 | 원본 선택 식별키 | 당시 제출 문자열 | 출처 | 후속 효력 확인 상태 |
 |---|---|---|---|
-| R2-011 | `11C` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R2-012 | `12B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R2-013 | `13B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R2-021 | `21A` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R2-031 | `31B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
+| R2-011 | `11C` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | **확정·최대 5인 사전 파티 허용**, R1의 최초 보류 해소 ([동일 승인](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968)) |
+| R2-012 | `12B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | **확정·주/부 포지션 및 제한 자동 배정**, R1 최초 보류 해소 |
+| R2-013 | `13B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | **확정·대기 증가에 따른 MMR 검색 확대**, R1 최초 보류 해소 |
+| R2-021 | `21A` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | **확정·21A는 기존 세트 사이 교체 재확인**, 새 교체 미니게임 아님 (MATCH-004) |
+| R2-031 | `31B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | **부분 대체·RP 소프트 리셋은 유지, 티어 리셋은 미적용** ([#140 후속 맞춤안](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245258798)); PLAYER-004 |
 | R2-032 | `32B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R2-033 | `33B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R2-034 | `34B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | **사용자 명시 수정 있음** · 원안 문자 그대로 채택 금지 |
+| R2-034 | `34B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | **34B 원안 수정·랭크 닷지 금지** (PLAYER-005) |
 | R2-035 | `35A` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R2-036 | `36B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R2-037 | `37B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
@@ -68,13 +68,13 @@
 | R2-041 | `41B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R2-042 | `42B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R2-043 | `43B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R2-044 | `44B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | **사용자 명시 수정 있음** · 원안 문자 그대로 채택 금지 |
+| R2-044 | `44B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | **44B 원안 수정·국가별 핑차 없음** (MATCH-006 / PLAYER-003) |
 | R2-045 | `45B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R2-046 | `46B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R2-047 | `47B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R2-048 | `48B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R2-049 | `49B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R2-050 | `50B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | **후속 주장 직책 전면 폐지 확정** ([후속 기록](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244600843)) |
+| R2-049 | `49B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | **후속 63C/64C로 방송 독점 범위 제한** ([후속](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244712136)): 공식 경기 자유 동시중계·무료 VOD 보장, 계약 자체는 유효 |
+| R2-050 | `50B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | **50B 미승인 → 별도 주장 제도 전면 폐기** ([후속](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244600843)); MATCH-011 |
 | R2-051 | `51B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R2-052 | `52B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R2-053 | `53B` | [#251 6244488968](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244488968) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
@@ -86,7 +86,7 @@
 
 | 원본 선택 식별키 | 당시 제출 문자열 | 출처 | 후속 효력 확인 상태 |
 |---|---|---|---|
-| R3-087 | `87C` | [#251 6245007620](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245007620) | **87C 철회·87B 최종 정정** ([후속 기록](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245024040)), COMP-019 |
+| R3-087 | `87C` | [#251 6245007620](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245007620) | **87C 철회 → 최종 87B** ([후속](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245024040)); 대회별 사전 동률 규정 (COMP-019) |
 | R3-088 | `88B` | [#251 6245007620](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245007620) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R3-089 | `89B` | [#251 6245007620](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245007620) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R3-090 | `90B` | [#251 6245007620](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245007620) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
@@ -109,7 +109,7 @@
 | R3-107 | `107B` | [#251 6245007620](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245007620) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R3-108 | `108B` | [#251 6245007620](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245007620) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R3-109 | `109B` | [#251 6245007620](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245007620) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R3-110 | `110C` | [#251 6245007620](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245007620) | **110C 추가 질문으로 보류 → 후속 수정 승인 → 2026-10-22 복수 소유 B안 최종 대체** (BIZ-010) |
+| R3-110 | `110C` | [#251 6245007620](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245007620) | **110C 미승인 → 임시 복수 독립 소유 금지 승인 → 최신 B안** ([후속](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6336990133)); 독립 다구단 100% 소유 허용·직접 경영 1곳 |
 | R3-111 | `111B` | [#251 6245007620](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245007620) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R3-112 | `112B` | [#251 6245007620](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245007620) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R3-113 | `113B` | [#251 6245007620](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6245007620) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
@@ -132,7 +132,7 @@
 | R4-185 | `185D` | [#251 6246141985](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6246141985) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R4-187 | `187A` | [#251 6246141985](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6246141985) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R4-188 | `188D` | [#251 6246141985](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6246141985) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
-| R4-190 | `190B` | [#251 6246141985](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6246141985) | **190B 보류 → 190A 실명 병기 → 최종 재정정(닉네임 불변·주인 식별, 실명 병기 불요)** (PLAYER-006) |
+| R4-190 | `190B` | [#251 6246141985](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6246141985) | **190B 보류 → 190A 실명 병기 중간 승인 → 최종 철회** ([최신](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6246200434)); 1인 1계정·닉네임 불변·소유자 식별 |
 | R4-192 | `192A` | [#251 6246141985](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6246141985) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R4-195 | `195C` | [#251 6246141985](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6246141985) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
 | R4-199 | `199D` | [#251 6246141985](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6246141985) | 번호/선택 문자열만 확인 · 후속 사용자 정정/미수록 여부 개별 검증 대기 |
