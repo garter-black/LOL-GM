@@ -27,9 +27,9 @@
 | R-066 | 66B | [#251 6244712136](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244712136) | 후속 선택·철회·룰북 연결 개별 판정 대기 |
 | R-067 | 67B | [#251 6244712136](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244712136) | 후속 선택·철회·룰북 연결 개별 판정 대기 |
 | R-068 | 68B | [#251 6244712136](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244712136) | 후속 선택·철회·룰북 연결 개별 판정 대기 |
-| R-069 | 69B | [#251 6244712136](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244712136) | 후속 무작위 기술·교통 사고 폐기 결정과 최종 효력 재대조 필요 |
-| R-070 | 70B | [#251 6244712136](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244712136) | 후속 무작위 기술·교통 사고 폐기 결정과 최종 효력 재대조 필요 |
-| R-071 | 71B | [#251 6244712136](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244712136) | 후속 무작위 기술·교통 사고 폐기 결정과 최종 효력 재대조 필요 |
+| R-069 | 69B | [#251 6244712136](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244712136) | **철회·무작위 항공/이동 사고 전제 폐지** ([후속 정정](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244903948)), 정상 이동·일정 예방만 유효 |
+| R-070 | 70B | [#251 6244712136](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244712136) | **철회·기술 퍼즈 이벤트/심판 미니게임 폐지** ([후속 정정](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244903948)), MATCH-010 |
+| R-071 | 71B | [#251 6244712136](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244712136) | **철회·기술 오류 리메이크/가상 재경기 금지** ([후속 정정](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244903948)), MATCH-010 |
 | R-072 | 72B | [#251 6244712136](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244712136) | 부분대조: 선수·직원 운영 세부 미이관(1차 판정표 B-05/06) |
 | R-073 | 73B | [#251 6244712136](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244712136) | 부분대조: 선수·직원 운영 세부 미이관(1차 판정표 B-05/06) |
 | R-074 | 74B | [#251 6244712136](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6244712136) | 부분대조: 선수·직원 운영 세부 미이관(1차 판정표 B-05/06) |
