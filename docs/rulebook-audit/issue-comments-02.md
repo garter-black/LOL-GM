@@ -1,0 +1,255 @@
+# Approval source comment register, batch 02 (evidence index only)
+These linked comments require validation against the latest user decisions. "approval-cue" is only a text-search marker, not an approval adjudication.
+
+## Issue #236 — 24 comments
+- [6227426822](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6227426822) [unreviewed]: ## 2026-10-17 전수조사 우선 보강
+- [6227728560](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6227728560) [unreviewed]: ## Codex 부문별 상세 구현·검증 인수 지침 (2026-10-17)
+- [6243838022](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6243838022) [approval-cue]: ## 2026-10-18 통합 솔랭 성장·시간·피로 원본 충돌 예방
+- [6243957502](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6243957502) [approval-cue]: ## 2026-10-18 신규 승인 반영 — 성장 원인·5인 조합 분석
+- [6244347847](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6244347847) [revision-cue]: ## 2026-10-18 랭크·팀워크·커리어 항목의 정확한 승인/보류 경계
+- [6244503667](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6244503667) [approval-cue,revision-cue]: ## 2026-10-18 확정된 통합 랭크 운영 (#11–13, #31–37) 및 은퇴/오더 (#53)
+- [6244601395](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6244601395) [approval-cue,revision-cue]: ## 2026-10-18 사용자 최종 정정 — 별도 주장(captain) 시스템 전면 제외
+- [6244726542](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6244726542) [approval-cue,revision-cue]: ## 2026-10-18 신규 확정 — 스태프 과부하·선수 휴가·멘토링·직무 전환 (#72–76)
+- [6245269539](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6245269539) [approval-cue]: ## 2026-10-18 선수·글로벌 랭크 추가 확정 #122–126·#137–140
+- [6246150224](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6246150224) [revision-cue]: ## 2026-10-18 세계 단일 랭크 추가 확정 #171C·#172A·#174A
+- [6246207338](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6246207338) [revision-cue]: ## 2026-10-18 최신 사용자 정정 #190 — 랭크 계정 1인 1개, 닉네임 불변
+- [6289713574](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6289713574) [revision-cue]: ## 2026-10-20 M01C·M02C·M03C·M04C·M05C·M07C·M08C 선수 성장/관계 세부화
+- [6290119243](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6290119243) [revision-cue]: ## 2026-10-20 M17~M23 선수·관계·공동 전술 성장 최종 확정
+- [6312053197](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6312053197) [revision-cue]: ## 2026-10-21 M75C~M82C·M85C~M89C 선수·실전/의료 세부 승인 연결
+- [6312257358](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6312257358) [revision-cue]: ## 2026-10-21 육성 구단 보상 C안 — 선수 육성 실제 기여 이력
+- [6312558558](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6312558558) [revision-cue]: ## 2026-10-21 M151·M152·M155·M158·M161·M171~M176·M183~M185 육성/선수 기록 연결
+- [6315207639](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6315207639) [approval-cue,revision-cue]: ## 2026-10-21 사용자 일괄 승인 — [④·⑤·⑨] 솔랭/스크림/공식전 성장, 5인 적응과 커리어 목표
+- [6315427234](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6315427234) [approval-cue,revision-cue]: ## 2026-10-21 승인 보강 — 11 입단 테스트, 12 로테이션, 13 무대 경험, 14 해외 적응, 16 프로 데뷔, 17 복귀, 19 은퇴 전향
+- [6337927588](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6337927588) [approval-cue]: ## 2026-10-22 사용자 승인: 40번 의료 중증도와 선수단 가용 인원 분리
+- [6338491452](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6338491452) [unreviewed]: ## 2026-10-22 전체 소스 감사 확정 #63 — 수동 100점 훈련 배분·훈련 강도 레거시 제거
+- [6390977888](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6390977888) [revision-cue]: ## 2026-10-25 선수 실제 활동/역할 퀘스트 원천 공유
+- [6391421105](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6391421105) [unreviewed]: ## 2026-10-25 5v5 통합 랭크 구현 시 성능 설계 게이트
+- [6457759794](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6457759794) [approval-cue,revision-cue]: ## 2026-10-28 신규 사용자 승인 — 2부 권고·정식 3부 이상 자율 확장
+- [6457937596](https://github.com/lkh0802a/LOL-GM/issues/236#issuecomment-6457937596) [approval-cue]: 2026-10-28 사용자 추가 승인: 하부 리그 16~22 필수 엔진 수정/통합 검증. 최신 정본 #311, 일정·승강 #234, 개발 실행표 #242, 설계 PR #313. 현재 main 실제 코드에서 1↔2 전용 승강, 적격 승격팀 없을 때 구단 fold
+
+## Issue #237 — 34 comments
+- [6227427229](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6227427229) [unreviewed]: ## 2026-10-17 후속 감사 작업 연결
+- [6227728947](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6227728947) [unreviewed]: ## Codex 부문별 상세 구현·검증 인수 지침 (2026-10-17)
+- [6243773839](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6243773839) [approval-cue]: ## 2026-10-18 설계 선택표 #17 확정 — 월별 재정·브랜드·성과 보너스·투자·복수 스폰서
+- [6243837749](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6243837749) [approval-cue]: ## 2026-10-18 실제 단일 후원 소스와 확정된 복수 스폰서 설계의 차이
+- [6244103691](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6244103691) [revision-cue]: ## 2026-10-18 일괄 승인: 재정·권리 #15–18
+- [6244347480](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6244347480) [revision-cue]: ## 2026-10-18 외부 주최사 여비 지원 및 재정난 #4·#25
+- [6244506109](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6244506109) [approval-cue,revision-cue]: ## 2026-10-18 비캘린더 참가·방송/주최측 비용/선수 상업 #45–49, #51–52
+- [6244725932](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6244725932) [revision-cue]: ## 2026-10-18 신규 30개 선택 — 구단 상업·팬덤·수익·보험·시설 (#57–61, #77–81)
+- [6245046999](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6245046999) [approval-cue,revision-cue]: ## 2026-10-18 구단 소유권 #110 최종 승인 — 독립 프로구단 중복 지배 금지, 산하 2군 허용
+- [6245270054](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6245270054) [approval-cue]: ## 2026-10-18 구단·시설·상업 117–146번 신규 확정 연계
+- [6246150738](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6246150738) [revision-cue]: ## 2026-10-18 재정 정책 추가 확정 #185D·#187A·#188D
+- [6247474398](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6247474398) [unreviewed]: ## 2026-10-18 R01 수정 D 및 R02~R04/R08~R16 구단·재정·감독 확정 연계
+- [6289714227](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6289714227) [approval-cue]: ## 2026-10-20 M05C·M06B·M07C·M08C·M13C 구단/스태프의 다차원 운영
+- [6290120658](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6290120658) [unreviewed]: ## 2026-10-20 M19C·M20C·M27C·M29C·M30C·M31C 경영/코칭 세부 확정
+- [6312054317](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6312054317) [revision-cue]: ## 2026-10-21 M50C·M91C~M97C·M113C~M127C 구단 경제/조직·팬덤 및 육성 구단 보상 방향
+- [6312255525](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6312255525) [approval-cue,revision-cue]: ## 2026-10-21 육성 구단 보상 C안 최종 승인 — 구단 재정 담당
+- [6312451773](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6312451773) [unreviewed]: ## 2026-10-21 육성 보상 소급 평가와 구버전 저장 정정
+- [6312556693](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6312556693) [revision-cue]: ## 2026-10-21 M151~M212 다차원 경제/육성 구단 보상 상세 최종안 연결
+- [6313635041](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6313635041) [unreviewed]: ## 2026-10-21 육성 구단 수익 KBO FA/FIFA 연대기여 밸런스 연구 — 재정
+- [6314621476](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6314621476) [unreviewed]: ## 2026-10-21 확정 — 강팀 보상 + 중소 구단 투자 유인을 함께 보존하는 경영·재정 수용 기준
+- [6315208237](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6315208237) [approval-cue]: ## 2026-10-21 사용자 일괄 승인 — [③] AI 구단별 실체 있는 장기 운영 철학
+- [6315427958](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6315427958) [approval-cue,revision-cue]: ## 2026-10-21 승인 보강 — 15 스태프 업무 시간/분배, 19 은퇴 후 스태프 진입, 21 감독 합법 위임
+- [6337041508](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6337041508) [approval-cue,revision-cue]: ## 2026-10-22 사용자 확정 B안 — 다구단 완전 소유, 한 독립 구단만 직접 경영, 나머지 독립 경영
+- [6337472531](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6337472531) [approval-cue]: ## 2026-10-22 사용자 최종 경제 보완 승인 — 25~29·31 및 규제 산정기준 분리
+- [6337681332](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6337681332) [approval-cue]: ## 2026-10-22 사용자 승인 — 34 구단 인수와 브랜드·팬덤 반응 분리
+- [6337928941](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6337928941) [approval-cue]: ## 2026-10-22 사용자 승인: 42번 팬덤/후원/흥행의 선수 숨은 OVR 참조 교정
+- [6338117490](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6338117490) [approval-cue]: ## 2026-10-22 사용자 확정 48·54 — 정상 구단 무근거 퇴출 방지와 왕조 팬덤의 실제 반응
+- [6338202138](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6338202138) [unreviewed]: ## 2026-10-22 추가 경제·계약 방향 보완 62 — 스태프 해지보장 계약의 개별화 검토
+- [6338220825](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6338220825) [approval-cue]: ## 2026-10-22 기존 확정 #28 산정범위의 소스 추가 교차 감사 — 플로어는 **전체 실제 부담 선수 급여** 기준
+- [6391062019](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6391062019) [revision-cue]: ## 2026-10-25 구단·스폰서·개인 방송의 가상 기술 사고 전면 제외
+- [6457760312](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6457760312) [approval-cue,revision-cue]: ## 2026-10-28 신규 사용자 승인 — 2부 권고·정식 3부 이상 자율 확장
+- [6457936473](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6457936473) [approval-cue,revision-cue]: 2026-10-28 사용자 추가 승인: 하부 리그 16~22 필수 엔진 수정/통합 검증. 최신 정본 #311, 일정·승강 #234, 개발 실행표 #242, 설계 PR #313. 현재 main 실제 코드에서 1↔2 전용 승강, 적격 승격팀 없을 때 구단 fold
+- [6458118923](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6458118923) [unreviewed]: **2026-10-28 실제 코드 수정 1차:** [PR #315](https://github.com/lkh0802a/LOL-GM/pull/315) (DRAFT, actual engine files + acceptance test; 현재 CI 결과 확인 필요)
+- [6461144067](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6461144067) [approval-cue]: ## 신규 연계 구단·팬덤 생태계 프로젝트 #317 — 실제 대회 노출과 수익성 분리
+
+## Issue #238 — 19 comments
+- [6227432549](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6227432549) [unreviewed]: ## 2026-10-17 전 게임 감사 최우선 연결
+- [6227729362](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6227729362) [unreviewed]: ## Codex 부문별 상세 구현·검증 인수 지침 (2026-10-17)
+- [6243957794](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6243957794) [approval-cue]: ## 2026-10-18 신규 승인 반영 — 네 가지 코칭·분석 확장
+- [6244512341](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6244512341) [unreviewed]: ## 2026-10-18 글로벌 랭크 스카우팅 공정성 연계
+- [6244726806](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6244726806) [unreviewed]: ## 2026-10-18 승인 — 수요/팬덤·매출 인과 분석과 비관리 경기 관전 (#82–83)
+- [6245279917](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6245279917) [approval-cue]: ## 2026-10-18 최종 선택 — 글로벌 점수제 랭크·관심 선수 관측 #139–141
+- [6246161393](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6246161393) [approval-cue,revision-cue]: ## 2026-10-18 스카우팅 확정 #192A / #190B 사용자 추가 의견으로 **미승인·보류**
+- [6246207638](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6246207638) [approval-cue,revision-cue]: ## 2026-10-18 #190 사용자 직접 수정 확정 — '실명 공개' 아님
+- [6247474918](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6247474918) [approval-cue]: ## 2026-10-18 R05B·R06C 2부·오픈컵 선수 관측/비교 확정
+- [6247907439](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6247907439) [unreviewed]: ## 2026-10-18 모든 국가 공통 선수 공급/스카우팅 정책 최신 정정
+- [6289714908](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6289714908) [unreviewed]: ## 2026-10-20 M03C·M04C·M14C·M16C 스카우트 관측·판단·표현 연계
+- [6290121479](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6290121479) [unreviewed]: ## 2026-10-20 M18C·M19C·M24C·M27C·M31C 관측/평가 정합성
+- [6312053726](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6312053726) [unreviewed]: ## 2026-10-21 M51C·M56C·M66C·M79C·M98C~M104C 스카우트 근거 및 정보 경계
+- [6312257989](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6312257989) [revision-cue]: ## 2026-10-21 육성 구단 보상 C안 — 합법 관측에 따른 유망주/스폰서 평가
+- [6312559132](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6312559132) [approval-cue]: ## 2026-10-21 M158C·M164B·M171~M176·M194B·M205C 스카우트·관측 경계
+- [6315208857](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6315208857) [approval-cue]: ## 2026-10-21 사용자 일괄 승인 — [⑥·⑧] 저평가 선수 발굴과 실제 코칭·상대 분석의 정보 근거
+- [6315428860](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6315428860) [approval-cue]: ## 2026-10-21 승인 보강 — 11 실제 입단 테스트·16 아마추어 발견/진입·15 직원 관측 업무·20 전략 확산
+- [6337929654](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6337929654) [approval-cue]: ## 2026-10-22 사용자 승인: 46번 AI 초기 스카우팅 보고서의 실능력치 누출 방지
+- [6390978240](https://github.com/lkh0802a/LOL-GM/issues/238#issuecomment-6390978240) [unreviewed]: ## 2026-10-25 엔진 실제 시야·정보를 분석/스카우팅 소비와 연결
+
+## Issue #239 — 21 comments
+- [6227432963](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6227432963) [unreviewed]: ## 2026-10-17 전 게임 감사 최우선 연결
+- [6227729748](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6227729748) [unreviewed]: ## Codex 부문별 상세 구현·검증 인수 지침 (2026-10-17)
+- [6244506394](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6244506394) [unreviewed]: ## 2026-10-18 스크림/랭크 역사 경량화 수용 #31·#37·#43
+- [6245280201](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6245280201) [approval-cue]: ## 2026-10-18 역사 기록·랭크 점수제·시즌 비교 #140·#146
+- [6246162003](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6246162003) [approval-cue]: ## 2026-10-18 구단 역사·모바일 기록 #199D·#202C·#204B
+- [6247475222](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6247475222) [unreviewed]: ## 2026-10-18 R18B·R20B·R21B 및 강등 산하 2군 기록 보존
+- [6289715451](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6289715451) [approval-cue]: ## 2026-10-20 M01~04·M13C·M15C·M16C 장기 개성/구단/국가 역사 연계
+- [6290123445](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6290123445) [unreviewed]: ## 2026-10-20 M17C·M18C·M27C·M30C·M31C·M32C 장기 경력과 조직 역사/평판
+- [6312085919](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6312085919) [unreviewed]: ## 2026-10-21 M50C·M53C·M55C·M58C·M81C·M97C·M120C·M127C·M134C·M143C/M144C 역사 상세
+- [6312258494](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6312258494) [unreviewed]: ## 2026-10-21 육성 구단 보상 C안 — 세대/구단 이력 보존
+- [6312449019](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6312449019) [approval-cue,revision-cue]: ## 2026-10-21 최신 사용자 정정 — 구버전 저장 호환 의무 제외·새 규칙 소급 적용
+- [6312592001](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6312592001) [revision-cue]: ## 2026-10-21 M151~M212 장기 이력·구단 매각·레거시 세이브 정책 연계
+- [6315209442](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6315209442) [approval-cue,revision-cue]: ## 2026-10-21 사용자 일괄 승인 — [⑩] 실제 역사를 축적하는 구단 정체성·라이벌 관계
+- [6315429619](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6315429619) [approval-cue]: ## 2026-10-21 승인 보강 — 16 아마→공식 프로 데뷔 이력, 19 은퇴 선수의 합법 스태프 전향
+- [6337043625](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6337043625) [approval-cue,revision-cue]: ## 2026-10-22 사용자 확정 B안 — 복수 독립 구단 실질 소유 그룹/경영권 역사
+- [6337680583](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6337680583) [approval-cue]: ## 2026-10-22 사용자 승인 — 32·35 당대 대회 기록 불변 및 상금 수령의 정확성
+- [6338118316](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6338118316) [approval-cue]: ## 2026-10-22 사용자 확정 50 — 전 세계 선수의 영속적·중복 없는 닉네임
+- [6338200576](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6338200576) [unreviewed]: ## 2026-10-22 추가 보완 58·59·60 — 시대별 역사 원본·선수 사건·관계 데이터 수명
+- [6338492306](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6338492306) [unreviewed]: ## 2026-10-22 전체 소스 감사 확정 #64·#65·#68 — 선수 경력 당시 소속, 계약만료/연간 출전 표본, 스크림 근거 수명
+- [6391062369](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6391062369) [unreviewed]: ## 2026-10-25 세계 역사·저장: 가상 기술 사고 미생성
+- [6456689123](https://github.com/lkh0802a/LOL-GM/issues/239#issuecomment-6456689123) [approval-cue]: ## 최신 사용자 확정: 저장 호환성은 단계별 정책
+
+## Issue #240 — 19 comments
+- [6227433320](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6227433320) [unreviewed]: ## 2026-10-17 감사 우선순위: 저장·결정론·UI 복사
+- [6227734210](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6227734210) [unreviewed]: ## Codex 전 분야 상세 인수 계약 연결 (2026-10-17)
+- [6244348949](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6244348949) [unreviewed]: ## 2026-10-18 모바일 진행·경기/알림 UI 세부 선택 #28–30 B 확정
+- [6244506623](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6244506623) [approval-cue,revision-cue]: ## 2026-10-18 모바일 초청/일정 충돌/정보 계층 #54–56
+- [6244727094](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6244727094) [unreviewed]: ## 2026-10-18 확정 — 관전·모바일 #82·#84–86
+- [6245280456](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6245280456) [approval-cue,revision-cue]: ## 2026-10-18 사용자 확정 — 모바일 선발·결정 취소·과거 비교 #122/#145/#146
+- [6246161683](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6246161683) [approval-cue,revision-cue]: ## 2026-10-18 모바일 UI 확정 #195C·#199D·#218A
+- [6247065136](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6247065136) [unreviewed]: #244 브라우저 저장 교정은 PR260/main1a37254에서 수용했습니다. 실제 Chromium mobile320×560/260 두테마·10슬롯/오프라인(로드 후) 터치 전환, 원자적 실패/수동 복원/시작 실패 보관본 복구/native quota·1000
+- [6247475489](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6247475489) [unreviewed]: ## 2026-10-18 모바일 R19C 2부 대회 탐색 확정
+- [6289717713](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6289717713) [approval-cue]: ## 2026-10-20 M16C 관측된 다차원 개성·판단 변화를 설명하는 모바일 UI
+- [6290124171](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6290124171) [revision-cue]: ## 2026-10-20 M26C·M27C·M31C·M32C 설명성/성능
+- [6312086546](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6312086546) [approval-cue]: ## 2026-10-21 M52C·M59C~M66C·M75C·M108C·M143C~M149C 모바일 UX/관전/안전
+- [6312451122](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6312451122) [approval-cue]: ## 2026-10-21 저장 호환 정책 최신 정정
+- [6312592538](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6312592538) [revision-cue]: ## 2026-10-21 M164B·M176B·M182B·M201C~M206D 모바일/설명/저장 상세화
+- [6338493803](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6338493803) [unreviewed]: ## 2026-10-22 전체 소스 감사 확정 #67·#70 — 모바일 UI 전체 세계 복제/직렬화, 신인 생성의 장기 비용
+- [6390978542](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6390978542) [revision-cue]: ## 2026-10-25 초정밀 경기 엔진 성능 예산/결정론 연결
+- [6391415438](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6391415438) [revision-cue]: ## 2026-10-25 사용자 직접 지시 — 랭크·초정밀 경기·패치 도입 시 최적화는 설계 동시 조건
+- [6392612876](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6392612876) [approval-cue,revision-cue]: ## 사용자 승인 추가 — 모바일 체감 반응성·장기 조작 품질 Gate (2026-10-25)
+- [6443813264](https://github.com/lkh0802a/LOL-GM/issues/240#issuecomment-6443813264) [unreviewed]: 분기 유지보수의 실제 실행 구성을 PR309에 구현하고 검증했습니다(아직 미병합/예약 Actions 미활성). 기존 long-career.yml에 주간 게임 플레이테스트와 분리한 분기 읽기 전용 감사·수동 maintenance 선택을 추가했습니다. 참조 후보와
+
+## Issue #241 — 37 comments
+- [6227425216](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6227425216) [unreviewed]: ## 2026-10-17 추가 사용자 최우선 지시 — 전체 게임 전수조사 수정 먼저
+- [6227607512](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6227607512) [unreviewed]: ## Codex 통합 수용 가이드 (2026-10-17)
+- [6227734615](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6227734615) [revision-cue]: ## Codex 전 분야 상세 인수 계약 연결 (2026-10-17)
+- [6228053790](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6228053790) [approval-cue,revision-cue]: ## 2026-10-17 전체 게임 마스터 명세 ↔ 통합 검증 연결
+- [6290124851](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6290124851) [unreviewed]: ## 2026-10-20 M32C 전 시스템 다차원 의사결정 인과 검증 확정
+- [6312087966](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6312087966) [approval-cue,revision-cue]: ## 2026-10-21 M49~M150 통합 세부 acceptance 추적 (M150C)
+- [6312259034](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6312259034) [revision-cue]: ## 2026-10-21 육성 구단 보상 C안 — 원자성·중복 방지 검증 기준
+- [6312449868](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6312449868) [approval-cue]: ## 2026-10-21 최신 정정 — 구버전 세이브를 독립 수용 목표로 강제하지 않음
+- [6312594238](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6312594238) [approval-cue,revision-cue]: ## 2026-10-21 M151~M212 최종 설계 연계 QA — 재정·랭크·경기/대회·세계 확인
+- [6313636565](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6313636565) [revision-cue]: ## 2026-10-21 연대기여금×한정 FA 보상 금융/시장 인과 검증 기준
+- [6314622841](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6314622841) [unreviewed]: ## 2026-10-21 추가 수용 경계 — FA 억제/강팀 정당 보상/하위 대회 경제적 사다리
+- [6315210069](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6315210069) [approval-cue,revision-cue]: ## 2026-10-21 사용자 일괄 승인 — 경제 외 10대 개선 통합 인수 검증 체크
+- [6315430387](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6315430387) [revision-cue]: ## 2026-10-21 최신 사용자 정정 반영 — 11~22 보강 인수, 18번 **사후 제재·이의신청 엔진 신규 도입 제외**
+- [6337044262](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6337044262) [approval-cue,revision-cue]: ## 2026-10-22 사용자 확정 B안 — 다구단 그룹/독립 경영·경기·시장·재정 통합 검사
+- [6338653579](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6338653579) [revision-cue]: ## 2026-10-22 최초 동적 검증 증거 — 메인 CI와 미병합 훈련 Draft 실패, #66·#71 격리 단위 실행
+- [6338756053](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6338756053) [approval-cue,revision-cue]: ## 2026-10-22 정적감사 #1~72 — 기존 통합 검증 게이트에 연결 (새 검사 엔진/새 이슈 없음)
+- [6338827779](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6338827779) [revision-cue]: ## 2026-10-22 동적 재현 후 **구현 지점까지 추적한 수정 지시** (#71/#66, 중복 이슈 생성 금지)
+- [6338882197](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6338882197) [revision-cue]: ## 2026-10-22 동적 검증 점검표 (증거와 미실행 범위 구분)
+- [6383761090](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6383761090) [unreviewed]: ## 2026-10-24 정밀화 전 분야 통합 QA 추가 — #280 §6
+- [6383879417](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6383879417) [revision-cue]: ## 비코드 검수 설계 — 핵심 플레이 경로 수용표 (2026-10-24)
+- [6388955186](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6388955186) [unreviewed]: [CODEX-CHECKPOINT]
+- [6390460635](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6390460635) [approval-cue]: ## 2026-10-25 상시 QA 누락 점검 — 최신 #224/PR284 정확 HEAD CI 실패 처리
+- [6390897987](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6390897987) [unreviewed]: ## 2026-10-25 실제 League of Legends 기준 엔진 대조 QA 인계
+- [6390978913](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6390978913) [unreviewed]: ## 2026-10-25 게임 엔진 전수 수용 체크리스트 정본 지정
+- [6391062658](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6391062658) [unreviewed]: ## 2026-10-25 QA 수용: 게임 내 기술 사고 0 / 진짜 코드 오류는 반드시 검출
+- [6392613436](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6392613436) [approval-cue,revision-cue]: ## 사용자 승인 추가 — '기능 존재'를 넘어 완성된 플레이 경험의 종단 품질 수용 (2026-10-25)
+- [6393499138](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6393499138) [revision-cue]: 실제 새 P0/배포 게이트 실패 — PR284 병합 결과 main8424e2ffa662e371de2801c079aac98d6c1d3b90의 CI40161588187 core job121074742440이 `ERR_SCRIPT_EXECUTION_TIMEOUT a
+- [6456925308](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6456925308) [approval-cue]: ## [통합 acceptance 추가] 사용자 영구 불변 규칙 회귀
+- [6457344073](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6457344073) [approval-cue]: ## 통합 시즌 모델 전환 수용 조건 — 2026-10-28 승인
+- [6457452057](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6457452057) [revision-cue]: ## [최신 사용자 정정] 지역별 다른 국내 리그 구조는 **처음 시즌부터** 허용 (2026-10-28)
+- [6457538960](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6457538960) [unreviewed]: ## 2026-10-28 코드 근거 교차 엔진 영향 감사 — 지역별 자율 시즌 구조 (미구현)
+- [6457760872](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6457760872) [approval-cue,revision-cue]: ## 2026-10-28 신규 사용자 승인 — 2부 권고·정식 3부 이상 자율 확장
+- [6457935440](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6457935440) [approval-cue,revision-cue]: 2026-10-28 사용자 추가 승인: 하부 리그 16~22 필수 엔진 수정/통합 검증. 최신 정본 #311, 일정·승강 #234, 개발 실행표 #242, 설계 PR #313. 현재 main 실제 코드에서 1↔2 전용 승강, 적격 승격팀 없을 때 구단 fold
+- [6458119612](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6458119612) [unreviewed]: **2026-10-28 실제 코드 수정 1차:** [PR #315](https://github.com/lkh0802a/LOL-GM/pull/315) (DRAFT, actual engine files + acceptance test; 현재 CI 결과 확인 필요)
+- [6463021220](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6463021220) [unreviewed]: 2026-10-28 HEAD 후속 수용 기록 — stacked Draft PR #319 https://github.com/lkh0802a/LOL-GM/pull/319 (base PR #318, SHA f3d6b5fbdba7d176469c5f453ce29314d
+- [6467801931](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6467801931) [approval-cue]: [2026-10-28 대회 엔진 10종 확정 통합 QA 범위] 사용자 승인 정본 [#323](https://github.com/lkh0802a/LOL-GM/issues/323): 사무국/독립 개최사의 실적·재정·대회 위상→차기 시즌 대회 유지/개편/초청→세계 
+- [6467952911](https://github.com/lkh0802a/LOL-GM/issues/241#issuecomment-6467952911) [approval-cue]: [2026-10-28 사용자 최종 확장·우선순위 정본] [#323 대회 17종+운영 보강 6대](https://github.com/lkh0802a/LOL-GM/issues/323) + [#322 이적시장 7종](https://github.com/lkh0802a
+
+## Issue #242 — 59 comments
+- [6241655309](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6241655309) [unreviewed]: ## 2026-10-18 06시 개발 실제 이어받기
+- [6247064211](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6247064211) [unreviewed]: P0 진행 갱신: #243은 PR259/main58e046a의 최종·결과main 검증 후 종료했고, #244도 PR260/main1a37254에서 실제 저장 결함/수동 복구/시작 실패 경로를 교정하고 최종/결과main 전체·의료7·CI·Pages workflo
+- [6247403991](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6247403991) [unreviewed]: #243(PR259)→#244(PR260)에 이어 #245(PR261) 구현·필수 검증·결과 main 검증을 마쳤습니다. 현재 main `d3bd47f`: 원래 전체/npm build/집중·인접/실제 mobile Chromium 저장·진행·당시 결과·목록 복귀
+- [6248183185](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6248183185) [unreviewed]: ## 2026-10-18 코덱스 단독 개발 속도·사용량 최적화 (코드/CI 규칙 변경 아님)
+- [6248260823](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6248260823) [unreviewed]: ## 2026-10-18 코덱스 단독 개발: 변경 파일 중심 자동 코드 맵 활용 지침
+- [6249889172](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6249889172) [unreviewed]: ISSUE/PR: #246 / PR262 / fix/seeded-shuffle / HEAD 14271e576266a831d40a3f8de1f00c54a0fc4dcb
+- [6287925934](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6287925934) [unreviewed]: [CODEX-CHECKPOINT]
+- [6288124264](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6288124264) [unreviewed]: [CODEX-CHECKPOINT]
+- [6338495240](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6338495240) [approval-cue]: ## 2026-10-22 저장소 전수조사 추가 #69 — 검사 근거 데이터 700MB급 Git 원장 비대화로 인한 Codex 작업 비용
+- [6338890727](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6338890727) [unreviewed]: ## 2026-10-22 동적 검증 업로드 인계 (기존 우선순위/단일 Codex 유지)
+- [6340001565](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6340001565) [approval-cue,revision-cue]: ## 2026-10-22 사용자 제안 검토 — 오래된 CI 작업 브랜치 정리 (삭제 실행은 Codex만)
+- [6362332236](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6362332236) [approval-cue]: ## 2026-10-23 Codex 인계 — 공식 캘린더 고유 포맷과 실제 경기 단계 정합성
+- [6383598869](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6383598869) [approval-cue]: ## 2026-10-24 사용자 확정: 이제 게임플레이 **정밀화 우선**
+- [6383643574](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6383643574) [unreviewed]: ## 2026-10-24 추가 승인 — 정밀화 8개 항목 등록 및 큐 연결
+- [6383680121](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6383680121) [revision-cue]: ## 2026-10-24 추가 승인 5개 등록: #280 §5 R1–R5
+- [6383760701](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6383760701) [approval-cue]: ## 2026-10-24 추가 사용자 확정 — 정밀화 기획 일괄 목록 마감 (#280 §6)
+- [6383946598](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6383946598) [approval-cue,revision-cue]: ## 2026-10-24 비코드 잔여 감사 — 오래된 열린 PR 4건의 실제 충돌·파일 겹침
+- [6390596892](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6390596892) [approval-cue,revision-cue]: ### 현재 1순위 PR284: 보조 정밀 코드리뷰 완료 (2026-10-25)
+- [6390740399](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6390740399) [unreviewed]: ## 보조 코드 감사 2차 — 실제 새 UI 시장·계약 연결 (2026-10-25)
+- [6390799668](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6390799668) [approval-cue]: ## 3순위 정밀 계산 감사 — 사용자 '사이드 때 자기 라인으로 가지 않는다' 교정 수용 (2026-10-25)
+- [6390845780](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6390845780) [approval-cue]: ## 3순위 게임 규칙 감사 추가 — 2026-10-25 교전 전력 우위 오해 교정
+- [6390898308](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6390898308) [unreviewed]: ## 로드맵 정밀화 감사 첨부 — 2026-10-25 실 LoL 규칙 대조
+- [6391296308](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6391296308) [approval-cue,revision-cue]: ## 사용자 '랭크 파티 임의 설정 금지' 문서 대조 — 2026-10-25
+- [6391422061](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6391422061) [approval-cue]: ## 2026-10-25 사용자 최적화 추가 조건 — 기존 #240을 #236/#233/#232 동시 설계 게이트로
+- [6392619379](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6392619379) [approval-cue]: ## 사용자 승인 추가 — 체감 완성도(Polish) 작업의 기존 로드맵 편입 (2026-10-25)
+- [6393129744](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6393129744) [unreviewed]: ## 2026-10-25 사용자 후속 정정 — **레거시 정리 대상은 UI에 한정하지 않음**
+- [6393391683](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6393391683) [unreviewed]: 진행 전환 — 2026-10-25 04:22 UTC: PR #284의 정확 최종68714d4에서 원래 full158/UI21/build/직접의료/core 및 CI40160324242(의료7·캘린더35 포함) 전부 PASS 후 main8424e2ffa662e37
+- [6393526336](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6393526336) [unreviewed]: 실제 큐 보정 — main8424e2f core CI의 기존35000ms timeout 실패로 #241 P0를 우선합니다. 기존 PR284는 MERGED지만 결과 main CI/Pages 성공은 아닙니다. 후속 [PR288](https://github.com/
+- [6396583794](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6396583794) [revision-cue]: 실행 전환: #224/PR #284 후속 실제 CI 병목은 PR #288로 수정·병합했고 동일 main의 단독 전체 검사159/의료/core 및 정확 main CI/기존 Pages 성공을 확인했습니다. 실패 원문과 2개 full 동시 실행으로 발생했던 의료 타
+- [6397038532](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6397038532) [unreviewed]: 현재 실행 전환: #233 S0 PR #289는 main60f95360bf5279e3bf122bd075ec61d359f52221에 병합됐고, 정확 PR/main CI·UI21/기존check160/의료/core·기존5 상태 해시 동일·기존 Pages4018801
+- [6397459893](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6397459893) [unreviewed]: #233 진행 갱신: PR #291의 같은 시각 손상 복원 결함 수정은 최종 PR/결과main14e1a0c의 원래 전체검사160·UI21·의료/core·정확CI·기존Pages까지 PASS했습니다. #233 전체 물리/실경기 연결은 여전히 미완료입니다.
+- [6402671242](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6402671242) [unreviewed]: 실행 전환 근거(2026-10-25 20:18 UTC): #290은 결과main5ac의 UI21/check161/medical/core·CI40226783347·기존Pages40227760739까지 완료. #292 입력 adapter도 최종PR a4db의 UI
+- [6421347831](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6421347831) [unreviewed]: 2026-10-27T23:22 UTC 최신 실행: 기존 PR309에서 출력 경로 링크가 추적 파일을 덮어쓰는 실제 반례를 재현해 2288d72b805f9cce42bd3de04c10cca50c1055f6로 수정·push했습니다. 신규 PR/예약/에이전트/병합 없
+- [6440982504](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6440982504) [approval-cue]: ## 2026-10-27 최신 사용자 확정 — 선별 자율 개발·지속 업데이트 (PR 검증 완료·사용자 검토 대기)
+- [6456296503](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6456296503) [approval-cue]: [2026-10-28 최신 사용자 확정 — 기존 병합/승인 정책보다 우선]
+- [6456528296](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6456528296) [approval-cue,revision-cue]: ## 2026-10-28 사용자 최신 최종 정정 — 대회 포맷은 초기 시즌 출발 설정, 이후 자율 변경 허용
+- [6456689933](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6456689933) [approval-cue]: ## 사용자 최신 7개 정책 우선 — #311 참조
+- [6456926755](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6456926755) [approval-cue]: ## [최상위 실행 기준] 월즈 최종 경기 / Fearless / First Selection 영구 고정
+- [6457123063](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6457123063) [approval-cue,revision-cue]: ## 2026-10-28 추가 규칙 선택 — 8/11~15 확정, 9/10 보류
+- [6457344595](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6457344595) [approval-cue,revision-cue]: ## 시즌 기본 모델 교체 확정 — Split/Circuit 필수 체계 폐기 (기존 신규 코어 우선순위 보존)
+- [6457452669](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6457452669) [revision-cue]: ## [최신 사용자 정정] 지역별 다른 국내 리그 구조는 **처음 시즌부터** 허용 (2026-10-28)
+- [6457539403](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6457539403) [unreviewed]: ## 2026-10-28 코드 근거 교차 엔진 영향 감사 — 지역별 자율 시즌 구조 (미구현)
+- [6458120306](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6458120306) [unreviewed]: **2026-10-28 실제 코드 수정 1차:** [PR #315](https://github.com/lkh0802a/LOL-GM/pull/315) (DRAFT, actual engine files + acceptance test; 현재 CI 결과 확인 필요)
+- [6459271254](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6459271254) [approval-cue]: ## 2026-10-28 신규 사용자 확정 — 상위 대회 4분류로 전환
+- [6460896427](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6460896427) [unreviewed]: ## 프로젝트 추가 등록(2026-10-28): 독립 지역대회 개최사 AI 엔진 #316
+- [6461142928](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6461142928) [unreviewed]: ## 신규 승인 백로그 연결 — 독립 개최사 생태계 고도화 #316 + 구단·팬덤 통합 #317
+- [6461188240](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6461188240) [approval-cue,revision-cue]: ## [최신 확정·정정 / 2026-10-28] 지역대회 참가 범위 = 해당 지역 관할 내부
+- [6461236293](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6461236293) [revision-cue]: ## 2026-10-28 최신 정정: 월즈 결승 마무리는 공식대회에만 적용
+- [6461306887](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6461306887) [revision-cue]: ## 2026-10-28 최신 변경: 독립 장기리그는 해당 연도 내 실제 완료
+- [6461394968](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6461394968) [unreviewed]: ## [2026-10-28] 글로벌 선수 FA 날짜 도입으로 현재 2027/2028 시즌 일정 전체 재편 필요
+- [6461477402](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6461477402) [unreviewed]: ## 실제 코드 반영 착수 (2026-10-28): 글로벌 선수 계약 만료/FA 날짜 — draft PR #318
+- [6464308110](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6464308110) [unreviewed]: [2026-10-28 일정 엔진 연계 승인 / 인수계획] #234에 사용자 최신 요구 **지역·국제 사무국의 자율 결정→세계 일정 후보→양방향 제약 협의→확정/실경기/저장/다음 시즌 환류**를 최상위로 등록했고 설계 문서 `docs/design/OFFICE_S
+- [6464782820](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6464782820) [revision-cue]: [2026-10-28 추가 승인 연결] 신규 이슈 [#321](https://github.com/lkh0802a/LOL-GM/issues/321) 생성. 팀별 프로 라이선스(구단 전체/대회 참가권/기존 강등 보호권과 구별) 없는 팀의 선수는 **이적시장 폐쇄에
+- [6465318218](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6465318218) [revision-cue]: [2026-10-28 신규 확정] **4주(정확히 28일) 글로벌 단일 이적시장**: 12월 첫째 화요일 00:00 UTC부터 넷째 월요일 23:59 UTC까지, 2027 시즌 2026-12-01~12-28, 2028 시즌 2027-12-07~2028-01-0
+- [6465387719](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6465387719) [approval-cue,revision-cue]: [2026-10-28 사용자 추가 승인 — 선수·대리인 협상 질질 끌기 제거] #224 최상단에 **실제 협상 AI 응답·판정 수용 기준**을 추가: 조건 충족 시 즉시 합의(기존 즉시 응답 유지), 명백히 불가하면 즉시 거절, 의미 있는 역제안 통상 1회·복
+- [6465453746](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6465453746) [unreviewed]: [2026-10-28 최신 선수 협상 설계] #224 최상단 신규 정책: **선수 AI는 영입 대상 구단의 당시 실제 로스터를 확인**하여 동포지션 주전/백업 경쟁, 실제 출전 가능성, 팀 전력·성장/우승 목표·유효 계약에 따라 계약/로스터 약속(주전·로테이션
+- [6465605959](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6465605959) [approval-cue]: [2026-10-28 사용자 추가 승인 — 이적시장 UX/실제 엔진 6대 기능 모두] 사용자 “Ui도 만들어야해” → “다 추가해보자”로 #225에 **모바일 우선 UI 전체 수용 명세**, #224에 **단일 실제 엔진 원본/판정 명세**를 최신 최상단으로 
+- [6467724098](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6467724098) [approval-cue]: [2026-10-28 추가 사용자 확정] 신규 이적시장 생태계 **7개 모두 승인**, 상세 원본/의존성/검증 [#322](https://github.com/lkh0802a/LOL-GM/issues/322) 등록. #224(빠른·합법 협상/이적·구단 AI 협상
+- [6467801052](https://github.com/lkh0802a/LOL-GM/issues/242#issuecomment-6467801052) [approval-cue]: [2026-10-28 사용자 추가 승인] 대회 엔진 10종 설계 [#323](https://github.com/lkh0802a/LOL-GM/issues/323) 등록. **대회 진화 AI / 리그·변형 스위스·래더·단계적 KO 포맷 설계 / 참가 구단 유치 경
+
+## Issue #243 — 9 comments
+- [6227607071](https://github.com/lkh0802a/LOL-GM/issues/243#issuecomment-6227607071) [unreviewed]: ## Codex 실제 구현 핸드오프 (2026-10-17)
+- [6227734925](https://github.com/lkh0802a/LOL-GM/issues/243#issuecomment-6227734925) [unreviewed]: ## Codex 전 분야 상세 인수 계약 연결 (2026-10-17)
+- [6228054129](https://github.com/lkh0802a/LOL-GM/issues/243#issuecomment-6228054129) [unreviewed]: ## 최종 Codex 통합 명세 참조
+- [6241216990](https://github.com/lkh0802a/LOL-GM/issues/243#issuecomment-6241216990) [unreviewed]: #243 구현·검증 진행 (2026-10-18 KST)
+- [6241646757](https://github.com/lkh0802a/LOL-GM/issues/243#issuecomment-6241646757) [unreviewed]: ## #243 이번 개발 종료 기록 — 2026-10-18 KST
+- [6244347103](https://github.com/lkh0802a/LOL-GM/issues/243#issuecomment-6244347103) [approval-cue]: ## 2026-10-18 스크림 Bo3/Bo5 전 세트 플레이 — 공식 대회와 종료 기준 분리
+- [6244503894](https://github.com/lkh0802a/LOL-GM/issues/243#issuecomment-6244503894) [unreviewed]: ## 2026-10-18 스크림 세트 운영 #38–44 선택 확정
+- [6244671958](https://github.com/lkh0802a/LOL-GM/issues/243#issuecomment-6244671958) [unreviewed]: 실제 재개: 2026-10-18 02:09:02 UTC. 최신 main e614c1f에서 독립 worktree `/workspace/LOL-GM-scrim-current`, `fix/scrim-single-current`로 기존 공개 7ba306e의 Bo1 단
+- [6244922682](https://github.com/lkh0802a/LOL-GM/issues/243#issuecomment-6244922682) [unreviewed]: PR #259를 **58e046ad323deca4b92af711e72cae367fdbd448**로 main에 병합했습니다. 최종 PR HEAD 26a3924의 CI #1526/#1527 모두 success이고, 결과 main CI #1528(https://gi
+
+## Issue #244 — 7 comments
+- [6227735306](https://github.com/lkh0802a/LOL-GM/issues/244#issuecomment-6227735306) [unreviewed]: ## Codex 전 분야 상세 인수 계약 연결 (2026-10-17)
+- [6244348591](https://github.com/lkh0802a/LOL-GM/issues/244#issuecomment-6244348591) [unreviewed]: ## 2026-10-18 모바일 저장 체크포인트 #26·#27 B 승인
+- [6245023681](https://github.com/lkh0802a/LOL-GM/issues/244#issuecomment-6245023681) [revision-cue]: #243은 #259/main58e046a의 최종 CI·결과 main 전체/의료 및 게시 작업 성공을 확인해 완료 처리했고 이 #244를 이어갑니다. 운영 직접 GET의 프록시403은 별도 미확인으로 보존합니다.
+- [6245215533](https://github.com/lkh0802a/LOL-GM/issues/244#issuecomment-6245215533) [revision-cue]: 진행 업데이트: PR #260, `fix/save-recovery-current`, 최종 고정 `47c42c252b47ed676899a67ac5d9830dc5fa7c1b`(검토한 공개16파일, 미커밋 없음). IDB 성공 뒤 오래된 fallback 정리 거절의
+- [6245328723](https://github.com/lkh0802a/LOL-GM/issues/244#issuecomment-6245328723) [revision-cue]: 시작 복구 누락까지 같은 PR #260에 보강했습니다. 새 최종 `b968e48e3d3c4599f2f72a1c90011fb1849d24d0`, 미커밋 없음. 정상 보관본이 있어도 DB=null이면 복구 진입이 없던 브라우저 반례를 고친 뒤, 두 테마/320×2
+- [6246961138](https://github.com/lkh0802a/LOL-GM/issues/244#issuecomment-6246961138) [unreviewed]: PR #260은 검증한 expected_head b968e48 고정으로 main `1a37254d60232623afd74ec5a25a195421c28db4`에 실제 병합됐습니다. `git diff b968e48 1a37254` 전체 트리 동일/종료0 확인. 별
+- [6247057453](https://github.com/lkh0802a/LOL-GM/issues/244#issuecomment-6247057453) [revision-cue]: 브라우저 저장/복구 교정의 최종 수용을 확인했습니다. PR #260 → main `1a37254d60232623afd74ec5a25a195421c28db4`, 검증 HEAD b968e48과 전체 트리 동일. 결과main 별도 worktree 전체npm 07:0
+
+## Issue #245 — 4 comments
+- [6227735733](https://github.com/lkh0802a/LOL-GM/issues/245#issuecomment-6227735733) [unreviewed]: ## Codex 전 분야 상세 인수 계약 연결 (2026-10-17)
+- [6247016987](https://github.com/lkh0802a/LOL-GM/issues/245#issuecomment-6247016987) [unreviewed]: #244 결과main 검증을 기다리는 동안 읽기 전용 재현을 준비했습니다(아직 #245 소스 편집/완료 아님). 실제 aiReviewLoanDecisions의 빈 임대 인덱스 관측에서 월 경계 간격10/9일·윤년8일을 확인했습니다. 실제 임대 명령으로 01-0
+- [6247241801](https://github.com/lkh0802a/LOL-GM/issues/245#issuecomment-6247241801) [unreviewed]: 진행 기록: PR #261 / fix/loan-review-calendar / `0e5fcaac4930e521cf6c692e9241d725624b288d`, 공개8파일·미커밋 없음. 임대 시작/각 당사자의 실제 마지막 검토부터7일, 매입·리콜 독립 날짜, 늦은
+- [6247402063](https://github.com/lkh0802a/LOL-GM/issues/245#issuecomment-6247402063) [unreviewed]: #245 검증 완료: PR #261 병합 결과 main `d3bd47fce8deda4dab1bf2e5babddbd9eca63f4d`는 최종 PR `0e5fcaa`와 전체 트리 동일. 실제 계약 시작/마지막 AI 검토로부터 7일을 재며 월말·윤년·연말에서도 연속
