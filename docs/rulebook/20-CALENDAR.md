@@ -10,10 +10,10 @@ CAL-001로 시작하는 세계 통합 시장은 **정확히 28일**, 종료 시�
 시장이 열린 동안 **공식 지역·공식 국제·독립 지역·독립 국제**의 실제 경기는 모두 금지한다. 독립 대회 잔여 경기를 이 기간에 걸치게 하지 않는다. 계약 협상·차기 시즌 준비·스카우팅은 실제 경기와 구별한다. [근거 #234](https://github.com/lkh0802a/LOL-GM/issues/234), [#323](https://github.com/lkh0802a/LOL-GM/issues/323)
 
 ### CAL-004 · Worlds 결승의 공식 피날레
-그해 World Championship 결승은 **그 시즌 마지막 공식 경기**다. 해당 시즌 공식 지역 1~N부, 플레이오프, 승강·최종 선발전은 **Worlds 개막 이전**에 끝나야 하며 다른 공식 국제대회도 월즈 결승 전에 종료된다. 결승 날짜 자체를 특정 주차/일요일로 고정한 규칙은 아니다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311), [#234](https://github.com/lkh0802a/LOL-GM/issues/234)
+해당 연도 World Championship 결승은 **그 시즌 마지막 공식 경기**다. 해당 시즌 공식 지역 1~N부, 플레이오프, 승강·최종 선발전은 **Worlds 개막 이전**에 종료되어야 하며 다른 공식 국제대회 또한 World Championship 결승 이전에 종료되어야 한다. 결승 날짜 자체를 특정 주차/일요일로 고정한 규칙은 아니다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311), [#234](https://github.com/lkh0802a/LOL-GM/issues/234)
 
 ### CAL-005 · 독립 장기리그 시한
-독립 지역·국제 **장기리그**의 당해 회차는 CAL-001의 시장 개장 **이전에 완주**한다. Worlds 결승 후~시장 개장 전 독립 경기는 다른 적법 조건 아래 가능하다. 독립 **단기 컵도** CAL-003의 시장 중 실경기 금지를 우회하지 않는다. [근거 #234](https://github.com/lkh0802a/LOL-GM/issues/234), [#323](https://github.com/lkh0802a/LOL-GM/issues/323)
+독립 지역·국제 **장기리그**의 당해 회차는 CAL-001의 시장 개장 **이전에 완주**한다. World Championship 결승 이후부터 통합 시장 개장 이전까지의 독립 경기는 다른 적법 조건 아래 가능하다. 독립 **단기 컵도** CAL-003의 시장 중 실경기 금지를 우회하지 않는다. [근거 #234](https://github.com/lkh0802a/LOL-GM/issues/234), [#323](https://github.com/lkh0802a/LOL-GM/issues/323)
 
 ### CAL-006 · 지역별 다양한 시즌 형식
 지역사무국은 처음 시즌부터 누적 연간 리그·스플릿·컵+리그 등 적법한 다른 형식을 운영한다. **세계 전체 3스플릿·3서킷·14구간의 의무적 공통 틀은 없다.** 국제 등록 마감, 같은 선수/팀 중복 경기, 이동·회복·방송 충돌과 세계 시계를 함께 준수한다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311), [#234](https://github.com/lkh0802a/LOL-GM/issues/234)
