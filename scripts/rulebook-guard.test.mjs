@@ -123,3 +123,25 @@ test('administrative academy relocation requires an actual eligible lower tier',
   const docs=changed('docs/rulebook/10-COMPETITIONS.md',text=>text.replace('해당 하위 부의 실재 여부·등록 자격·수용 정원과 계약·소유권·재정상 의무','행정 편의만 확인'));
   assert.match(check(docs),/BROKEN_PIN: COMP-004/);
 });
+
+
+test('adjudication matrix cannot duplicate an existing clause id',()=>{
+  const file='docs/rulebook-audit/CLAUSE_DECISION_MATRIX_2026_11_01.md';
+  const docs=changed(file,text=>text.replace('| CORE-002 |','| CORE-001 |'));
+  assert.match(check(docs),/MATRIX_DUPLICATE: CORE-001/);
+});
+test('adjudication matrix cannot omit a rulebook clause',()=>{
+  const file='docs/rulebook-audit/CLAUSE_DECISION_MATRIX_2026_11_01.md';
+  const docs=changed(file,text=>text.replace(/^\| UI-010 \|[^\n]*\n/m,''));
+  assert.match(check(docs),/MATRIX_MISSING: UI-010/);
+});
+test('adjudication source type must reflect direct comment links',()=>{
+  const file='docs/rulebook-audit/CLAUSE_DECISION_MATRIX_2026_11_01.md';
+  const docs=changed(file,text=>text.replace(/(\| CORE-001 \|[^\n]*\| )이슈·기타( \|)/,'$1댓글 직접 링크$2'));
+  assert.match(check(docs),/MATRIX_SOURCE_DEPTH: CORE-001/);
+});
+test('adjudication summary cannot overcount reviewed clauses',()=>{
+  const file='docs/rulebook-audit/CLAUSE_DECISION_MATRIX_2026_11_01.md';
+  const docs=changed(file,text=>text.replace('| 관련 원문 부분대조 | 95 |','| 관련 원문 부분대조 | 94 |'));
+  assert.match(check(docs),/MATRIX_SUMMARY: 관련 원문 부분대조/);
+});
