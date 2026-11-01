@@ -46,3 +46,10 @@ test('publication version and changelog cannot silently diverge',()=>{
   const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.3.0','v9.9.9'));
   assert.match(check(docs),/CHANGELOG: no entry/);
 });
+test('approved youth compensation and club taxonomy cannot silently regress',()=>{
+  const file='docs/rulebook/60-BUSINESS.md';
+  let docs=changed(file,text=>text.replace('지급 비율·금액·분할식·자격·발효 시점·기금 조성은 미확정','지급 비율은 확정'));
+  assert.match(check(docs),/BROKEN_PIN: BIZ-011/);
+  docs=changed(file,text=>text.replace('프로/세미프로/아마추어','프로/아마추어 고정'));
+  assert.match(check(docs),/BROKEN_PIN: BIZ-012/);
+});
