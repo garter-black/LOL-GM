@@ -1,13 +1,19 @@
 # 20. 세계 일정과 시즌 경계
 
 ### CAL-001 · 글로벌 선수 시장 개장
-매년 **12월 첫째 화요일 00:00 UTC**에 선수 FA와 일반 계약 선수 이적시장을 **동시에** 개장한다. 개장일은 해당 연도 달력에 따라 산정하며, 특정 연도의 날짜를 고정값으로 사용하지 않는다. [근거 #234](https://github.com/lkh0802a/LOL-GM/issues/234), [#321](https://github.com/lkh0802a/LOL-GM/issues/321)
+매년 **12월 첫째 화요일 00:00 UTC**에 선수 FA와 일반 계약 선수 이적시장을 **동시에** 개장한다. 개장일은 해당 연도 달력에 따라 산정하며, 특정 연도의 날짜를 고정값으로 사용하지 않는다. [근거 #234](https://github.com/lkh0802a/LOL-GM/issues/234), [#321](https://github.com/lkh0802a/LOL-GM/issues/321) [#321 통합 시장·연중 계약 예외 원문](https://github.com/lkh0802a/LOL-GM/issues/321#issuecomment-6465317390)
+
+
 
 ### CAL-002 · 28일간 하나의 시장
-CAL-001로 시작하는 세계 통합 시장은 **정확히 28일**, 종료 시각 배타로 운영한다. 별도 FA/일반 이적 순차 개장 방식을 사용하지 않는다. [근거 #234](https://github.com/lkh0802a/LOL-GM/issues/234), [#323](https://github.com/lkh0802a/LOL-GM/issues/323)
+CAL-001로 시작하는 세계 통합 시장은 **정확히 28일**, 종료 시각 배타로 운영한다. 별도 FA/일반 이적 순차 개장 방식을 사용하지 않는다. [근거 #234](https://github.com/lkh0802a/LOL-GM/issues/234), [#323](https://github.com/lkh0802a/LOL-GM/issues/323) [#321 통합 시장·연중 계약 예외 원문](https://github.com/lkh0802a/LOL-GM/issues/321#issuecomment-6465317390)
+
+
 
 ### CAL-003 · 선수 시장 중 실경기 금지
-시장이 열린 동안 **공식 지역·공식 국제·독립 지역·독립 국제**의 실제 경기는 모두 금지한다. 독립 대회 잔여 경기를 이 기간에 걸치게 하지 않는다. 계약 협상·차기 시즌 준비·스카우팅은 실제 경기와 구별한다. [근거 #234](https://github.com/lkh0802a/LOL-GM/issues/234), [#323](https://github.com/lkh0802a/LOL-GM/issues/323)
+시장이 열린 동안 **공식 지역·공식 국제·독립 지역·독립 국제**의 실제 경기는 모두 금지한다. 독립 대회 잔여 경기를 이 기간에 걸치게 하지 않는다. 계약 협상·차기 시즌 준비·스카우팅은 실제 경기와 구별한다. [근거 #234](https://github.com/lkh0802a/LOL-GM/issues/234), [#323](https://github.com/lkh0802a/LOL-GM/issues/323) [#321 통합 시장·연중 계약 예외 원문](https://github.com/lkh0802a/LOL-GM/issues/321#issuecomment-6465317390)
+
+
 
 ### CAL-004 · Worlds 결승의 공식 피날레
 해당 연도 World Championship 결승은 **그 시즌 마지막 공식 경기**다. 해당 시즌 공식 지역 1~N부, 플레이오프, 승강·최종 선발전은 **Worlds 개막 이전**에 종료되어야 하며 다른 공식 국제대회 또한 World Championship 결승 이전에 종료되어야 한다. 결승 날짜 자체를 특정 주차/일요일로 고정한 규칙은 아니다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311), [#234](https://github.com/lkh0802a/LOL-GM/issues/234)
