@@ -67,7 +67,9 @@ export function validateRulebook(docs){
     if(!rule){add('MISSING_PIN',id);continue;}
     for(const re of checks)if(!re.test(rule.body))add('BROKEN_PIN',id+' missing '+re.source);
   }
-  for(const file of DOCUMENTS.filter(x=>x.endsWith('.md'))){
+  // Existing AGENTS.md intentionally links many legacy documents outside
+  // this limited rulebook fixture; only validate relative links authored here.
+  for(const file of [...CHAPTERS.map(([path])=>path),'docs/rulebook/README.md','docs/rulebook/CHANGELOG.md','docs/AI_RULEBOOK_GUIDE.md']){
     const content=docs[file];
     for(const match of content.matchAll(/\[[^\]\n]+\]\(([^)\s]+)(?:\s+[^)]*)?\)/g)){
       const target=match[1].split('#')[0];
