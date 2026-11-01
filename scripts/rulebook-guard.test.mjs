@@ -43,7 +43,7 @@ test('immutable First Selection and draft policies cannot silently disappear',()
   assert.match(check(docs),/BROKEN_PIN: MATCH-002/);
 });
 test('publication version and changelog cannot silently diverge',()=>{
-  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.6.2','v9.9.9'));
+  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.7.0','v9.9.9'));
   assert.match(check(docs),/CHANGELOG: no entry/);
 });
 test('approved youth compensation and club taxonomy cannot silently regress',()=>{
@@ -142,7 +142,7 @@ test('adjudication source type must reflect direct comment links',()=>{
 });
 test('adjudication summary cannot overcount reviewed clauses',()=>{
   const file='docs/rulebook-audit/CLAUSE_DECISION_MATRIX_2026_11_01.md';
-  const docs=changed(file,text=>text.replace('| 관련 원문 부분대조 | 102 |','| 관련 원문 부분대조 | 101 |'));
+  const docs=changed(file,text=>text.replace('| 관련 원문 부분대조 | 103 |','| 관련 원문 부분대조 | 102 |'));
   assert.match(check(docs),/MATRIX_SUMMARY: 관련 원문 부분대조/);
 });
 
@@ -156,4 +156,26 @@ test('unverifiable historical replay cannot be advertised as a perfect reproduct
   const file='docs/rulebook/80-EXPERIENCE.md';
   const docs=changed(file,text=>text.replace('완전한 재현에 필요한 근거가 부족한 경우에는 재현의 한계를 명시','근거가 부족해도 전체 사건을 완벽하게 재현했다고 표시'));
   assert.match(check(docs),/BROKEN_PIN: UI-007/);
+});
+
+
+test('CORE-007 cannot forbid newly founded independent events until the next season',()=>{
+  const file='docs/rulebook/00-CORE.md';
+  const docs=changed(file,text=>text.replace('신규 독립 대회는 당해 시즌에도 신설할 수 있으나','신규 독립 대회도 무조건 다음 시즌에만 신설할 수 있으며'));
+  assert.match(check(docs),/BROKEN_PIN: CORE-007/);
+});
+test('CORE-007 cannot change a currently running independent event retroactively',()=>{
+  const file='docs/rulebook/00-CORE.md';
+  const docs=changed(file,text=>text.replace('기존 독립 대회의 구조적 개편은 원칙적으로 차기 회차부터','기존 독립 대회의 구조적 개편은 진행 중 회차에도 즉시'));
+  assert.match(check(docs),/BROKEN_PIN: CORE-007/);
+});
+test('COMP-011 must retain the official next-season structural reform rule',()=>{
+  const file='docs/rulebook/10-COMPETITIONS.md';
+  const docs=changed(file,text=>text.replace('공식 대회 체계의 구조적 개편을 원칙적으로 차기 시즌부터','공식 대회 체계의 구조적 개편을 현재 시즌 즉시'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-011/);
+});
+test('COMP-011 may not omit the global transfer-window match ban for new independent events',()=>{
+  const file='docs/rulebook/10-COMPETITIONS.md';
+  const docs=changed(file,text=>text.replace('세계 공통 경기 금지 기간의 검증을 통과해야 한다','세계 공통 경기 금지 기간을 무시하고 진행할 수 있다'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-011/);
 });
