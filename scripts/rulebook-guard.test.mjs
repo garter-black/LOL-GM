@@ -142,7 +142,7 @@ test('adjudication source type must reflect direct comment links',()=>{
 });
 test('adjudication summary cannot overcount reviewed clauses',()=>{
   const file='docs/rulebook-audit/CLAUSE_DECISION_MATRIX_2026_11_01.md';
-  const docs=changed(file,text=>text.replace('| 관련 원문 부분대조 | 112 |','| 관련 원문 부분대조 | 111 |'));
+  const docs=changed(file,text=>text.replace('| 관련 원문 부분대조 | 113 |','| 관련 원문 부분대조 | 112 |'));
   assert.match(check(docs),/MATRIX_SUMMARY: 관련 원문 부분대조/);
 });
 
