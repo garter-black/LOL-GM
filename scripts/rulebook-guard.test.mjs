@@ -43,7 +43,7 @@ test('immutable First Selection and draft policies cannot silently disappear',()
   assert.match(check(docs),/BROKEN_PIN: MATCH-002/);
 });
 test('publication version and changelog cannot silently diverge',()=>{
-  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.8.0','v9.9.9'));
+  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.8.1','v9.9.9'));
   assert.match(check(docs),/CHANGELOG: no entry/);
 });
 test('approved youth compensation and club taxonomy cannot silently regress',()=>{
@@ -225,4 +225,26 @@ test('office leaders cannot ignore disclosure and recusal for conflicts',()=>{
   const file='docs/rulebook/70-GOVERNANCE.md';
   const docs=changed(file,text=>text.replace('공개하고 관련 심의·결정에서 회피','비밀로 하고 스스로 심의·결정'));
   assert.match(check(docs),/BROKEN_PIN: GOV-012/);
+});
+
+
+test('approved payment simplification pays valid funded obligations automatically',()=>{
+  const file='docs/rulebook/60-BUSINESS.md';
+  const docs=changed(file,text=>text.replace('별도의 반복 조작 없이 기한 내 지급','담당자의 반복 수동 클릭이 있어야만 지급'));
+  assert.match(check(docs),/BROKEN_PIN: BIZ-004/);
+});
+test('unfunded obligations must remain actual outstanding debt',()=>{
+  const file='docs/rulebook/60-BUSINESS.md';
+  const docs=changed(file,text=>text.replace('자금이 부족하여 이행할 수 없는 확정 의무는 미지급 채무로 기록','자금이 부족한 채무는 무상으로 소멸'));
+  assert.match(check(docs),/BROKEN_PIN: BIZ-004/);
+});
+test('random AI non-payment cannot create artificial defaults',()=>{
+  const file='docs/rulebook/60-BUSINESS.md';
+  const docs=changed(file,text=>text.replace('AI의 임의 지연이나 시스템상의 지급 누락으로 연체를 생성하지 않는다','AI가 임의로 지급을 건너뛰어 연체를 생성할 수 있다'));
+  assert.match(check(docs),/BROKEN_PIN: BIZ-004/);
+});
+test('subsequent nonpayment cannot automatically revoke executed transfers',()=>{
+  const file='docs/rulebook/60-BUSINESS.md';
+  const docs=changed(file,text=>text.replace('이미 완료된 이적·출전·경기 결과를 뒤늦은 미지급만으로 자동 소급 취소하지 않는다','뒤늦은 미지급이 있으면 과거 경기·이적을 자동 취소한다'));
+  assert.match(check(docs),/BROKEN_PIN: BIZ-004/);
 });
