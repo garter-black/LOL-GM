@@ -27,6 +27,8 @@ export const DOCUMENTS = Object.freeze([
   'docs/rulebook-audit/STEP1_CHOICE_SOURCE_INVENTORY_B_2026_11_01.md',
   'docs/rulebook-audit/STEP1_SUPERSESSION_CHAINS_2026_11_01.md',
   'docs/rulebook-audit/STEP1_CROSS_ISSUE_EFFECT_AUDIT_2026_11_01.md',
+  'docs/rulebook-audit/STEP1_R01_R21_SOURCE_ADJUDICATION_2026_11_01.md',
+  'docs/rulebook-audit/STEP1_CALENDAR_LICENSE_SUPERSESSION_2026_11_01.md',
   'docs/rulebook-audit/CROSS_DOCUMENT_CONFLICT_AUDIT_2026_11_01.md',
   'docs/RULEBOOK_SEMANTIC_AUDIT_2026_11_01.md',
   'AGENTS.md',
