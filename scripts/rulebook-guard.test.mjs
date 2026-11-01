@@ -330,3 +330,16 @@ test('save migration obligations distinguish development from the supported stab
     assert.match(check(docs),/BROKEN_PIN: CORE-009/);
   }
 });
+
+test('Worlds final disqualification cannot invent a match, winner, or time',()=>{
+  const file='docs/rulebook/20-CALENDAR.md';
+  for(const [before,after] of [
+    ['양 팀의 적법한 실격','양 팀의 자동 승계'],
+    ['우승자·경기·경기 시각을 만들어내지 않고 결승 단계의 종료/판정 이력으로 피날레를 확인','가짜 경기와 우승자를 생성'],
+    ['COMP-006의 무우승 판정','임의의 재결승'],
+  ]){
+    const docs=changed(file,text=>text.replace(before,after));
+    assert.notEqual(docs[file],original[file]);
+    assert.match(check(docs),/BROKEN_PIN: CAL-004/);
+  }
+});

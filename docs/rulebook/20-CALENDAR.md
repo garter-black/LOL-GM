@@ -16,7 +16,7 @@ CAL-001로 시작하는 세계 통합 시장은 **정확히 28일**, 종료 시�
 
 
 ### CAL-004 · Worlds 결승의 공식 피날레
-해당 연도 World Championship 결승은 **그 시즌 마지막 공식 경기**다. 해당 시즌 공식 지역 1~N부, 플레이오프, 승강·최종 선발전은 **Worlds 개막 이전**에 종료되어야 하며 다른 공식 국제대회 또한 World Championship 결승 이전에 종료되어야 한다. 결승 날짜 자체를 특정 주차/일요일로 고정한 규칙은 아니다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311), [#234](https://github.com/lkh0802a/LOL-GM/issues/234)
+해당 연도 World Championship 결승은 **그 시즌 마지막 공식 경기**다. 해당 시즌 공식 지역 1~N부, 플레이오프, 승강·최종 선발전은 **Worlds 개막 이전**에 종료되어야 하며 다른 공식 국제대회 또한 World Championship 결승 이전에 종료되어야 한다. 양 팀의 적법한 실격으로 결승이 실제 경기 없이 종료되는 경우에는 **우승자·경기·경기 시각을 만들어내지 않고 결승 단계의 종료/판정 이력으로 피날레를 확인**한다. 이 경우에도 다른 공식 대회의 해당 시즌 경기는 결승 단계 종료 전에 마쳐야 하며 COMP-006의 무우승 판정을 따른다. 결승 날짜 자체를 특정 주차/일요일로 고정한 규칙은 아니다. [근거 #311](https://github.com/lkh0802a/LOL-GM/issues/311), [#234](https://github.com/lkh0802a/LOL-GM/issues/234)
 
 ### CAL-005 · 독립 장기리그 시한
 독립 지역·국제 **장기리그**의 당해 회차는 CAL-001의 시장 개장 **이전에 완주**한다. World Championship 결승 이후부터 통합 시장 개장 이전까지의 독립 경기는 다른 적법 조건 아래 가능하다. 독립 **단기 컵도** CAL-003의 시장 중 실경기 금지를 우회하지 않는다. [근거 #234](https://github.com/lkh0802a/LOL-GM/issues/234), [#323](https://github.com/lkh0802a/LOL-GM/issues/323)
