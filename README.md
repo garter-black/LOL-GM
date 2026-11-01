@@ -40,8 +40,14 @@ npm run dev
 npm run build
 ```
 
-Open the address printed by the development server. Canonical code is under
-`src/artifact/`; `scripts/artifact-modules.mjs` defines ordered module ownership.
+Open the address printed by the development server. **The shipped interface is
+`src/ui-v2/`**, assembled by `scripts/build-ui-v2.mjs`. Shared simulation,
+world, contract, competition, and persistence code lives in `src/artifact/`;
+`scripts/artifact-modules.mjs` lists the engine modules used by the active build.
+The old `src/artifact/ui-*.js`, `src/artifact/app.js` UI entry, and
+`src/artifact/shell.html` are **not a second active product UI**. They remain
+only where legacy acceptance tests or the native save bridge still depend on
+specific code. New screen work must be made in `src/ui-v2/`, not the old UI.
 `scripts/build.mjs` generates root `index.html` and `dist/index.html`; do not edit
 generated HTML manually. Use the [focused checks](docs/DEVELOPMENT.md#focused-development-map)
 for the changed domain; `npm run check` is the full serial local fallback.

@@ -119,6 +119,12 @@ export const ENGINE_MODULES = [
   'negotiation-final.js',
 ];
 
+// Deprecated older-screen module list, retained for historical regression
+// coverage only. The shipped UI v2 build imports ENGINE_MODULES and
+// src/ui-v2/ explicitly; it does NOT import UI_MODULES. Do not use these
+// filenames to judge live-screen behavior or add new features to legacy UI.
+// See scripts/ui-v2-browser-storage.mjs for the one native-storage extraction
+// dependency that must be decoupled before deleting app.js/ui-save-library.js.
 export const UI_MODULES = [
   'ui-club-actions.js',
   'ui-initial-comparison.js',
@@ -195,4 +201,6 @@ export const UI_MODULES = [
   'app.js',
 ];
 
+// Historical full-artifact fixture, still consumed by regression tests.
+// Do not use this array in production builds.
 export const ARTIFACT_MODULES = [...ENGINE_MODULES, ...UI_MODULES];
