@@ -20,6 +20,7 @@ export const DOCUMENTS = Object.freeze([
   'docs/rulebook/CHANGELOG.md',
   'docs/AI_RULEBOOK_GUIDE.md',
   'docs/RULEBOOK_MIGRATION_AUDIT.md',
+  'docs/RULEBOOK_APPROVAL_ADJUDICATION_2026_11_01.md',
   'docs/RULEBOOK_SEMANTIC_AUDIT_2026_11_01.md',
   'AGENTS.md',
 ]);
@@ -51,7 +52,7 @@ export const POLICY_PINS = Object.freeze({
   'MATCH-003':[/First Selection/,/변경 대상이 아니다/],
   'GOV-004':[/과반/,/지역 대표/],
   'UI-002':[/삭제/,/다른 슬롯/],
-  'UI-009':[/게임 세계/,/메타 설명/,/오류/,/GitHub/],
+  'UI-009':[/게임 세계 밖의 개발·설계 메타 설명/,/오류/,/GitHub/],
   'UI-010':[/제출하지 않은/,/다시 검증/,/이미 제출된/,/확정된 지급/],
 });
 
