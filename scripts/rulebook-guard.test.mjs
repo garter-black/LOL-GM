@@ -74,3 +74,8 @@ test('official international eligibility and distinct payroll bases are pinned',
   docs=changed('docs/rulebook/60-BUSINESS.md',text=>text.replaceAll('상위 5명','전체 선수'));
   assert.match(check(docs),/BROKEN_PIN: BIZ-013/);
 });
+test('general early-contact consent cannot erase the non-license buyout exception',()=>{
+  const file='docs/rulebook/30-TRANSFERS.md';
+  const docs=changed(file,text=>text.replace('다만 **TRANS-005에 해당하는 프로 라이선스 미보유 팀 계약 선수는 적법한 바이아웃을 전제로 한 자유 접촉·협상 예외**','다만 모든 조기 접촉은 반드시 원팀 동의'));
+  assert.match(check(docs),/BROKEN_PIN: TRANS-003/);
+});
