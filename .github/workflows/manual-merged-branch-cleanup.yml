@@ -1,0 +1,61 @@
+name: Manual merged-branch cleanup
+
+on:
+  workflow_dispatch:
+    inputs:
+      execute:
+        description: Actually delete verified merged branches (default false)
+        type: boolean
+        default: false
+        required: true
+      confirmation:
+        description: Type DELETE_MERGED_BRANCHES to enable deletion
+        type: string
+        default: ''
+        required: false
+      min_age_days:
+        description: Skip branches from PRs merged within this many days
+        type: number
+        default: 2
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: manual-merged-branch-cleanup
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check exclusion rules
+        run: node --test scripts/prune-merged-branches.test.mjs
+      - name: Preview or delete merged branches
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH_CLEANUP_CONFIRMATION: ${{ inputs.confirmation }}
+          BRANCH_CLEANUP_MIN_AGE_DAYS: ${{ inputs.min_age_days }}
+        run: |
+          set -euo pipefail
+          if [[ "${{ inputs.execute }}" == "true" ]]; then
+            node scripts/prune-merged-branches.mjs --execute
+          else
+            node scripts/prune-merged-branches.mjs
+          fi
+      - name: Upload reviewed branch list and deletion report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: merged-branch-cleanup-report
+          path: reports/merged-branch-cleanup.json
+          retention-days: 7
+          if-no-files-found: warn
