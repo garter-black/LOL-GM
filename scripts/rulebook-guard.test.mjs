@@ -10,7 +10,7 @@ test('published rulebook has unique, sourced rules and working local links',()=>
   const result=validateRulebook(original);
   assert.deepEqual(result.errors,[]);
   assert.equal(result.chapterCount,9);
-  assert(result.ruleCount>=112); // protect the reviewed baseline without blocking future approved additions
+  assert(result.ruleCount>=113); // protect the reviewed baseline without blocking future approved additions
 });
 test('duplicate ID cannot pass as a new approved clause',()=>{
   const file='docs/rulebook/20-CALENDAR.md';
@@ -43,7 +43,7 @@ test('immutable First Selection and draft policies cannot silently disappear',()
   assert.match(check(docs),/BROKEN_PIN: MATCH-002/);
 });
 test('publication version and changelog cannot silently diverge',()=>{
-  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.9.0','v9.9.9'));
+  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.10.0','v9.9.9'));
   assert.match(check(docs),/CHANGELOG: no entry/);
 });
 test('approved youth compensation and club taxonomy cannot silently regress',()=>{
@@ -258,4 +258,27 @@ test('normal routine operations cannot erase real costs or world outcomes',()=>{
   const file='docs/rulebook/00-CORE.md';
   const docs=changed(file,text=>text.replace('실제로 발생한 활동·지급·비용·일정·계약 결과','비용과 지급을 발생하지 않은 것으로 취급한다'));
   assert.match(check(docs),/BROKEN_PIN: CORE-010/);
+});
+
+// Later direct user approval: regional windows prioritize mid-season international
+// events but remain optional/local; transfers must not bypass legal contracts or registration.
+test('regional mid-season windows cannot become mandatory on every international event',()=>{
+  const file='docs/rulebook/30-TRANSFERS.md';
+  const docs=changed(file,text=>text.replace('국제대회마다 의무적으로 개설하거나','국제대회마다 반드시 개설하며'));
+  assert.match(check(docs),/BROKEN_PIN: TRANS-011/);
+});
+test('regional mid-season windows must remain subject to advance local publication',()=>{
+  const file='docs/rulebook/30-TRANSFERS.md';
+  const docs=changed(file,text=>text.replace('개장 여부, 횟수 및 시작·종료 시각을 사전에 공표','모든 지역이 같은 날짜에 자동 개장'));
+  assert.match(check(docs),/BROKEN_PIN: TRANS-011/);
+});
+test('regional window cannot void the selling club contract rights',()=>{
+  const file='docs/rulebook/30-TRANSFERS.md';
+  const docs=changed(file,text=>text.replace('영입 지역의 개장만으로 원소속 구단의 계약상 권리','영입 지역 시장은 원소속 구단의 계약상 권리'));
+  assert.match(check(docs),/BROKEN_PIN: TRANS-011/);
+});
+test('international roster locks must not disappear on mid-season transfer',()=>{
+  const file='docs/rulebook/30-TRANSFERS.md';
+  const docs=changed(file,text=>text.replace('진행 중인 국제대회의 확정 명단을 소급 변경','진행 중인 국제대회의 명단을 자유롭게 변경'));
+  assert.match(check(docs),/BROKEN_PIN: TRANS-011/);
 });
