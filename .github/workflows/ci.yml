@@ -94,6 +94,9 @@ jobs:
       - name: Validation scope policy
         run: node --test scripts/ci-scope.test.mjs
 
+      - name: Approved rulebook structure and policy pins
+        run: node scripts/ci-run.mjs rulebook -- npm run check:rulebook
+
       - name: Record change risk with the trusted base policy
         if: always()
         env:
