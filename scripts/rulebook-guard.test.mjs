@@ -10,7 +10,7 @@ test('published rulebook has unique, sourced rules and working local links',()=>
   const result=validateRulebook(original);
   assert.deepEqual(result.errors,[]);
   assert.equal(result.chapterCount,9);
-  assert(result.ruleCount>=96); // protect the reviewed baseline without blocking future approved additions
+  assert(result.ruleCount>=98); // protect the reviewed baseline without blocking future approved additions
 });
 test('duplicate ID cannot pass as a new approved clause',()=>{
   const file='docs/rulebook/20-CALENDAR.md';
@@ -43,7 +43,7 @@ test('immutable First Selection and draft policies cannot silently disappear',()
   assert.match(check(docs),/BROKEN_PIN: MATCH-002/);
 });
 test('publication version and changelog cannot silently diverge',()=>{
-  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.4.1','v9.9.9'));
+  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.5.0','v9.9.9'));
   assert.match(check(docs),/CHANGELOG: no entry/);
 });
 test('approved youth compensation and club taxonomy cannot silently regress',()=>{
