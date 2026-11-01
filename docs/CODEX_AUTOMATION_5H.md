@@ -1,3 +1,5 @@
+> **2026-10-27 최신 사용자 결정:** 현재는 매일08:00 서울의 단일 Codex 개발 예약과 주간 테스트/분기 감사 분리다. 초기 자동 PR만 허용하며 자동 병합 비활성. 아래 과거5시간/병합 문구와 충돌하면 §8 및 최신 AGENTS가 우선한다. 파일명은 기존 링크를 보존한다.
+
 # LOL-GM — Codex 단독 5시간 간격 연속 자동 개발 운영 계약
 
 > 개정: 2026-10-18 · 적용 대상: **기존 Codex 개발 예약 한 개**. GitHub 문서·ChatGPT 일반 예약은 Codex Automation 설정 자체가 아니다. Codex 예약 편집 권한이 없다면 변경했다고 주장하지 않는다. 게임 코드 개발자는 기존 **Codex 모델 그대로** 유지한다.
@@ -90,3 +92,91 @@ NEXT: 다음 실행에서 바로 확인/실행할 파일·명령 1개
 ## 7. 적용 여부 구분
 
 **GitHub에 이 문서와 AGENTS.md를 수정한 것**은 Codex 개발 지침의 변경이다. **실제 Codex Automation 트리거/실행 모델/실행시간 설정 변경**은 별도로 Codex 자체 예약 관리 기능에서 수행하고, 수정 전후의 트리거와 다음 실행 시각을 확인해야 한다. **ChatGPT의 별도 반복 작업 생성은 기존 Codex 예약을 수정하거나 Codex 모델로 코드를 실행하는 것과 동등하지 않다.**
+
+## 8. 지속 개발과 유지보수 — 2026-10-27
+
+### 정본과 자율 결정
+
+#242/개별 이슈가 과제·최신 우선순위, CODEX_MASTER_BLUEPRINT/DECISIONS가 확정 디자인, ARCHITECTURE/분야 색인이 코드 경계, DEVELOPMENT가 장기 구현 기록, PR 체크포인트가 현재 정확 HEAD·검증·재개 위치다. 같은 용도의 PRODUCT_VISION/GAME_DESIGN/ROADMAP/BACKLOG/DEVELOPMENT_STATE/AUTOMATION 문서를 추가로 복제하지 않는다. 버전 후보 변경 기록은 루트 CHANGELOG.md를 사용한다. package.json의 버전과 실제 릴리스/배포를 별개로 검증한다.
+
+각 완료 단위 뒤 후보 2~3개를 다음 기준으로 짧게 비교한다. 수치는 추정이면 추정으로 표시하고 근거 없는 완료율·개발 기간을 계산하지 않는다.
+
+| 평가 | 기록할 근거 |
+| --- | --- |
+| 재미·전략적 깊이 | 플레이어의 실제 선택/결과가 어떻게 늘어나는가 |
+| 안정성·현재 완성도 | 실제 재현/진행 불능/장부·세이브 위험 |
+| 신규 경험 | 단순 이름/화면 추가가 아닌 새 플레이 흐름 |
+| 시스템 연계 | 기존 writer→consumer→역사/저장 연결 |
+| 시뮬레이션 설득력 | 승인된 세계 규칙·관측·AI 동등성 |
+| 확장성·유지보수 | 기존 소유 모듈 재사용·중복 감소 |
+| 비용·기술 위험 | 작업량/검증비용 추정·실패/롤백 경계 |
+| 호환성 | 기존 규정/ID·세이브·당시 결과 보전 |
+
+순서는 (1) 실증된 P0/필수 실패, (2) 확정된 핵심 의존/우선순위, (3) 준비된 고가치 수직 기능이다. BLOCKED_SOURCE/NEEDS_DECISION을 숨기거나 동일 차단을 반복 조회하지 않고 독립 가능한 승인 작업으로 이동한다. 신규 콘텐츠/알고리즘/시스템 연결도 정상 후보이며 미세 UI·리팩터링만 영구 반복하지 않는다. 큰 디자인/권한/비호환 변경은 후보 설계·재현·검토 가능한 PR까지 준비한 뒤 승인을 받는다. 의도된 변형 Swiss/엘리미네이션·단계 진입·결승 무우승/재결승 없음·최신 #234 5.0/6.0을 표준 규칙으로 덮어쓰지 않는다. 게임 내부 사무국의 제도 진화와 Codex의 소프트웨어 업데이트는 다른 프로세스다.
+
+### 실행 안전 점검과 재개
+
+`codex-development-preflight.mjs`는 로컬 Git 원본에서 worktree·브랜치/HEAD/dirty를 읽고 같은 UID의 worktree cwd 프로세스만 확인한다. 환경/명령 인자/인증은 수집하지 않는다. 읽기 실패는 UNKNOWN/실패로 처리하고 기존 파일·프로세스를 reset/kill하지 않는다. 다른 머신·루트 cwd의 개발자·원격 CI/예약은 관측 범위 밖이다. 원격 최신 상태와 단독 실행 확인을 대신하지 않는다.
+
+```sh
+node scripts/codex-development-preflight.mjs --root "$PWD" --out /tmp/lol-gm-preflight.json
+# 로컬 테스트는 모든 worktree의 검사 종료/JSON 결과를 확인한 후 직렬 실행
+node scripts/codex-development-preflight.mjs --root "$PWD" --require-idle --out /tmp/lol-gm-test-gate.json
+```
+
+동일 공유 환경의 반복 실행은 저장소 외부의 동일 lease 경로를 사용한다. 새 run-id는 실제 실행을 식별하고 체크포인트에 보존한다. 다음 예시의 경로/ID는 운영 환경에 맞게 확정하며 다른 저장소의 lease를 재사용하지 않는다.
+
+```sh
+node scripts/codex-development-preflight.mjs --root "$PWD" --lease-dir /workspace/LOL-GM-release-evidence/development-lease --run-id ACTUAL_RUN_ID --out /tmp/lol-gm-claim.json
+# 종료: 작업/검사와 HEAD를 기록하고 실제 이전 개발자가 끝났음을 확인한 소유자만 해제
+node scripts/codex-development-preflight.mjs --root "$PWD" --lease-dir /workspace/LOL-GM-release-evidence/development-lease --run-id ACTUAL_RUN_ID --release --out /tmp/lol-gm-release.json
+```
+
+출력과 lease의 부모 경로는 실제 경로로 해석한 뒤 worktree 경계를 검사한다. `--out`은 기존 파일·심볼릭 링크·하드 링크·이전 증거를 교체하지 않고 새 파일만 배타적으로 생성한다. 매 관측마다 새 증거 파일명을 사용한다. 존재하는 출력 경로는 lease 변경 전에 거절하며, 중단된 출력도 자동 삭제하지 않는다.
+
+lease claim/release는 동일 파일시스템에서 atomic mkdir guard로 직렬화한다. 기존/불완전 lease 또는 guard는 자동 만료·삭제하지 않는다. 중단 후 실제 worker/PID·Git·CI/checkpoint를 대조한 뒤 확인된 소유 run-id로만 해제/재claim한다. CLI PID는 짧게 종료되므로 생존 증거로 쓰지 않는다. 공유 파일시스템 없는 별도 환경 간 강제 잠금은 지원하지 않는다. 스케줄러의 단일 실행 보장이 미확인인 상태에서 강제 보장이 있다고 보고하지 않는다. 새 워커를 병렬로 시험하는 run-now도 현재 실행 중에는 호출하지 않는다.
+
+### 주간·월간·분기 판단
+
+추가 Codex 개발 예약/상시 데몬 없이 기존 개발 예약과 기존 Actions의 책임을 구분한다. 주간에는 CHANGELOG 후보와 정확 PR/main/CI/Pages 근거를 비교해 사용자용 변경 내역을 갱신한다. 검증된 개발 커밋, 병합, 실제 배포/릴리스는 별도 표시하고 새 기능 수/커밋 수를 품질 지표로 대신하지 않는다. 월간에는 분야별 실제 동작/전략 선택·연계·장기 안정성·회귀·기술 부채를 재평가해 #242 후보 순서를 갱신한다. 실제 플레이 재미는 테스트 PASS와 구분한다. Codex 개발 예약은 기존 객체 하나를 최신 사용자 요청에 따라 매일 08:00 Asia/Seoul로 갱신했다. 주간 실제 테스트와 분기 감사는 소스 쓰기 권한 없는 기존 long-career.yml의 별도 schedule job으로 준비하며, 이 PR이 main에 병합되기 전에는 등록/실행된 상태가 아니다. Actions는 검증만 하고 Codex는 개발을 수행한다.
+
+분기 유지보수는 #240 성능/#257 경계 정리에서 계획하고 현재 분기는 PLANNED로 시작한다. 날짜가 됐다는 이유로 신규 기능을 자동 중단하거나 삭제 PR을 만들지 않는다. 동일 입력/시드·기기/런타임·HEAD의 시간/메모리/빌드/결과 기준값→병목/참조→최소 수정→동일 결과·저장/인접 회귀→전후 계측으로 판단한다. 미사용 코드/의존성/설정/에셋/테스트도 실제 조립·런타임·저장/마이그레이션·검증 목적을 조사한다. 오래됨/이름만으로 삭제하지 않으며 필수 테스트/역사 증거를 없애지 않는다. 구형 경기 엔진은 승인된 새 코어 운영 전환이 검증되기 전 제거하지 않는다. 큰 정리는 별도 branch/PR이고 분기 점검 결과·다음 시기를 #240 체크포인트에 남긴다. 성과가 없으면 불필요한 리팩터링을 반복하지 않는다.
+
+### 실제 자동화/릴리스 경계
+
+2026-10-27 실조회 후 기존 예약6ad42989635c8191b59da280710eb737를 enabled/Asia-Seoul/매일08:00로 실제 갱신했다(첫 DTSTART2026-10-28). 기존5시간 반복을 대체했고 초기 자동 병합 금지·Level1/2/3를 프롬프트에 반영했다. next_run_time와 상세 run/result는 null이다. last_run_time만으로 worker 완료·출력 전달·다음 실행 검증을 주장하지 않는다. 현재 세션에서 실제 코드/테스트/PR은 수행되지만 예약이 독립 환경/모델을 설정했다고 단정하지 않는다. 중복 시험 실행은 하지 않았고 주기/프롬프트 변경은 최신 사용자 실행 지시에 따른 것이며 모델·권한/한도는 바꾸지 않았다.
+
+기존 CI·UI·medical 샤드/집계와 Pages workflow_run 산출물 게이트를 재사용한다. 수십/100시즌용 실제 daily-career-acceptance 진입점과 기존 수동 workflow_dispatch를 유지한다. 주간 schedule은 우선 3개 기존 시드×2시즌, NA/EU와 기존 국제 fixture로 범위를 명시하며 전세계100시즌 검증으로 확대하지 않는다. 기존 메모리/시간 예산을 늘리지 않는다. 분기 감사는 기존 코드맵의 engine/ui-market 참조 후보와 build 시간·최대RSS를 기록하며 자동 삭제하지 않는다. 실제 장기 테스트/실기기/TalkBack은 NOT_RUN을 유지한다. 초기 자동 병합은 모든 Level에서 비활성이다. Level 1은 낮은 위험의 UI/통계/문서/테스트/경미한 수정 구현·검증·PR, Level 2는 콘텐츠/알고리즘/상호작용 구현·검증·PR 후 사람 검토, Level 3는 핵심 규칙/엔진 교체/비호환 저장/삭제/인증·권한·보호·중대 배포의 사전 승인 또는 안전한 독립 실험만 허용한다. 자동 병합을 나중에 켜려면 별도 파일 범위·보안·필수 테스트·실제 보호와 사용자 승인 정책을 검증해야 한다. 2026-10-27 조회 main protected=false/rulesets=[]로 현재 자동 병합 보호 설정은 미충족이다. 이후 PR은 검토 가능한 상태로 보존하고 관리자 보호 설정 또는 사용자의 명시적 검토/병합을 기다린다. 기존 Pages를 삭제·새 서비스로 교체하거나 새 릴리스 태그/중대한 배포 변경을 자동 발행하지 않는다.
+
+### 파일 기반 위험 판정과 보호 설정
+
+`node scripts/codex-change-risk.mjs --base EXACT_BASE --head EXACT_HEAD --out /tmp/lol-gm-risk.json`은 Git의 실제 변경 경로/상태를 읽는다. runtime JS는 최소 Level2, 저장/핵심 경기·대회/등록 경계·정책/워크플로/의존성·삭제/미확인 상태는 Level3로 보수 분류한다. 테스트/일반 문서/스타일도 PASS나 승인으로 승격하지 않는다. 출력 automaticMergeAllowed=false는 항상 고정이다. PR 라벨이나 전달받은 테스트 PASS로 낮추는 입력은 없다. CI는 가능하면 base commit의 신뢰된 판정 코드를 실행하며 최초 도입은 bootstrap Level3/사람 검토다. PR 자신의 새 판정 코드를 자동 승인자로 쓰지 않는다.
+
+현재 연결 도구는 보호/관리자 쓰기를 제공하지 않으며 branch protection 읽기도 관리자 API 권한 제한이 있다. 파일 추가만으로 실제 GitHub 설정이 바뀌지 않는다. 관리자는 Settings → Rules → Rulesets에서 main 대상 활성 규칙(PR 필요, 승인 가능한 독립 리뷰어가 있을 때 승인1명 이상·민감 변경 사용자 검토, CI의 verify 필수·Require branches to be up to date before merging, 강제 push/삭제 금지, 승인 후 새 변경 재검토, 관리자/자동화 우회 최소)을 설정하고 실제 PR로 확인해야 한다. 정확한 required check 이름은 현재 CI/check-runs의 verify를 확인하고 다른 상태를 임의 이름으로 등록하지 않는다. 현재 자동 병합을 켜기 위해 보호를 완화하거나 봇 자기 승인을 인간 리뷰로 세지 않는다. 연결된 GitHub PR 작성자와 저장소 소유자가 같을 수 있으므로 자기 PR 승인 불가를 고려해야 한다. 독립 리뷰어가 없는 경우 사람 승인 게이트가 강제됐다고 주장하지 말고 자동 병합은 계속 끈 채 사용자가 PR을 직접 검토·병합하도록 남긴다. 새 계정·권한 우회로 해결하지 않는다. 이 문서/PR 자체는 관리자 설정 완료가 아니다.
+
+관리자 병합 후 시험: Actions → Long daily-clock careers → Run workflow에서 task=career/seasons=2로 실제 동일 진입점을 실행하거나 task=maintenance로 분기 증거 job만 실행한다. 기존 수동 기본100시즌은 그대로이며 실제 실행량/목적을 확인하고 선택한다. 주간 schedule은 2시즌×3시드로 고정한 초기 범위다. 테스트가 queue/running이면 중복 dispatch하지 않고 해당 run을 기다린다. 실제 첫 scheduled/dispatch 결과가 확인되기 전에는 등록 구성/수동 로컬 검증과 자동 실행 성공을 구분한다.
+
+### 현재 전 분야 구현 기준점과 후보 비교
+
+이 표는 전체 소스를 새로 완성했다는 평가가 아니라 현재 코드·정확 main5ae0738의 원래 check162/UI34 및 CI/Pages·관련 이슈를 대조한 작업 선택 기준이다. 아래 과거 진행 중/고정 큐는 당시 기록이다. 기능 수·이슈 수로 완료율을 계산하지 않는다.
+
+| 영역 | 현재 실제 경계 | 잔여·다음 판단 |
+| --- | --- | --- |
+| 경기 | 운영 집계 engine.js/series.js, 신규 match-core 입력·복원/자료 검증 골격 | #233 원자료 BLOCKED_SOURCE, 새 물리0·결과null; 구형 보수/가짜 물리로 대체 금지 |
+| 대회 | competition/international/worlds·차순위 승계 writer와 PR274–282 검증 범위 | #234 변형 규칙·이후 단계/반복 승계·최신5.0/6.0 문법/독립검증은 부분/미구현 |
+| 시즌·시간·일정 | season.advanceStep·공통 공식/협상 시각·실제 경기 소비 | 가변 시즌 구간/형식 DAG·자원/이동·비예지 recourse는 #234 확정 범위로 분리 |
+| 리그 사무국 | officeDecisions/office-consultation·국제계수/권한의 기존 코드 | 정책 후보의 선행 실행 가능성·독립 verifier/안전한 계절 적용; 정치 시스템 제외 |
+| 구단·재정 | finance/finance-closeout/estate·실제 급여/상금/현금·경영 원장 | #237 장기 투자/AI 전략·재무 분포의 인과·수치 안정성 검증 |
+| 선수·AI·아카데미 | player/development/medical/loans·실제 AI 오퍼·2군 권한 | #236/#235 목적/정보 범위·육성/노화/퇴역·장기 다양성; 강제 균형 보정 금지 |
+| 계약·시장 UI | 기존 negotiation/transfer writer·수동 합의/최종 서명, PR293–307 소비자 | #308 단계별 목록/시장홈 검증·사람 검토, 이후 전체 흐름/계약 창·플레이 경험 |
+| 기록·이벤트 | 당시 draft/match/history-identity·경력/뉴스·저장 원본 | #239 영구/최근 보존 창 구분·장기 탐색·당시 명칭; 실제 recordPlayerEvent 최근120 제한을 영구 역사 완료로 세지 않음 |
+| 패치·스카우팅 | patch/content/balance·관측 보고서/실제 비용·소유 경계 | #232 공식 표본→후보→preview→발효/적응, #238 정보/분석 깊이; 기술 사고 이벤트 제외 |
+| UI·저장 | src/ui-v2 독립 렌더·native ACK/복원·기존 save.js | #273 삭제/재사용·전체 모바일/키보드/취소·응답 지연·실기기/TalkBack 미완료 |
+| 검증·배포 | 원래 check/UI/medical 샤드/집계/core/실제 daily-career, CI→검증된 standalone→기존 Pages | 100시즌 workflow 존재≠100시즌 수행; 새 주간2시즌/분기 감사는 실제 실행 후 판정 |
+| 개발 운영 | 실제 단일 Codex/worktrees/checkpoints/활성 기존 예약 | Level1/2/3 정적 판정·lease·주간/분기 구성은 이번 운영 PR, main 보호·자동 병합 승인·예약 실행 결과는 별도 |
+
+이번 후보 비교: (1) 기존 협상 개인조건 노출·대기 조건 오류/시장홈 누락은 재현 가능하고 관측 안전성과 의사결정 개선 가치가 있어 먼저 수정(#308). (2) 자율 개발 운영·위험/동시 실행·플레이테스트 구성은 사용자 직접 실행 지시에 따라 별도 PR로 처리. (3) #233 코어는 여전히 필수 원자료 없으므로 물리를 창작하지 않는다. 운영 수용 뒤 #273 저장 삭제/재사용·#234 승인 문법/독립 verifier 등 서로 다른 도메인 준비도를 비교하고 가치/비용/위험/의존을 기록해 선택한다. 큰 디자인 변경은 사전 승인 대상이다.
+
+분기 성능/레거시 감사는 PLANNED이며 기본 개발마다 정리를 수행하지 않는다. 전후 동일 조건 측정·실제 참조/조립/런타임·저장 호환을 확인한 후보만 #240/#257의 독립 maintenance PR로 처리한다. 원래 테스트·실패/역사 증거를 삭제하지 않는다.
+
+---

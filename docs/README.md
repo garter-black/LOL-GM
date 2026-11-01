@@ -1,3 +1,20 @@
+## 현재 개발 진입점 — 2026-10-27
+
+[최신 AGENTS](../AGENTS.md) → [살아 있는 #242 백로그](https://github.com/lkh0802a/LOL-GM/issues/242)·실제 이슈/PR 체크포인트 → 관련 코드/테스트 순서로 복원한다. 아래 날짜별 고정 첫 작업은 역사 기록이다. 신규 기능과 개선을 함께 평가하며 초기에는 검증/PR까지만 자동 처리하고 병합은 사람 검토를 따른다. 정치·파벌·권력투쟁 시스템은 개발하지 않는다.
+
+| 지식 목적 | 기존 정본 |
+| --- | --- |
+| 제품 비전·핵심 루프 / 확정 디자인 | CODEX_MASTER_BLUEPRINT §1 / DECISIONS·개별 이슈 최신 확정 |
+| 구조·소유 코드 | ARCHITECTURE / CODEX_DOMAIN_INDEX 및 A·B·C 상세 |
+| 로드맵·백로그 | #242 / 각 소유 이슈, DEVELOPMENT |
+| 현재 상태·중단 복원 | 개별 PR/이슈의 정확 HEAD CODEX-CHECKPOINT |
+| 업데이트 후보·실제 적용 | [CHANGELOG](../CHANGELOG.md)와 정확 CI/Pages 근거 |
+| 자동 개발·위험/유지보수·관리자 설정 | [CODEX_AUTOMATION_5H §8](CODEX_AUTOMATION_5H.md#8-지속-개발과-유지보수--2026-10-27) |
+
+동일 목적의 새 문서 10개를 복제하지 않는다. 운영 파일의 과거5시간 명칭은 링크 보존용이며 최신 실제 Codex 예약은 매일08:00 서울로 갱신했다. 주간/분기 Actions는 PR 구성과 main 적용/실행을 구분한다.
+
+---
+
 ## 2026-10-21 #234 공통 시간·기존 PR230 연결 (구현 중)
 
 최신 기준은 main `eb228b7`의 AGENTS.md/CODEX_AUTOMATION_5H.md, [#242 최신 실제 순서](https://github.com/lkh0802a/LOL-GM/issues/242)와 #241이다. #247은 [정확 PR/main 검증·기존 Pages 근거](https://github.com/lkh0802a/LOL-GM/issues/247#issuecomment-6309294470)로 종료했다. 기존 PR230의 시간 writer와 후속 PR231 공개 보강을 현재 엔진·수동 결정·저장에 재사용 연결하며 아직 새 최종 HEAD 수용 전이다. 아래 고정 번호·시간 목표·게시 상태는 해당 날짜의 원문이고 현재 예약/실행 상한/완료 상태를 뜻하지 않는다. 기존 예약 하나/같은 Codex/동시 개발 하나, 임의 실행 상한 없이 실제 플랫폼 한도를 지킨다.

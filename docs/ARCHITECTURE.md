@@ -1,3 +1,13 @@
+## 2026-10-27 실제 빌드·개발 운영 경계
+
+현재 `scripts/build.mjs`는 `build-ui-v2.mjs`를 호출한다. 후자는 `artifact-modules.mjs:ENGINE_MODULES`의 기존 엔진과 `src/ui-v2`의 state/market/contracts/views/management/champion-art/official/dialog/app, 기존 native browser storage를 조립한다. 구형 UI 모듈은 새 화면 조립에 넣지 않는다. index.html/dist는 이 경로의 생성물이며 직접 편집하지 않는다. 아래 구형 UI 모듈 소유 설명은 참조/호환성 조사 자료이지 현재 새 화면이 전부 그 renderer를 호출한다는 뜻이 아니다.
+
+게임의 사실은 기존 command/writer·단일 시계/결과·관측·기록/저장이 소유한다. `match-core-*`의 새 코어 자료/입력/복원 골격을 실제 경기 물리/운영 전환으로 혼동하지 않는다. #233 원자료 차단과 #234 승인된 변형 대회/일정 명세를 보존한다. 과정/품질 도구가 게임 결과를 생성하거나 기존 writer를 복제하지 않는다.
+
+개발 자동화와 게임의 사무국 AI는 분리한다. `codex-development-preflight.mjs`는 로컬 worktree/같은 UID cwd 관측·공유 환경 lease, `codex-change-risk.mjs`는 실제 Git diff의 보수적 검토 분류를 담당한다. 원격/다른 머신의 생존을 보장하거나 사람 승인/보호를 대체하지 않는다. CI는 테스트/위험 증거만, 기존 long-career는 실제 생성 월드 플레이테스트/분기 측정만 수행하고 소스를 자동 수정하지 않는다. 초기 Codex는 단일 실행으로 분석→기능/엔진 구현→QA→PR을 수행하며 자동 병합/릴리스는 비활성이다.
+
+---
+
 > Documentation review 2026-10-03: [navigation](README.md), [active priorities and validation](DEVELOPMENT.md). Latest explicit user direction and later confirmed decisions supersede dated instructions; historical evidence is retained.
 
 # LOL GM Architecture Guardrails

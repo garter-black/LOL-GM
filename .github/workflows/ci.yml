@@ -80,6 +80,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -91,6 +93,34 @@ jobs:
 
       - name: Validation scope policy
         run: node --test scripts/ci-scope.test.mjs
+
+      - name: Record change risk with the trusted base policy
+        if: always()
+        env:
+          RISK_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          RISK_HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          mkdir -p reports
+          base="$RISK_BASE_SHA"
+          if [[ -z "$base" || "$base" =~ ^0+$ ]]; then
+            base="$(git rev-parse "$RISK_HEAD_SHA^" 2>/dev/null || true)"
+          fi
+          if [[ -n "$base" ]] && git cat-file -e "$base:scripts/codex-change-risk.mjs" 2>/dev/null; then
+            git show "$base:scripts/codex-change-risk.mjs" > "$RUNNER_TEMP/lol-gm-trusted-risk.mjs"
+            node "$RUNNER_TEMP/lol-gm-trusted-risk.mjs" --base "$base" --head "$RISK_HEAD_SHA" --out reports/change-risk.json
+          else
+            node --input-type=module -e 'import {writeFileSync} from "node:fs"; writeFileSync("reports/change-risk.json",JSON.stringify({schemaVersion:1,level:3,automaticMergeAllowed:false,approval:"HUMAN_REVIEW_REQUIRED",reason:"Risk policy bootstrap: trusted base policy is absent",base:process.env.RISK_BASE_SHA,head:process.env.RISK_HEAD_SHA},null,2));'
+          fi
+
+      - name: Preserve risk report for human review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: change-risk
+          path: reports/change-risk.json
+          retention-days: 3
+          if-no-files-found: error
 
       # Historical evidence replay enforces obsolete byte-for-byte documentation
       # preservation. Keep executable runner tests in CI; the archived proof
