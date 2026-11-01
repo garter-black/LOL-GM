@@ -40,6 +40,7 @@
 - **COMP-006:** [#234 나중 확정된 캘린더 싱글/더블 혼합](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6340237032)에서 '최대 2패'는 대회 전체 누적 패수 상한이 아니라 **단계별 엘리미네이션 브래킷의 타입 제한**으로 해석해야 한다. 결승은 [reset 금지](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6340164667), [양측 실격 우승자 없음](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6381690538)과 함께 적용.
 - **COMP-004:** [#251 R01D](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6247461134)와 [후속 유지](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6337287799) 대조해 강등된 모구단과 산하 2군의 **동일 2부 참가 충돌** 처리 누락을 교정. 다른 모든 디비전의 정당한 권한·참가 조건까지 임의 규범화하지 않는다.
 - **COMP-015:** [#251 2026-10-28 확정](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6460414410)에서 승인된 공식 국제대회 표시·MSI 미진출 권역컵 팀·Worlds/Masters/Open 출전자 우선순위를 이관. **출전자 선정 순서와 경기 개최 순서**를 동일시하지 않는다.
+- **TRANS-003/005:** [#321 상시 바이아웃 자유 접촉 예외](https://github.com/lkh0802a/LOL-GM/issues/321)와 시장 전 일반 계약자 조기 접촉 동의 조건을 교차 대조. TRANS-003의 무조건적 문구가 TRANS-005 예외를 무효화하지 않도록 **원소속 동의 의무의 적용 범위를 한정**했다.
 - **BIZ-013/014:** [#237 2026-10-22 보완 승인](https://github.com/lkh0802a/LOL-GM/issues/237#issuecomment-6337472531)에서 캡/사치세 5인 vs 플로어 전체 선수단 및 동일 소유 그룹의 유한한 자금 원본을 이관. 수치·세율·강제 의무는 미확정 그대로 보존.
 
 **일괄 조항 검사:** [비규범 의미 감사표](RULEBOOK_SEMANTIC_AUDIT_2026_11_01.md)에서 9개 장 96개 조항의 규정 적용 범위와 출처 깊이를 대조했다. 73개 조항이 이슈 본문 수준의 출처만 보유한 것은 **출처 정밀성 보강 대상**이지 해당 조항 73개가 무효라는 뜻은 아니다. 610개 승인 댓글 각각의 선택 최종 판정은 계속 미완료다.
