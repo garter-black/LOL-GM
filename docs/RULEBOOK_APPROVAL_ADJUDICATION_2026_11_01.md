@@ -39,3 +39,22 @@
 1. [#251](https://github.com/lkh0802a/LOL-GM/issues/251)의 남은 일괄 M01~M212 및 후속 철회/정정은 **개별 선택 단위**로 계속 판정한다. 47개 댓글 전부를 한 번 읽었다는 사실만으로 수백 선택을 승인 이관 완료로 표시하지 않는다.
 2. [#234](https://github.com/lkh0802a/LOL-GM/issues/234)의 다중 페이지 댓글 및 [#224](https://github.com/lkh0802a/LOL-GM/issues/224)의 계약 효력, [#321](https://github.com/lkh0802a/LOL-GM/issues/321)의 시장 예외를 각각 최신 결론까지 대조한다.
 3. [#327](https://github.com/lkh0802a/LOL-GM/pull/327) 구형 문서 교정과 독립 규정집의 의미 차이를 비교하고, [#320](https://github.com/lkh0802a/LOL-GM/pull/320) 등 실제 엔진 구현·정확한 커밋 CI는 별도 검증한다.
+
+## 후속 원문 대조 2차 — #234 달력·승강·2군 라이선스
+
+**조사 방법:** #234의 **139개 댓글이 두 페이지에 걸쳐 있음을 확인**하고, 페이지 1(100개)·2(39개)의 목록 및 아래 특정 댓글 **본문**을 직접 대조하였다. 139개 댓글 내부의 모든 단위 선택을 모두 판정했다는 뜻은 아니다. 2026-10-28 이후 최종 승인과 다르거나 적용 범위가 다른 선택을 분리했다.
+
+| 쟁점 | 이전 기록 | 최신 직접 확인 | 판정·수록 |
+|---|---|---|---|
+| 동일 리그의 서로 다른 팀 경기 동시 진행 | [앞선 병행 가능 해석](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394276059) | [동일 공식 리그 내부 병행 금지](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394319394) | **후속 대체·현행 이관 CAL-009.** 별개의 리그·부는 자원 허용 시 병행 가능 |
+| 같은 팀 하루 여러 시리즈 일반 허용 | 구형 #251/#234 편성안 | [명시적 결정 경기만 예외](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394328655) | **후속 대체·현행 이관 CAL-010.** 일반 스위스 라운드 중복 금지 |
+| 다른 국제대회끼리의 경기·방송 비중복 및 자동 순연 | [다른 공식 국제대회 시간 비중복 요구](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394319394) | [대회 내부만 실제 종료에 따른 순연; 대회 간 연쇄 순연 금지](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394537279) | **후속 대체·현행 이관 CAL-011.** 예정 시각 분산과 다른 대회 실제 송출 중첩 가능성은 양립 |
+| 대회 포맷의 영구 고정 | 예전 3스플릿·3서킷·14구간 규범화 위험 | [초기 시드만 확정, 미래 시즌 자율 개편](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6456527527), [휴식·구간 재정정](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6456688201) | **후속 대체·기존 COMP-011 출처 보강.** 초기 포맷을 상위 불변조건으로 고정하지 않음 |
+| 지역리그 순위만으로 자동 승격·강등 | 이전 엔진의 자동 승강 경로 | [승강 결정전 필수·다음 시즌 발효](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6459532093) | **현행 승인·누락 이관 COMP-016.** 지역의 승강제 선택 자유·경기 없는 자동 교체 금지 |
+| 소유 2군의 승격·승강 결정전 참가 | 예전 일반 승강 경로에 2군 적용 가능성 | [2군 승격·결정전 참여 금지](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460306910) | **현행 승인·누락 이관 COMP-017.** 성적을 타 구단의 자동 진출권으로 이전하지 않음 |
+| 동일 구단 1군·2군이 동일 부가 된 경우의 처리 | [2026-10-18 R01D 매각·해체](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6247461134) → [2026-10-22 유지](https://github.com/lkh0802a/LOL-GM/issues/251#issuecomment-6337287799) | [2026-10-28 적법한 하위 부 행정 이동·매각·해체를 열거](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460306910) | **적용 범위 충돌 검토 필요.** R01D의 구체적 '같은 공식 2부'와 나중의 1~N부 일반 이동 지시의 우선·특례 관계가 원문만으로 충분히 해소되지 않음. COMP-004를 묵시적으로 폐기하거나 행정 하향을 2부 전체에 자동 허용하지 않음. 기존 명시 규칙 유지, 후속 검토 |
+| 집단 강등 보호 라이선스의 부분 발급/상실 | [2군 일부 신규 발급 허용](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460049339) | [2군도 신규 일부 발급 금지](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460062655) → [발급 집단 규칙과 개별 적법 상실은 별개](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460306910) | **후속 대체·범위 정정 확인.** 초기에 전원 발급 후 한 구단만 합법 상실하여 현황이 9/10 보호가 되어도, 그것을 신규 부분 발급 위반으로 판단하거나 자동 일괄 몰수하지 않음. 발효 시점은 [시즌 종료 후](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460119557). 상세 상위 조항 이관 전에 다른 라이선스 권리·임시 발급 검토 필요 |
+| 라이선스 실효에 따른 2군 보호권 연쇄 상실 | [1군 A, 2군 B ⇒ B는 A 필요](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6459926380) | [단독/통합 신규 발급](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6459955079), [적격 1군 공석 충원 우선](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460092768), [시즌 후 효력](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460119557), [최신 선택 보완](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460306910) | **현행 세부 승인 확인·미이관.** 규칙 상호작용이 있어 한 문장만 부분 이관하면 강제 일괄 박탈·실효 시점 오류를 초래할 수 있음. 계약·예외와 정합하게 별도 라이선스 조항으로 추후 이관 |
+| 대회 4종 상위 분류 및 공식 지역 단일 체계 | 구형 Split/Circuit/Calendar 최상위 종류 | [대회 4분류 전환](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6459267399), [공식 지역리그 단일 체계·1부 표기](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460502670) | **후속 대체·기존 COMP-001/002 출처 보강.** 구형 Circuit을 영구 분류로 되살리지 않음 |
+
+**2차 이관 결과:** CAL-009/010/011, COMP-016/017 **5개 조항 신규 이관**, 기존 COMP-001/002/005/007/011 직접 댓글 근거 추가. 편찬 후 **9개 장 103개 조항, 직접 댓글 링크 포함 47개, 나머지 이슈/기타 링크 56개**. 이 감사에서 확인된 **2부 2군 충돌 해결 경로 불일치**는 결론을 만들어 내지 않고 추적 대상으로 보존했다. #234의 댓글 **139건**은 전체 목록과 일부 본문을 살폈으나 모든 단위 선택의 최종 효력을 1개씩 판정한 것은 아니다.
