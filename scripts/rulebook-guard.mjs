@@ -20,6 +20,7 @@ export const DOCUMENTS = Object.freeze([
   'docs/rulebook/CHANGELOG.md',
   'docs/AI_RULEBOOK_GUIDE.md',
   'docs/RULEBOOK_MIGRATION_AUDIT.md',
+  'docs/RULEBOOK_SEMANTIC_AUDIT_2026_11_01.md',
   'AGENTS.md',
 ]);
 
@@ -39,6 +40,11 @@ export const POLICY_PINS = Object.freeze({
   'BIZ-010':[/100% 소유/,/한 곳뿐/,/독립 경영/],
   'BIZ-011':[/육성/,/실제 예산/,/미확정/,/중복 계산/],
   'BIZ-012':[/프로\/세미프로\/아마추어/,/배타적/,/프로 라이선스/],
+  'COMP-004':[/같은 공식 2부/,/매각 또는 해체/,/R01D/],
+  'COMP-006':[/엘리미네이션 단계\/브래킷/,/대회 전체에서 2패를 초과할 수 없다는 뜻이 아니다/,/Grand Final Reset/,/양 팀 적법 실격/],
+  'COMP-015':[/MSI 미진출팀/,/Masters/,/Open/,/중복 출전/],
+  'BIZ-013':[/상위 5명/,/전체 선수단/,/미확정/],
+  'BIZ-014':[/유한/,/복제/,/인수/],
   'MATCH-011':[/주장/,/도입하지 않는다/],
   'COMP-014':[/공식 지역대회/,/독립 지역대회/,/참가/],
   'MATCH-002':[/Fearless Draft/,/해제/],
@@ -92,6 +98,13 @@ export function validateRulebook(docs){
       else if(!(joined in docs))add('BROKEN_LOCAL_LINK',file+' -> '+joined);
     }
   }
+
+  // Provenance depth is reported as a metric, not a proxy for approval validity:
+  // issue-level citations can still be valid but require more precise adjudication.
+  const sourceDepth = {
+    directCommentLinked: [...ids.values()].filter(({body}) => /issues\/\d+#issuecomment-\d+/.test(body)).length,
+    issueOnlyOrOther: [...ids.values()].filter(({body}) => !/issues\/\d+#issuecomment-\d+/.test(body)).length,
+  };
   const agent=docs['AGENTS.md'];
   for(const required of ['## 규정집 필수 참조','docs/rulebook/README.md','docs/AI_RULEBOOK_GUIDE.md','npm run check:rulebook']){
     if(!agent.includes(required))add('CODEX_ENTRY',required);
@@ -101,7 +114,7 @@ export function validateRulebook(docs){
   const version=docs['docs/rulebook/README.md'].match(/\*\*규정집 발행본:\*\*\s*(v\d+\.\d+\.\d+)/)?.[1];
   if(!version)add('VERSION','rulebook README lacks a semantic publication version');
   else if(!docs['docs/rulebook/CHANGELOG.md'].includes(' '+version))add('CHANGELOG','no entry for the current rulebook version '+version);
-  return {errors,ruleCount:ids.size,chapterCount:CHAPTERS.length};
+  return {errors,ruleCount:ids.size,chapterCount:CHAPTERS.length,sourceDepth};
 }
 
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
@@ -110,6 +123,6 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
     for(const error of result.errors)console.error('rulebook: '+error);
     process.exitCode=1;
   }else{
-    console.log('rulebook: PASS '+result.ruleCount+' approved clauses across '+result.chapterCount+' chapters; evidence, IDs, relative links, Codex entrypoint and policy pins verified (DOCUMENT CHECK ONLY)');
+    console.log('rulebook: PASS '+result.ruleCount+' documented clauses across '+result.chapterCount+' chapters; '+result.sourceDepth.directCommentLinked+' direct-comment-linked; '+result.sourceDepth.issueOnlyOrOther+' issue-level/other-linked. IDs, links, Codex entrypoint and policy pins verified (DOCUMENT CHECK ONLY; SOURCE LINKS DO NOT VERIFY APPROVAL)');
   }
 }
