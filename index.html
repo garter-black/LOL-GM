@@ -9590,9 +9590,7 @@ function closeExclusiveContractWindow(db){
   if(cw.stage!=='exclusive')return {ok:true,stage:cw.stage,date:db.worldDate,
     settlement:cw.settlement||null,msg:'기존 계약 만료 전 단계가 이미 끝났습니다'};
   const renewals=aiRunExclusiveRenewals(db),earlyOffers=aiRunEarlyContactOffers(db);
-  // A restored pending settlement may already be past FA opening. Apply the
-  // existing settlement at the current date without rewinding the world clock.
-  if(!freeAgencyDateValid(db.worldDate))throw Error('계약 만료 처리의 현재 날짜를 확인할 수 없습니다');
+  if(!freeAgencyDateValid(db.worldDate))throw Error('날짜 오류');
   setWorldCalendarDate(db,db.worldDate>cw.outsideContactDate?db.worldDate:cw.outsideContactDate);
   processTransferPayments(db);
   processLocalServiceDaily(db);aiChooseLocalEligibility(db);
