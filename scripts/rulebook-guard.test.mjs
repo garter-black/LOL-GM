@@ -10,7 +10,7 @@ test('published rulebook has unique, sourced rules and working local links',()=>
   const result=validateRulebook(original);
   assert.deepEqual(result.errors,[]);
   assert.equal(result.chapterCount,9);
-  assert(result.ruleCount>=98); // protect the reviewed baseline without blocking future approved additions
+  assert(result.ruleCount>=103); // protect the reviewed baseline without blocking future approved additions
 });
 test('duplicate ID cannot pass as a new approved clause',()=>{
   const file='docs/rulebook/20-CALENDAR.md';
@@ -43,7 +43,7 @@ test('immutable First Selection and draft policies cannot silently disappear',()
   assert.match(check(docs),/BROKEN_PIN: MATCH-002/);
 });
 test('publication version and changelog cannot silently diverge',()=>{
-  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.5.0','v9.9.9'));
+  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.6.0','v9.9.9'));
   assert.match(check(docs),/CHANGELOG: no entry/);
 });
 test('approved youth compensation and club taxonomy cannot silently regress',()=>{
@@ -93,4 +93,19 @@ test('reopening an unsent draft cannot revoke signed contracts or committed paym
   const file='docs/rulebook/80-EXPERIENCE.md';
   const docs=changed(file,text=>text.replace('이미 제출된 유효 제안, 실제 당사자 합의, 최종 서명, 확정된 지급 및 경과한 세계 시간','미제출 협상 내용'));
   assert.match(check(docs),/BROKEN_PIN: UI-010/);
+});
+
+test('a same-league broadcast overlap cannot silently replace sequential play',()=>{
+  const docs=changed('docs/rulebook/20-CALENDAR.md',text=>text.replace('서로 겹치지 않도록 순차 편성','일부 겹치도록 편성'));
+  assert.match(check(docs),/BROKEN_PIN: CAL-009/);
+});
+test('independent international events cannot be chained into automatic delay',()=>{
+  const docs=changed('docs/rulebook/20-CALENDAR.md',text=>text.replace('연쇄적으로 순연하거나 취소하지 않는다','연쇄적으로 순연한다'));
+  assert.match(check(docs),/BROKEN_PIN: CAL-011/);
+});
+test('automatic promotion and academy promotion cannot return silently',()=>{
+  let docs=changed('docs/rulebook/10-COMPETITIONS.md',text=>text.replace('자동 승격·강등시키지 않는다','자동 승격·강등시킨다'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-016/);
+  docs=changed('docs/rulebook/10-COMPETITIONS.md',text=>text.replace('2군은 공식 지역리그에서 승격하거나 승격 결정전에 참가할 수 없다','2군은 모든 승격 결정전에 자유롭게 참가할 수 있다'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-017/);
 });
