@@ -43,7 +43,7 @@ test('immutable First Selection and draft policies cannot silently disappear',()
   assert.match(check(docs),/BROKEN_PIN: MATCH-002/);
 });
 test('publication version and changelog cannot silently diverge',()=>{
-  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.6.0','v9.9.9'));
+  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.6.1','v9.9.9'));
   assert.match(check(docs),/CHANGELOG: no entry/);
 });
 test('approved youth compensation and club taxonomy cannot silently regress',()=>{
@@ -65,7 +65,7 @@ test('a tournament-wide two-loss cap cannot replace per-bracket elimination poli
 });
 test('relegated parent and academy second-division collision cannot disappear',()=>{
   const file='docs/rulebook/10-COMPETITIONS.md';
-  const docs=changed(file,text=>text.replace('산하 2군의 적법한 매각 또는 해체(R01D)','다른 2부로 자동 재배치'));
+  const docs=changed(file,text=>text.replace('적격한 실제 하위 부로 행정적으로 이동하거나, 적법하게 매각 또는 해체','다른 2부로 자동 재배치'));
   assert.match(check(docs),/BROKEN_PIN: COMP-004/);
 });
 test('official international eligibility and distinct payroll bases are pinned',()=>{
@@ -108,4 +108,18 @@ test('automatic promotion and academy promotion cannot return silently',()=>{
   assert.match(check(docs),/BROKEN_PIN: COMP-016/);
   docs=changed('docs/rulebook/10-COMPETITIONS.md',text=>text.replace('2군은 공식 지역리그에서 승격하거나 승격 결정전에 참가할 수 없다','2군은 모든 승격 결정전에 자유롭게 참가할 수 있다'));
   assert.match(check(docs),/BROKEN_PIN: COMP-017/);
+});
+
+
+test('approved academy solution cannot be restricted to sale or dissolution only',()=>{
+  const docs=changed('docs/rulebook/10-COMPETITIONS.md',text=>text.replace('적격한 실제 하위 부로 행정적으로 이동하거나, 적법하게 매각 또는 해체','적법하게 매각 또는 해체'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-004/);
+});
+test('parent and academy cannot share a lower official tier',()=>{
+  const docs=changed('docs/rulebook/10-COMPETITIONS.md',text=>text.replace('같은 공식 지역리그의 동일한 부에 동시에 소속되거나 참가할 수 없다','같은 공식 지역리그의 3부라면 함께 참가할 수 있다'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-004/);
+});
+test('administrative academy relocation requires an actual eligible lower tier',()=>{
+  const docs=changed('docs/rulebook/10-COMPETITIONS.md',text=>text.replace('해당 하위 부의 실재 여부·등록 자격·수용 정원과 계약·소유권·재정상 의무','행정 편의만 확인'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-004/);
 });
