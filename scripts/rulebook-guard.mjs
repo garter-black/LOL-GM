@@ -23,6 +23,7 @@ export const DOCUMENTS = Object.freeze([
   'docs/RULEBOOK_APPROVAL_ADJUDICATION_2026_11_01.md',
   'docs/rulebook-audit/CLAUSE_DECISION_MATRIX_2026_11_01.md',
   'docs/rulebook-audit/STEP1_APPROVAL_EFFECT_AUDIT_2026_11_01.md',
+  'docs/rulebook-audit/STEP1_CHOICE_SOURCE_INVENTORY_2026_11_01.md',
   'docs/rulebook-audit/CROSS_DOCUMENT_CONFLICT_AUDIT_2026_11_01.md',
   'docs/RULEBOOK_SEMANTIC_AUDIT_2026_11_01.md',
   'AGENTS.md',
