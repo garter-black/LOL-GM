@@ -35,6 +35,10 @@ export const POLICY_PINS = Object.freeze({
   'TRANS-005':[/라이선스 미보유/,/바이아웃/,/원소속|원팀/],
   'PLAYER-002':[/5대5/,/1~5인/,/파티/],
   'PLAYER-004':[/RP/,/세계 순위/],
+  'PLAYER-006':[/1인 1계정|인물 한 명당 고유 랭크 계정 하나/,/닉네임 변경/,/실명/,/요구하지 않는다/],
+  'BIZ-010':[/100% 소유/,/한 곳뿐/,/독립 경영/],
+  'MATCH-011':[/주장/,/도입하지 않는다/],
+  'COMP-014':[/공식 지역대회/,/독립 지역대회/,/참가/],
   'MATCH-002':[/Fearless Draft/,/해제/],
   'MATCH-003':[/First Selection/,/변경 대상이 아니다/],
   'GOV-004':[/과반/,/지역 대표/],
@@ -91,7 +95,7 @@ export function validateRulebook(docs){
     if(!agent.includes(required))add('CODEX_ENTRY',required);
   }
   if(!docs['docs/AI_RULEBOOK_GUIDE.md'].includes('비규범'))add('GUIDE_SCOPE','AI guide must not define new policy');
-  if(!docs['docs/rulebook/CHANGELOG.md'].includes('v0.2.0'))add('CHANGELOG','missing initial approved compilation');
+  if(!docs['docs/rulebook/CHANGELOG.md'].includes('v0.2.1'))add('CHANGELOG','missing initial approved compilation');
   return {errors,ruleCount:ids.size,chapterCount:CHAPTERS.length};
 }
 
