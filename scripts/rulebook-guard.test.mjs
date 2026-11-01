@@ -288,3 +288,16 @@ test('matrix chapter total must match the real number of clauses',()=>{
   const docs=changed(file,text=>text.replace('### CORE — 10개 조항','### CORE — 9개 조항'));
   assert.match(check(docs),/MATRIX_CHAPTER_COUNT: CORE/);
 });
+
+// Audit coverage is a workflow gate, not a declaration that all source decisions are verified.
+test('source-adjudication audit must stay available to rulebook readers',()=>{
+  const file='docs/rulebook-audit/STEP1_APPROVAL_EFFECT_AUDIT_2026_11_01.md';
+  const docs={...original};
+  delete docs[file];
+  assert.match(check(docs),/FILE_MISSING/);
+});
+test('approval-audit link cannot silently point to a nonexistent file',()=>{
+  const file='docs/rulebook/README.md';
+  const docs=changed(file,text=>text.replace('STEP1_APPROVAL_EFFECT_AUDIT_2026_11_01.md','missing-approval-audit.md'));
+  assert.match(check(docs),/BROKEN_LOCAL_LINK/);
+});
