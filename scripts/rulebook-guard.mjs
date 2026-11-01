@@ -21,6 +21,7 @@ export const DOCUMENTS = Object.freeze([
   'docs/AI_RULEBOOK_GUIDE.md',
   'docs/RULEBOOK_MIGRATION_AUDIT.md',
   'docs/RULEBOOK_APPROVAL_ADJUDICATION_2026_11_01.md',
+  'docs/rulebook-audit/CLAUSE_DECISION_MATRIX_2026_11_01.md',
   'docs/RULEBOOK_SEMANTIC_AUDIT_2026_11_01.md',
   'AGENTS.md',
 ]);
@@ -97,6 +98,50 @@ export function validateRulebook(docs){
     if(!rule){add('MISSING_PIN',id);continue;}
     for(const re of checks)if(!re.test(rule.body))add('BROKEN_PIN',id+' missing '+re.source);
   }
+  // The non-normative adjudication matrix must reflect current clauses and
+  // evidence depth. This verifies indexing, NOT whether a linked source
+  // actually contains the user's final approval.
+  const matrix=docs['docs/rulebook-audit/CLAUSE_DECISION_MATRIX_2026_11_01.md'];
+  const matrixIds=new Set();
+  const matrixStatusCounts=new Map();
+  let matrixDirect=0;
+  for(const line of matrix.split('\\n')){
+    const m=line.match(/^\\| ([A-Z]+-\\d{3}) \\|/);
+    if(!m)continue;
+    const id=m[1];
+    const cells=line.split('|').map(part=>part.trim());
+    if(matrixIds.has(id))add('MATRIX_DUPLICATE',id);
+    matrixIds.add(id);
+    const rule=ids.get(id);
+    if(!rule){add('MATRIX_ORPHAN',id);continue;}
+    const declared=cells[4];
+    const actual=/issues\\/\\d+#issuecomment-\\d+/.test(rule.body)?'댓글 직접 링크':'이슈·기타';
+    if(declared!==actual)add('MATRIX_SOURCE_DEPTH',id+' expected '+actual+' found '+declared);
+    if(actual==='댓글 직접 링크')matrixDirect++;
+    const status=cells[5];
+    if(!['관련 원문 부분대조','세부 판정 대기','**후속 대체 확인·교정 필요**'].includes(status)){
+      add('MATRIX_STATUS',id+' '+status);
+    }
+    matrixStatusCounts.set(status,(matrixStatusCounts.get(status)||0)+1);
+  }
+  for(const id of ids.keys())if(!matrixIds.has(id))add('MATRIX_MISSING',id);
+  if(matrixIds.size!==ids.size)add('MATRIX_COUNT','matrix '+matrixIds.size+' / rules '+ids.size);
+  const summaries=[
+    ['관련 원문 부분대조','관련 원문 부분대조'],
+    ['세부 판정 대기','세부 판정 대기'],
+    ['후속 대체 확인·교정 필요','**후속 대체 확인·교정 필요**'],
+  ];
+  for(const [label,status] of summaries){
+    const line=matrix.split('\\n').find(l=>l.startsWith('| '+label+' |'));
+    const declared=line?Number(line.split('|')[2].trim()):NaN;
+    if(!Number.isInteger(declared)||declared!==(matrixStatusCounts.get(status)||0)){
+      add('MATRIX_SUMMARY',label+' '+declared+' / '+(matrixStatusCounts.get(status)||0));
+    }
+  }
+  const depthLine=matrix.split('\\n').find(l=>l.startsWith('| 직접 댓글 링크 포함 |'));
+  const declaredDirect=depthLine?Number(depthLine.split('|')[2].trim()):NaN;
+  if(declaredDirect!==matrixDirect)add('MATRIX_DEPTH_SUMMARY',declaredDirect+' / '+matrixDirect);
+
   // Existing AGENTS.md intentionally links many legacy documents outside
   // this limited rulebook fixture; only validate relative links authored here.
   for(const file of [...CHAPTERS.map(([path])=>path),'docs/rulebook/README.md','docs/rulebook/CHANGELOG.md','docs/AI_RULEBOOK_GUIDE.md']){
