@@ -37,16 +37,29 @@ const result=await runEngineFixture(String.raw`(()=>{
     check(store.closedAt?.startsWith(window.closesOn+'T')&&Object.values(store.offers).every(o=>o.status!=='open'),'actual AI quotes not closed at deadline');
     check(!aiMarketOfferAvailable(db,heldQuote),'stale pre-deadline AI quote still available');
     const quotes=JSON.stringify(store),p=db.players[heldQuote.pid],t=db.teams[heldQuote.teamId];
-    check(!issueAIMarketOffer(db,t,p,heldQuote.terms,'late-deadline')&&JSON.stringify(store)===quotes,'closed period issued a new quote');
+    check(!issueAIMarketOffer(db,t,p,heldQuote.terms,'late-deadline',null,null,null,heldQuote.period)&&JSON.stringify(store)===quotes,'closed period issued a new quote');
     check(JSON.stringify(Object.values(db.players).map(p=>[p.id,p.team,p.contract]))===contracts,'deadline signed/moved a player without approval');
     const before=packDB(db);check(!submitNegotiationOffer(db,nid,neg.demand).ok&&packDB(db)===before,'stale offer accepted after deadline');
    }
    if(day===14||day===28){db=unpackDB(packDB(db));restores++;}
   }
   check(db.world.negotiations[nid].status==='expired'&&db.players[pid].team===null,'native restoration reopened proposal or signed player');
+  const freshQuotes=currentAIMarketOffers(db).filter(o=>o.status==='open');
+  check(freshQuotes.length>0&&freshQuotes.every(o=>o.issuedAt>=window.closesOn+'T00:00:00.000Z'&&!db.players[o.pid].team&&o.period!==period),'year-round true FA lost new AI offers after market close');
+  check(freshQuotes.every(o=>aiMarketOfferAvailable(db,o))&&freshQuotes.some(o=>negotiationCompetition(db,db.players[o.pid],managedTeam(db),null,'fa').some(row=>row.offerId===o.id)),'new FA offers not consumed as real competing offers');
+  const quoteRestored=unpackDB(packDB(db));check(freshQuotes.every(o=>aiMarketOfferAvailable(quoteRestored,quoteRestored.contractMarketOffers.periods[o.period].offers[o.id])),'new FA offers unavailable after restore');
   const closed=JSON.stringify(db.world.negotiations[nid]),quotes=JSON.stringify(db.contractMarketOffers.periods[period]);
   check(advanceOffseasonFreeAgencyDay(db).ok&&JSON.stringify(db.world.negotiations[nid])===closed,'year-round FA day changed closed proposal');
   check(JSON.stringify(db.contractMarketOffers.periods[period])===quotes,'later refresh reopened the closed quote period');
+ }
+ {
+  let {db}=fixture(2027);const window=globalTransferMarketWindow(2027);
+  while(db.worldDate<window.lastOpenDate)check(advanceOffseasonFreeAgencyDay(db).ok,'reach last open market day');
+  const before=packDB(db),world=db.world,refresh=refreshAIMarketOffers;let threw=false;
+  try{refreshAIMarketOffers=(...args)=>{refresh(...args);throw Error('postmarket issuance failure')};advanceOffseasonFreeAgencyDay(db)}
+  catch(error){threw=error.message==='postmarket issuance failure'}finally{refreshAIMarketOffers=refresh}
+  check(threw&&packDB(db)===before&&db.world===world,'postmarket issuance failure changed live world');
+  check(advanceOffseasonFreeAgencyDay(db).ok&&db.worldDate===window.closesOn&&currentAIMarketOffers(db).some(o=>o.status==='open'),'postmarket issuance retry');
  }
  {
   let {db,nid}=fixture(2027);const window=globalTransferMarketWindow(2027);

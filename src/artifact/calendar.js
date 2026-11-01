@@ -76,12 +76,14 @@ function advanceOffseasonFreeAgencyDay(db,actor='manager'){
  if(!['manager','system'].includes(actor)||actor==='manager'&&(!t||t.active===false||t.parent||w.manage!=='manual'||w.fired||w.pendingOfficial?.queue?.length))return {ok:false,msg:'현재 구단에서 날짜를 직접 진행할 권한이 없습니다'};
  // 처리 실패가 현재 세계를 부분 변경하지 않도록 완성된 결과만 반영한다.
  const prepared=JSON.parse(JSON.stringify(db));
+ const previousOfferPeriod=aiMarketOfferPeriod(prepared)?.id;
  setWorldCalendarDate(prepared,state.next);processTransferPayments(prepared);processLocalServiceDaily(prepared);aiChooseLocalEligibility(prepared);
  const marketClosesOn=globalTransferMarketWindow(w.year).closesOn;
  if(state.next>=marketClosesOn)closeOpenNegotiationsForDeadline(prepared);
  if(state.next===marketClosesOn){
-  expireCurrentAIMarketOffers(prepared);
- }else refreshAIMarketOffers(prepared);
+  expireCurrentAIMarketOffers(prepared,previousOfferPeriod);
+ }
+ refreshAIMarketOffers(prepared);
  for(const key of Object.keys(db))delete db[key];Object.assign(db,prepared);
  return {ok:true,stage:'fa',date:db.worldDate,msg:'자유계약 기간 · '+db.worldDate};
 }

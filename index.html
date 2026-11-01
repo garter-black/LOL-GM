@@ -5306,12 +5306,14 @@ function advanceOffseasonFreeAgencyDay(db,actor='manager'){
  if(!['manager','system'].includes(actor)||actor==='manager'&&(!t||t.active===false||t.parent||w.manage!=='manual'||w.fired||w.pendingOfficial?.queue?.length))return {ok:false,msg:'현재 구단에서 날짜를 직접 진행할 권한이 없습니다'};
  // 처리 실패가 현재 세계를 부분 변경하지 않도록 완성된 결과만 반영한다.
  const prepared=JSON.parse(JSON.stringify(db));
+ const previousOfferPeriod=aiMarketOfferPeriod(prepared)?.id;
  setWorldCalendarDate(prepared,state.next);processTransferPayments(prepared);processLocalServiceDaily(prepared);aiChooseLocalEligibility(prepared);
  const marketClosesOn=globalTransferMarketWindow(w.year).closesOn;
  if(state.next>=marketClosesOn)closeOpenNegotiationsForDeadline(prepared);
  if(state.next===marketClosesOn){
-  expireCurrentAIMarketOffers(prepared);
- }else refreshAIMarketOffers(prepared);
+  expireCurrentAIMarketOffers(prepared,previousOfferPeriod);
+ }
+ refreshAIMarketOffers(prepared);
  for(const key of Object.keys(db))delete db[key];Object.assign(db,prepared);
  return {ok:true,stage:'fa',date:db.worldDate,msg:'자유계약 기간 · '+db.worldDate};
 }
@@ -9200,7 +9202,7 @@ function aiMarketOfferPeriod(db){
   if(w.phase==='offseason'){
     const day=freeAgencyDayState(db);
     return day.stage==='fa'&&db.worldDate<=day.through
-      ?{id:'fa/'+w.contractWindow.startSeason,kind:'fa',year:w.contractWindow.startSeason}:null;
+      ?{id:'fa/'+w.contractWindow.startSeason+(db.worldDate>=globalTransferMarketWindow(w.year).closesOn?'/post':''),kind:'fa',year:w.contractWindow.startSeason}:null;
   }
   // Annual settlement advances db.year before the old world's year rolls over.
   if(w.phase==='market')return {id:'market/'+db.year,kind:'fa',year:db.year};
@@ -9239,14 +9241,15 @@ function closeAIMarketOffer(db,o,status,reason){
   if(o.status!=='open')return;
   o.status=status;o.reason=reason;o.closedAt=negotiationClockAt(db);
 }
-function expireCurrentAIMarketOffers(db){
-  const period=aiMarketOfferPeriod(db),store=period&&db.contractMarketOffers?.periods?.[period.id];
+function expireCurrentAIMarketOffers(db,periodId=aiMarketOfferPeriod(db)?.id){
+  const store=periodId&&db.contractMarketOffers?.periods?.[periodId];
   if(!store)return;
   for(const o of Object.values(store.offers))closeAIMarketOffer(db,o,'expired','period_closed');
   store.closedAt=negotiationClockAt(db);
 }
-function issueAIMarketOffer(db,t,p,terms,event,target=null,choiceValue=null,market=null){
+function issueAIMarketOffer(db,t,p,terms,event,target=null,choiceValue=null,market=null,expectedPeriod=null){
   const period=aiMarketOfferPeriod(db);if(!period)return null;
+  if(expectedPeriod&&period.id!==expectedPeriod)return null;
   if(db.contractMarketOffers?.periods?.[period.id]?.closedAt)return null;
   const root=db.contractMarketOffers||(db.contractMarketOffers={version:1,periods:{}}),
     store=root.periods[period.id]||(root.periods[period.id]={offers:{},events:{}}),
@@ -9305,7 +9308,7 @@ function refreshAIMarketOffers(db){
       if(!candidate)continue;
       const rng=new RNG(db.world.seed+'/'+period.id+'/'+event+'/'+t.id+'/'+role,'ai-market-offer'),
         terms=aiMarketProposalTerms(db,candidate.p,t,candidate.ask,rng);
-      issueAIMarketOffer(db,t,candidate.p,terms,event);
+      issueAIMarketOffer(db,t,candidate.p,terms,event,null,null,null,period.id);
     }
   }
   store.events[event]=true;return currentAIMarketOffers(db);

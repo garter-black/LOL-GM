@@ -10,7 +10,7 @@ function aiMarketOfferPeriod(db){
   if(w.phase==='offseason'){
     const day=freeAgencyDayState(db);
     return day.stage==='fa'&&db.worldDate<=day.through
-      ?{id:'fa/'+w.contractWindow.startSeason,kind:'fa',year:w.contractWindow.startSeason}:null;
+      ?{id:'fa/'+w.contractWindow.startSeason+(db.worldDate>=globalTransferMarketWindow(w.year).closesOn?'/post':''),kind:'fa',year:w.contractWindow.startSeason}:null;
   }
   // Annual settlement advances db.year before the old world's year rolls over.
   if(w.phase==='market')return {id:'market/'+db.year,kind:'fa',year:db.year};
@@ -49,14 +49,15 @@ function closeAIMarketOffer(db,o,status,reason){
   if(o.status!=='open')return;
   o.status=status;o.reason=reason;o.closedAt=negotiationClockAt(db);
 }
-function expireCurrentAIMarketOffers(db){
-  const period=aiMarketOfferPeriod(db),store=period&&db.contractMarketOffers?.periods?.[period.id];
+function expireCurrentAIMarketOffers(db,periodId=aiMarketOfferPeriod(db)?.id){
+  const store=periodId&&db.contractMarketOffers?.periods?.[periodId];
   if(!store)return;
   for(const o of Object.values(store.offers))closeAIMarketOffer(db,o,'expired','period_closed');
   store.closedAt=negotiationClockAt(db);
 }
-function issueAIMarketOffer(db,t,p,terms,event,target=null,choiceValue=null,market=null){
+function issueAIMarketOffer(db,t,p,terms,event,target=null,choiceValue=null,market=null,expectedPeriod=null){
   const period=aiMarketOfferPeriod(db);if(!period)return null;
+  if(expectedPeriod&&period.id!==expectedPeriod)return null;
   if(db.contractMarketOffers?.periods?.[period.id]?.closedAt)return null;
   const root=db.contractMarketOffers||(db.contractMarketOffers={version:1,periods:{}}),
     store=root.periods[period.id]||(root.periods[period.id]={offers:{},events:{}}),
@@ -115,7 +116,7 @@ function refreshAIMarketOffers(db){
       if(!candidate)continue;
       const rng=new RNG(db.world.seed+'/'+period.id+'/'+event+'/'+t.id+'/'+role,'ai-market-offer'),
         terms=aiMarketProposalTerms(db,candidate.p,t,candidate.ask,rng);
-      issueAIMarketOffer(db,t,candidate.p,terms,event);
+      issueAIMarketOffer(db,t,candidate.p,terms,event,null,null,null,period.id);
     }
   }
   store.events[event]=true;return currentAIMarketOffers(db);
