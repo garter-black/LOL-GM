@@ -1,0 +1,268 @@
+# Approval source comment register, batch 01 (evidence index only)
+This is a retrieval inventory, **not** a ruling that every comment is approved policy. Inspect the full linked original and later superseding decisions before moving anything into the rulebook.
+
+## Issue #1 — 1 comments
+- [5845263857](https://github.com/lkh0802a/LOL-GM/issues/1#issuecomment-5845263857) [unreviewed]: Artifact migration status:
+
+## Issue #2 — 1 comments
+- [6227221620](https://github.com/lkh0802a/LOL-GM/issues/2#issuecomment-6227221620) [unreviewed]: ## 2026-10-17 이슈 정리 — 초기 기반 감사 범위 완료 / 후속 분리
+
+## Issue #57 — 14 comments
+- [5923170381](https://github.com/lkh0802a/LOL-GM/issues/57#issuecomment-5923170381) [unreviewed]: ## 추가로 확인된 실제 병목
+- [5923352076](https://github.com/lkh0802a/LOL-GM/issues/57#issuecomment-5923352076) [revision-cue]: ## 전수조사 결과 — 실제 병목 계측 + 전체 최적화 후보
+- [5923960726](https://github.com/lkh0802a/LOL-GM/issues/57#issuecomment-5923960726) [unreviewed]: ## 개발 작업 속도 최적화 1단계 완료 — check.mjs subprocess/source reread 제거
+- [5924165497](https://github.com/lkh0802a/LOL-GM/issues/57#issuecomment-5924165497) [revision-cue]: ## 개발 작업 속도 최적화 2단계 완료 — CI DAG / docs-only / draft gate
+- [5924370496](https://github.com/lkh0802a/LOL-GM/issues/57#issuecomment-5924370496) [unreviewed]: ## 개발 작업 속도 최적화 3단계 완료 — deterministic medical seed sharding
+- [5924535647](https://github.com/lkh0802a/LOL-GM/issues/57#issuecomment-5924535647) [unreviewed]: ## 개발 작업 속도 최적화 4a 완료 — shared test harness / UI·finance·contracts runner
+- [5924663282](https://github.com/lkh0802a/LOL-GM/issues/57#issuecomment-5924663282) [unreviewed]: ## 개발 작업 속도 최적화 4b 완료 — shared calendar/scouting harness
+- [5924819148](https://github.com/lkh0802a/LOL-GM/issues/57#issuecomment-5924819148) [unreviewed]: ## 개발 작업 속도 최적화 — regression/smoke/career 병렬 gate 완료
+- [5924885847](https://github.com/lkh0802a/LOL-GM/issues/57#issuecomment-5924885847) [unreviewed]: ## Smoke 내부 최적화 계측 완료
+- [5925364119](https://github.com/lkh0802a/LOL-GM/issues/57#issuecomment-5925364119) [unreviewed]: PR #67 fixes the nondeterminism prerequisite for #66. Main 580956b full-smoke repetitions passed but produced 811/810/813 players. First divergen
+- [5925429988](https://github.com/lkh0802a/LOL-GM/issues/57#issuecomment-5925429988) [unreviewed]: #67 merged as 84c4044; merged-main full CI 36820098204 succeeded. #66 resumed on that main. Local opt-in shard proof passed with exact SHA-256 pa
+- [5925451376](https://github.com/lkh0802a/LOL-GM/issues/57#issuecomment-5925451376) [unreviewed]: ## Smoke patch-system sharding complete — #66
+- [5925529718](https://github.com/lkh0802a/LOL-GM/issues/57#issuecomment-5925529718) [unreviewed]: ## Compact CI evidence complete — #68
+- [5925642443](https://github.com/lkh0802a/LOL-GM/issues/57#issuecomment-5925642443) [revision-cue]: ## 개발 작업 속도 최적화 종료 판정 — COMPLETE
+
+## Issue #62 — 1 comments
+- [5925749579](https://github.com/lkh0802a/LOL-GM/issues/62#issuecomment-5925749579) [unreviewed]: ## R01 ownership / mutation audit baseline
+
+## Issue #224 — 30 comments
+- [6227116712](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6227116712) [approval-cue,revision-cue]: ## 2026-10-17 사용자 최종 승인 보강 — 이적시장 C안(혼합형 시간 진행)
+- [6227433733](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6227433733) [unreviewed]: ## 2026-10-17 사용자 최우선 변경 — 게임 전체 결함 선행
+- [6227725917](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6227725917) [unreviewed]: ## Codex 부문별 상세 구현·검증 인수 지침 (2026-10-17)
+- [6244348220](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6244348220) [unreviewed]: ## 2026-10-18 선수 이적 의향 정보 공개 #22 B 확정
+- [6245269814](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6245269814) [unreviewed]: ## 2026-10-18 선수 이적·계약 세부 선택 #127–131B
+- [6246150483](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6246150483) [approval-cue,revision-cue]: ## 2026-10-18 시간형 이적 협상 확정 #177D·#178C·#180A
+- [6289717119](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6289717119) [approval-cue,revision-cue]: ## 2026-10-20 M08C·M05C 선수의 다차원 계약/커리어 목표 연계
+- [6290122751](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6290122751) [approval-cue,revision-cue]: ## 2026-10-20 M20C·M31C 계약·이적 판단과 관측자별 평판 연계
+- [6312054961](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6312054961) [approval-cue]: ## 2026-10-21 M51C·M80C·M105C~M112C 이적 의사/계약 UI 및 육성 구단 보상 검토 경계
+- [6312256109](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6312256109) [revision-cue]: ## 2026-10-21 육성 구단 보상 최종 C안 — 실제 이적·권리 경계
+- [6312452393](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6312452393) [approval-cue,revision-cue]: ## 2026-10-21 구버전 저장 호환 제외/육성 소급 평가(계약 경계)
+- [6312557289](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6312557289) [approval-cue,revision-cue]: ## 2026-10-21 M151~M169 이적·FA/임대·육성 보상 법적 권리 구체화
+- [6313634262](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6313634262) [approval-cue,revision-cue]: ## 2026-10-21 KBO FA × FIFA 연대기여금 연구 통합안 — 계약 원본
+- [6314620849](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6314620849) [unreviewed]: ## 2026-10-21 확정 — 핵심 FA 집중 억제 목적의 계약/보상 엔진 수용 기준
+- [6315205093](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6315205093) [approval-cue]: ## 2026-10-21 사용자 일괄 승인 — [① 출전 기회, ⑨ 경력 목표] 계약·FA 엔진 보강
+- [6315423087](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6315423087) [approval-cue]: ## 2026-10-21 승인 보강 — 11 입단 테스트, 14 해외 적응, 16 아마→프로 계약
+- [6337042151](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6337042151) [approval-cue]: ## 2026-10-22 사용자 확정 B안 — 동일 최종 소유 그룹 간 독립 이적/FA/임대
+- [6338119040](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6338119040) [approval-cue]: ## 2026-10-22 사용자 확정 51·52 — 실제 AI 계약 경쟁·임대 협상의 시장 근거 강화
+- [6338199880](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6338199880) [approval-cue]: ## 2026-10-22 추가 검토/승인 57 — 전 세계 AI 임대시장에 하드코딩된 단일 '최대 2건' 제한 제거
+- [6386868332](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6386868332) [unreviewed]: [CODEX-CHECKPOINT]
+- [6388955813](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6388955813) [unreviewed]: [CODEX-CHECKPOINT]
+- [6390438419](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6390438419) [approval-cue]: ## 최신 진행 누락 정리 — #224 실제 AI 경쟁 제안 PR284 (2026-10-25 KST)
+- [6456686937](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6456686937) [approval-cue,revision-cue]: ## 최신 사용자 확정: 우선 재계약 기간은 7일
+- [6461306307](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6461306307) [revision-cue]: ## 2026-10-28 최신 변경: 독립 장기리그는 해당 연도 내 실제 완료
+- [6461393830](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6461393830) [unreviewed]: ## [2026-10-28] 글로벌 선수 FA 날짜 도입으로 현재 2027/2028 시즌 일정 전체 재편 필요
+- [6461476400](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6461476400) [unreviewed]: ## 실제 코드 반영 착수 (2026-10-28): 글로벌 선수 계약 만료/FA 날짜 — draft PR #318
+- [6463901860](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6463901860) [unreviewed]: [2026-10-28 사용자 최신 FA 변경 / 구현 연계] 게임 글로벌 선수 FA는 **11월 셋째 화요일 → 매년 12월 첫째 화요일 00:00 UTC**, 표준 만료는 바로 전 월요일 23:59 UTC로 재확정. 2027-12-07 / 2028-12-05
+- [6464780974](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6464780974) [approval-cue]: [2026-10-28 신규 사용자 확정 — 팀 단위 프로 라이선스/상시 바이아웃 영입] **#321**을 신규 계약·시장 정책 정본으로 등록: 프로 라이선스 **미보유 팀**에 등록된 계약 선수는 이적시장 닫혀도 *FA처럼 자유 접촉·협상 가능*, 하지만 실제
+- [6465187837](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6465187837) [approval-cue,revision-cue]: [2026-10-28 사용자 선호 — 시장 개방 중 모든 대회 경기 미개최] #234 최상위 일정 규칙에 반영: 통합 이적시장(매년 12월 첫째 화요일 00:00 UTC 개장)이 **개방 상태인 기간에는 공식 지역·공식 국제·독립 지역·독립 국제대회 모두 실제
+- [6467722298](https://github.com/lkh0802a/LOL-GM/issues/224#issuecomment-6467722298) [approval-cue]: [2026-10-28 승인된 이적시장 생태계 7종 후속 작업] 새 전용 이슈 [#322](https://github.com/lkh0802a/LOL-GM/issues/322)에 정본 설계/실제 인과·QA 항목 등록: ① 계약·로스터 변경의 연쇄 반응 ② 구단 A
+
+## Issue #225 — 11 comments
+- [6227117244](https://github.com/lkh0802a/LOL-GM/issues/225#issuecomment-6227117244) [approval-cue,revision-cue]: ## 2026-10-17 C안 엔진 계획 연동 — 모바일 시장 화면
+- [6227434186](https://github.com/lkh0802a/LOL-GM/issues/225#issuecomment-6227434186) [revision-cue]: ## 2026-10-17 최우선 전수조사 우선 연결
+- [6227726351](https://github.com/lkh0802a/LOL-GM/issues/225#issuecomment-6227726351) [revision-cue]: ## Codex 부문별 상세 구현·검증 인수 지침 (2026-10-17)
+- [6245281026](https://github.com/lkh0802a/LOL-GM/issues/225#issuecomment-6245281026) [approval-cue,revision-cue]: ## 2026-10-18 추가 승인 #145B — 모바일 협상 초안 복구 vs 확정 거래 불변
+- [6312087208](https://github.com/lkh0802a/LOL-GM/issues/225#issuecomment-6312087208) [approval-cue]: ## 2026-10-21 M51C·M56C·M75C/M80C·M100C·M105C~M112C·M148B 이적시장 모바일 UI 상세
+- [6312593107](https://github.com/lkh0802a/LOL-GM/issues/225#issuecomment-6312593107) [approval-cue,revision-cue]: ## 2026-10-21 M159C/M164B/M176B·M201C~M205C 관측·시장 UI 구체화
+- [6390737986](https://github.com/lkh0802a/LOL-GM/issues/225#issuecomment-6390737986) [approval-cue,revision-cue]: ## 실제 현재 게임 신 UI 확인 기반 #225 미완료 수용 항목 (2026-10-25)
+- [6392612529](https://github.com/lkh0802a/LOL-GM/issues/225#issuecomment-6392612529) [approval-cue,revision-cue]: ## 사용자 승인 추가 — 이적시장 실제 플레이 동선 마감 품질 (2026-10-25)
+- [6402505567](https://github.com/lkh0802a/LOL-GM/issues/225#issuecomment-6402505567) [unreviewed]: [CODEX-CHECKPOINT]
+- [6467723176](https://github.com/lkh0802a/LOL-GM/issues/225#issuecomment-6467723176) [unreviewed]: [2026-10-28 신규 이적시장 생태계 7종 UI 연계] 신규 [#322](https://github.com/lkh0802a/LOL-GM/issues/322) 승인·설계 등록: 기존 6대 UI 이외 **선수 전술 적합도 추정·이적 후 적응 위험과 사후 리포
+- [6467953611](https://github.com/lkh0802a/LOL-GM/issues/225#issuecomment-6467953611) [unreviewed]: [2026-10-28 대회 UX 범위 연결] 대회 1~17/6 보강 승인 정본 [#323](https://github.com/lkh0802a/LOL-GM/issues/323), 현재 실행 순서 [#242](https://github.com/lkh0802a/LO
+
+## Issue #232 — 15 comments
+- [6227117654](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6227117654) [unreviewed]: ## 2026-10-17 초정밀 C안 엔진 개발과의 연결 보강
+- [6227434682](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6227434682) [unreviewed]: ## 2026-10-17 전 게임 감사 우선순위 연결
+- [6227726752](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6227726752) [unreviewed]: ## Codex 부문별 상세 구현·검증 인수 지침 (2026-10-17)
+- [6243958083](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6243958083) [unreviewed]: ## 2026-10-18 신규 승인 연계 — 패치 전후 구단 적응 분석
+- [6289716028](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6289716028) [unreviewed]: ## 2026-10-20 M10C·M11C 메타 발견/모방의 개인·구단 차이
+- [6290122109](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6290122109) [unreviewed]: ## 2026-10-20 M25C·M26C·M28C 패치/메타 연구·확산 세부 확정
+- [6312085200](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6312085200) [unreviewed]: ## 2026-10-21 M54C·M136C~M142C 패치·메타 적응 및 UI 정확성
+- [6312593672](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6312593672) [unreviewed]: ## 2026-10-21 M175C·M180C·M210C 패치 표본/적응·장기 분포 상세화
+- [6315205735](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6315205735) [approval-cue]: ## 2026-10-21 사용자 일괄 승인 — [⑦] 패치 적응 속도와 팀별 학습 차이
+- [6315423805](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6315423805) [approval-cue]: ## 2026-10-21 승인 보강 — 20 공개 국제대회 전략의 지역 간 확산
+- [6337473197](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6337473197) [approval-cue]: ## 2026-10-22 사용자 추가 승인 30 — 패치 엔진의 챔피언 강도 추정에서 선택편향 방지
+- [6390897647](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6390897647) [approval-cue]: ## 2026-10-25 실제 LoL 시즌/패치 정합성 — 경기 엔진 감사 연결
+- [6390977238](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6390977238) [unreviewed]: ## 2026-10-25 경기 엔진 전체 명세와 패치 연결
+- [6391421508](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6391421508) [unreviewed]: ## 2026-10-25 가상 패치 엔진의 랭크 증거 처리 최적화
+- [6456922011](https://github.com/lkh0802a/LOL-GM/issues/232#issuecomment-6456922011) [approval-cue]: ## [패치 엔진 적용 경계] Fearless / First Selection 영구 고정
+
+## Issue #233 — 17 comments
+- [6227425628](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6227425628) [unreviewed]: ## 2026-10-17 우선 작업 연결
+- [6227727105](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6227727105) [unreviewed]: ## Codex 부문별 상세 구현·검증 인수 지침 (2026-10-17)
+- [6290119951](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6290119951) [unreviewed]: ## 2026-10-20 M21C~M24C 실제 경기 엔진 소비자 연계
+- [6312052636](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6312052636) [unreviewed]: ## 2026-10-21 M52C·M59C~M64C·M139C 경기 원본/관전 소비
+- [6312559929](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6312559929) [revision-cue]: ## 2026-10-21 M177~M182 상세 실제 E01 경기와 관전 분석 연결
+- [6315206370](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6315206370) [approval-cue]: ## 2026-10-21 사용자 일괄 승인 — [②·⑤·⑥] 선수 능력 총합을 넘어선 실전 전술 상성·팀 호흡·코칭 소비
+- [6315424474](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6315424474) [approval-cue]: ## 2026-10-21 승인 보강 — 13 대회 경험·압박의 실제 판단/행동 반영
+- [6338493029](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6338493029) [unreviewed]: ## 2026-10-22 전체 소스 감사 확정 #66 — 세트간 멘탈/모멘텀은 실제 경기 등록 출전 인원 기준
+- [6338651857](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6338651857) [unreviewed]: ## 2026-10-22 Node.js 격리 재현 — #66 실제 5인은 같은데 벤치 composure가 세트간 모멘텀 변경
+- [6390795914](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6390795914) [approval-cue]: ## 2026-10-25 사용자 직접 정정 반영 — 사이드 운영은 원래 포지션 라인이 아님 (정밀 계산 감사)
+- [6390841807](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6390841807) [approval-cue]: ## 2026-10-25 사용자 직접 수정 — 강팀이라도 교전 자동 승리 불가 / 교전 중립 결과 수용
+- [6390890199](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6390890199) [revision-cue]: ## 실제 LoL 2026 소환사의 협곡 대비 경기 엔진 코드 감사 — 2026-10-25 KST
+- [6391061349](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6391061349) [approval-cue]: ## 사용자 2026-10-25 전역 확정: 경기 속 기술적 사고·버그 사건 제외
+- [6396824509](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6396824509) [revision-cue]: [CODEX-CHECKPOINT]
+- [6396921366](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6396921366) [revision-cue]: 새 실패 반례(현재 main60f9536의 S0 복원): 0ms wait를 실제 실행해 생성한 snapshot에서 receipts를 [완료,시작] 순으로 뒤집고 seq를 재번호하면 restore가 받아들입니다. 통제 fixture 결과 {corruption:c
+- [6397459317](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6397459317) [unreviewed]: [CODEX-CHECKPOINT]
+- [6456923166](https://github.com/lkh0802a/LOL-GM/issues/233#issuecomment-6456923166) [approval-cue]: ## [신규 단일 경기 코어 연동] 영구 불변 드래프트·시리즈 규칙
+
+## Issue #234 — 139 comments
+- [6227426023](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6227426023) [unreviewed]: ## 2026-10-17 우선 작업 연결
+- [6227727671](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6227727671) [unreviewed]: ## Codex 부문별 상세 구현·검증 인수 지침 (2026-10-17)
+- [6244103341](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6244103341) [approval-cue,revision-cue]: ## 2026-10-18 일괄 확정: 국제대회·리그·사무국 1~14번
+- [6244112334](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6244112334) [approval-cue,revision-cue]: ## 2026-10-18 사용자 추가 확정 — 공식 캘린더 대회 절대 우선 (모든 구단/AI 공통)
+- [6244168425](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6244168425) [approval-cue,revision-cue]: ## 2026-10-18 대회 편성 추가 논의 — 충돌 방지 자동화 확정 / 대형 외부 대회 공식 협의는 제안 단계
+- [6244180511](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6244180511) [approval-cue,revision-cue]: ## 2026-10-18 사용자 승인 — 대형 비캘린더 주최사의 사전 공식 일정 협의
+- [6244346699](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6244346699) [revision-cue]: ## 2026-10-18 30개 선택 중 통합 이동·일정 정책 (중복 승인 방지)
+- [6244505851](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6244505851) [unreviewed]: ## 2026-10-18 시간·랭크·원격 스크림/모바일 일정 충돌 최신 정책
+- [6244726258](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6244726258) [approval-cue,revision-cue]: ## 2026-10-18 신규 승인 — 방송·중계·개최지/관전 (62–68) 및 공식 기술 사고 충돌 (69–71)
+- [6244904280](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6244904280) [approval-cue,revision-cue]: ## 2026-10-18 최신 사용자 최종 승인 — 게임 진행만 막는 무작위 사고 제외 (편의성 우선)
+- [6245024412](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6245024412) [revision-cue]: ## 2026-10-18 최신 정정: **87B 대회별 동률 규정 유지**, 87C 전면 결정전 철회
+- [6245269253](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6245269253) [approval-cue]: ## 2026-10-18 승인 #117–121 · #123/#125 대회 등록 연계
+- [6246149917](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6246149917) [approval-cue,revision-cue]: ## 2026-10-18 신규 토의 최종 확정 #149A·#155A — 대회/리그 제도
+- [6247474657](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6247474657) [unreviewed]: ## 2026-10-18 R01~R04/R07·국가별 2부 참가 자격·승강 연결
+- [6247907089](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6247907089) [unreviewed]: ## 2026-10-18 국가별·연합 2부 및 사무국: 전 국가 공통 규칙 최신 정정
+- [6289716556](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6289716556) [unreviewed]: ## 2026-10-20 M15C 국가·리그 경쟁력의 다차원 역사적 형성
+- [6309631874](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6309631874) [unreviewed]: [CODEX-CHECKPOINT]
+- [6312084679](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6312084679) [approval-cue]: ## 2026-10-21 M55C·M57C·M84B·M128C~M135C·M140C/M141C/M146C 리그/세계 시간 수용
+- [6312256733](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6312256733) [approval-cue]: ## 2026-10-21 육성 구단 보상 C안 — 리그 실제 예산 육성 지원
+- [6312557924](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6312557924) [unreviewed]: ## 2026-10-21 M156~M170·M195~M200 리그 지원 예산/대회 규정/공식 시각 연결
+- [6313635737](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6313635737) [unreviewed]: ## 2026-10-21 KBO × FIFA 결제관리/리그 예산 구분
+- [6314622166](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6314622166) [unreviewed]: ## 2026-10-21 확정 — 하위 대회/2부도 실재 경제적 성장 사다리로 사용하는 수용 기준
+- [6315425101](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6315425101) [approval-cue,revision-cue]: ## 2026-10-21 사용자 최신 정정 — 18번 규정 위반/징계 엔진 **제외**, 12 로테이션·14 해외 이동·22 진출 시나리오
+- [6321092927](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6321092927) [unreviewed]: [CODEX-CHECKPOINT]
+- [6330597963](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6330597963) [unreviewed]: [CODEX-CHECKPOINT]
+- [6331330521](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6331330521) [unreviewed]: [CODEX-CHECKPOINT]
+- [6337042880](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6337042880) [approval-cue]: ## 2026-10-22 사용자 확정 B안 — 동일 소유 그룹 복수 구단 국제전 참가와 독립 경기
+- [6337679846](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6337679846) [approval-cue,revision-cue]: ## 2026-10-22 사용자 승인 — 재검토 추가 33·36·37·38·39 (공식 국제대회/승강·리그 구조/전국 확장)
+- [6337928256](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6337928256) [approval-cue]: ## 2026-10-22 사용자 승인: 41, 43, 44, 45번 — 공식 순위/국제대회 계약 정합성
+- [6338116773](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6338116773) [approval-cue,revision-cue]: ## 2026-10-22 사용자 확정 47·49·53·55·56 — 라이선스 / 대진 / 월즈 슬롯 / 장기 국제지수 / 신생 권역컵
+- [6338201338](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6338201338) [revision-cue]: ## 2026-10-22 추가 보완 61 — 홀수 참가팀 허용 결정의 초기 설정·검증 반영
+- [6338494525](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6338494525) [revision-cue]: ## 2026-10-22 전체 소스 감사 확정 #71·#72 — 양팀 모두 합법적 출전 가능 5인 부족/공식 방송 슬롯 실시간 충돌
+- [6338650892](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6338650892) [unreviewed]: ## 2026-10-22 실제 Node.js 함수 단위 재현 — #71 양팀 모두 5인 미달일 때 무경기 승자 확정 (기존 승인 보완)
+- [6338682342](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6338682342) [unreviewed]: ## 2026-10-22 #71 실제 함수 격리 실행 재현 — 양팀 출전 인원 부족 시 앞쪽 시드 자동승리
+- [6339980269](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6339980269) [approval-cue]: ## 2026-10-22 사용자 최종 확정 — 다양한 변형 대회 포맷 / Codex만 구현
+- [6340164667](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6340164667) [approval-cue]: ## 2026-10-22 사용자 최종 결정 — **공식 캘린더 대회는 재결승전(Grand Final Reset)이 없다**
+- [6340237032](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6340237032) [revision-cue]: ## 2026-10-22 사용자 즉시 정정 — 공식 캘린더의 싱글·더블 **혼합** (더블까지만 = 최대 2패 탈락)
+- [6361105902](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6361105902) [approval-cue]: ## 공식 캘린더 대회 포맷 구현 정합성 — 사용자 추가 수정 승인 (2026-10-23)
+- [6363548120](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6363548120) [unreviewed]: [CODEX-CHECKPOINT]
+- [6364196774](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6364196774) [unreviewed]: [CODEX-CHECKPOINT]
+- [6364525307](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6364525307) [unreviewed]: [CODEX-CHECKPOINT]
+- [6370455689](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6370455689) [unreviewed]: [CODEX-CHECKPOINT]
+- [6371299858](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6371299858) [unreviewed]: [CODEX-CHECKPOINT]
+- [6373144242](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6373144242) [unreviewed]: [CODEX-CHECKPOINT]
+- [6374502926](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6374502926) [unreviewed]: [CODEX-CHECKPOINT]
+- [6377402894](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6377402894) [approval-cue]: [사용자 확정 결정 · D-032 보완]
+- [6377687670](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6377687670) [approval-cue]: [사용자 확정 결정 · D-032 동률 절차 보완]
+- [6378244219](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6378244219) [unreviewed]: [CODEX-CHECKPOINT]
+- [6381562552](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6381562552) [unreviewed]: [CODEX-CHECKPOINT · 다음 결함 실제 소비자 재현]
+- [6381599537](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6381599537) [approval-cue,revision-cue]: [사용자 최신 확정 · 양측 출전 인원 부족]
+- [6381643826](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6381643826) [approval-cue]: [사용자 최신 후속 결정 · 차순위 승계]
+- [6381649851](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6381649851) [approval-cue]: [사용자 최종 확정 · 실격팀 경기 자리 승계]
+- [6381690538](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6381690538) [approval-cue,revision-cue]: [사용자 최신 확정 · 토너먼트 결승 우승자 없음 — 앞 결정 정정]
+- [6393240756](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6393240756) [approval-cue,revision-cue]: ## 2026-10-25 사용자가 확정한 일정 UI 선택 옵션 — 연간 달력은 **기본값이 아님**
+- [6393318793](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6393318793) [approval-cue,revision-cue]: ## [2026-10-25 사용자 최신 결정] 지역 정규 시즌 **팀당 주 2경기 고정 규칙 폐지**
+- [6393347703](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6393347703) [approval-cue,revision-cue]: ## 2026-10-25 사용자 후속 요구: 연간 일정은 **스토브리그 기간 확보를 우선적인 일정 제약으로 보장**
+- [6393412075](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6393412075) [approval-cue,revision-cue]: ## [2026-10-25 최신 사용자 확정] 공식 경기 사이 ‘하루 휴식’은 **권장**, 강제 최소 간격 폐지 + **전 구단 일정 난이도 형평성 최적화**
+- [6393606883](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6393606883) [revision-cue]: ## 2026-10-25 실제 편성 시안 — **주중 2경기, 주말 3경기** 우선 활용 (하드 규칙 아님)
+- [6393739011](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6393739011) [approval-cue,revision-cue]: ## [2026-10-25 사용자 최종 уточ정] 연간/스플릿 길이에 맞춰 **요일별 경기 수 패턴을 먼저 확정, 모든 정규시즌 주간에 반복**
+- [6393748473](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6393748473) [approval-cue]: ## [2026-10-25 최신 사용자 정정·최종 편성 UI 요구] 요일별 **경기 수 고정**, 주차별 경기 요일 변동 금지
+- [6393885979](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6393885979) [approval-cue]: ## 2026-10-25 정정 — **주말만 경기 수 증가/주말 우선 편성 아님**
+- [6393886491](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6393886491) [unreviewed]: ## 2026-10-25 추가 정정 — **주말 경기 수 증가는 필수도 우선 목표도 아님**
+- [6393888803](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6393888803) [unreviewed]: ## 2026-10-25 사용자 최신 정정 — **주말 경기 수 우대/증편 가정 폐기**
+- [6393892580](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6393892580) [revision-cue]: ## [2026-10-25 최신 사용자 정정] 주말 우선 증편 정책 폐기 — 평일과 주말은 동등한 일정 자원
+- [6393919786](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6393919786) [approval-cue]: 2026-10-25 사용자 최종 정정: “증편하면 주말을 위주로 구성하라는거지”.
+- [6394007453](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394007453) [approval-cue]: ## 2026-10-25 전 시즌 재검증 결과 — 주말 우선 증편·매주 고정 요일 적용
+- [6394046195](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394046195) [approval-cue,revision-cue]: ## [2026-10-25 최신 사용자 결정] 대규모 참가 리그는 **싱글 라운드로빈 허용** — 연간 일정 압축 수단
+- [6394103787](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394103787) [unreviewed]: ## [2026-10-25 재검증 결과] CN 2부 싱글 RR 적용 시 2027년 전체 시즌 독립 편성 감사
+- [6394181784](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394181784) [approval-cue,revision-cue]: ## [2026-10-25 사용자 추가 요구] 비캘린더 대회를 위한 **이동·적응·복귀 포함 실제 연속 개최 기간**을 연간 달력에 확보
+- [6394251606](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394251606) [revision-cue]: ## [2026-10-25 최신 사용자 정정] 캘린더 대회 **서로도 기간 병행 허용**, 실제 경기 시간대는 중복 금지
+- [6394276059](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394276059) [revision-cue]: ## [2026-10-25 최신 사용자 즉시 정정] 리그 경기는 서로 동시간대 진행 허용 — 전세계 공식전 순차화 오류 철회
+- [6394319394](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394319394) [revision-cue]: ## [2026-10-25 긴급 사용자 정정] 같은 리그 내부는 **서로 다른 팀끼리의 경기도 시간 중복 금지**
+- [6394328655](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394328655) [approval-cue]: ## [2026-10-25 최신 정정] 동일 팀 하루 여러 시리즈는 스위스 타이브레이크 등 규정상 예외만
+- [6394495097](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394495097) [approval-cue]: ## [2026-10-25 최신 사용자 명시 정정] Chapter 3 국제대회는 **개최지별 시차 활용** — 요일 분리 금지
+- [6394504346](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394504346) [unreviewed]: ## [2026-10-25 국제대회 시간대 추가 해석] 초반 다경기 스테이지와 녹아웃의 중계 용량을 다르게 편성
+- [6394537279](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394537279) [approval-cue,revision-cue]: ## [2026-10-25 최신 사용자 최종 정정] 국제대회 간 순연 금지 / **동일 대회 내부만 순연**
+- [6394693727](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394693727) [approval-cue,revision-cue]: ## [2026-10-25 사용자 최종 용어 통일] 국제대회 **기간·묶음 모두 Circuit**
+- [6394745588](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394745588) [approval-cue]: ## [2026-10-25 사용자 승인] Chapter 3 개별 대회명 World 계열로 통일
+- [6394850682](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394850682) [approval-cue]: ## [2026-10-25 신규 2027 LCK + Circuit 1~3 통합 시각표 정적 편성안 — 743개 시작 슬롯]
+- [6394877897](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394877897) [approval-cue]: ## [2026-10-25 사용자 결정] LCK Split 2·3 정규시즌 8주
+- [6394975306](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6394975306) [unreviewed]: ## [2026-10-25 연간 일정 추가 요구] 비캘린더 대회 최소 2주 확보
+- [6395103284](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6395103284) [approval-cue,revision-cue]: ## [2026-10-25 최신 사용자 정정] **3일 휴식은 그룹/예선 단계 → 녹아웃 단계 전환에만 적용**
+- [6395177812](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6395177812) [approval-cue,revision-cue]: ## [2026-10-25 최신 사용자 결정] 패자조 결승→최종 결승 사이 휴식일 없음 / 일요일 결승·라운드 종료 선호
+- [6395267375](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6395267375) [approval-cue,revision-cue]: ## [2026-10-25 확정] 해당 연도 모든 대회 일정의 마지막 경기는 Circuit 3 **World Championship 결승전**
+- [6395284288](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6395284288) [unreviewed]: ## [2026-10-25 사용자 추가 결정] Circuit별 이동·현지 적응 1주 확보
+- [6395316290](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6395316290) [approval-cue,revision-cue]: ## [2026-10-25 사용자 최신 정정] **우선 재계약 기간만 1주**, FA는 단축하지 않음
+- [6395445211](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6395445211) [approval-cue,revision-cue]: ## [2026-10-25 최신 사용자 확정] First Stand: 4개 3팀 조, **조별 1·2위 8강 진출**
+- [6395477683](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6395477683) [approval-cue]: ## [2026-10-25 사용자 결정] Split 1 정규시즌+별도 Playoffs 1을 **단일 컵대회**로 통합·압축
+- [6395496683](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6395496683) [unreviewed]: ## [2026-10-25 사용자 최신 정정] 비캘린더 대회 2주 **독립 블록 삭제**, Circuit 1·2 이동주에 겹쳐 운영
+- [6395722344](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6395722344) [approval-cue]: ## [2026-10-25 사용자 요청 반영] 프리시즌 12주→7주, 절약한 5주를 본 시즌 일정에 재배분하는 **수정 편성안**
+- [6395737798](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6395737798) [approval-cue]: ## [2026-10-25 사용자 승인] 2027 연간 일정 틀 — 프리시즌 7주안 채택
+- [6395853262](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6395853262) [approval-cue]: ## [2026-10-25 사용자 작업 지시] 기존 일정 엔진을 승인된 2027 연간 캘린더로 **실제 작동하도록 수정 — Codex 구현 필수**
+- [6396123382](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6396123382) [revision-cue]: ## [2026-10-25 최신 재확인] LCK Split 2·3의 **확정된 방송 슬롯**을 변경하지 말 것
+- [6396543910](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6396543910) [unreviewed]: ## [2026-10-25 사용자 제안 채택을 위한 편성안] LCK Split 2·3을 **Round 1 / Round 2**로 분리하여 형평성 해결
+- [6397449540](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6397449540) [approval-cue]: ## [2026-10-25 최종 편성 확정 — 독립 정수 최적화 검증] 2027 시즌 52주 / Split 2·3 정규 11주 × 2
+- [6406291586](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6406291586) [approval-cue,revision-cue]: > **[최신 사용자 확정 · 2026-10-26] 플레이오프 '경기 사이 온전한 1일 휴식' 의무 폐지.** 아래 기존 편성 예시는 과거의 더 엄격한 휴식 제한하에서 만든 *가능한 일정 사례*일 뿐, 날짜 간격이 신규 필수조건이라는 뜻은 아니다. 동일 팀의 
+- [6406842210](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6406842210) [approval-cue,revision-cue]: ## [2026-10-26 최신 결정: PO 내부 1일 휴식 의무 폐지 — 기존 #234 설계 최우선 수정]
+- [6406901050](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6406901050) [approval-cue,revision-cue]: ## [2026-10-26 최신 사용자 확정] 플레이오프 주간 종료일은 **매주 일요일** — 유동 휴식일은 중간에 배치
+- [6406956737](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6406956737) [approval-cue,revision-cue]: ## [2026-10-26 사용자 최신 확정] 일정 공정성 우선 + 정규시즌 종료 후 휴식 유지
+- [6408086803](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6408086803) [revision-cue]: ## [2026-10-26 신규 설계안] 8팀 단계적 진입 혼합 토너먼트 + 2027 52주 전체 편성
+- [6411034015](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6411034015) [unreviewed]: ## [2026-10-26] 2년 달력 검산: 연초 프리시즌 누락 수정 및 2028 윤년 반영
+- [6411161689](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6411161689) [revision-cue]: ## [2026-10-26 2개 역년 검증] 2027/2028 달력의 연초 프리시즌 연속성 및 2028 윤년 보정
+- [6412210175](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6412210175) [unreviewed]: ## [2026-10-26 사용자 재지시] 52주 캘린더를 실제 생성하는 일정 엔진 구조 교체 — 1년 초과 차단
+- [6413422886](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6413422886) [approval-cue,revision-cue]: ## [2026-10-26 추가 강화] 일정 엔진 전면 교체의 **아키텍처·장기 지속성·수용 품질 게이트**
+- [6413566849](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6413566849) [approval-cue]: ## [2026-10-26 사용자 승인] 장기 시즌 52/53주 자동 보정 규칙 확정 — **프리시즌만 가변**
+- [6413705810](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6413705810) [approval-cue,revision-cue]: ## [2026-10-26 추가 승인·발전] 고정 개막일 + 방송 슬롯 선예약 + 결과연동 부분 재편성 — 실제 엔진 구현 계약
+- [6413893310](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6413893310) [approval-cue,revision-cue]: ## [2026-10-26 최우선 사용자 의도 명확화] 사람이 일정 짜는 게임이 아닌 **완전 자율 사무국×대회×캘린더 생성 엔진**
+- [6437451822](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6437451822) [approval-cue,revision-cue]: ## [2026-10-27 사용자 최신 확정] 14개 구간 고정 철회 — 구간 수·길이·경계까지 알고리즘 자동 결정
+- [6437658620](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6437658620) [approval-cue,revision-cue]: ## [2026-10-27 추가 발전] 견고한 자율 일정 생성: 경기시간 불확실성·다년 부담·누적 공정성·규정 발효·설명가능성
+- [6437812409](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6437812409) [revision-cue]: ## [2026-10-27 추가 구현 설계] 자율 일정 엔진 3.0: **제약 컴파일러 + 계층적 탐색 + 반례 피드백 + 시즌 내 재계획**
+- [6440703872](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6440703872) [approval-cue,revision-cue]: ## [2026-10-27 자율 생태계 엔진 5.0] **대회 규칙 합성 + 제도 협상 + 경제·시간 공동계획 + 독립 검증**
+- [6440821257](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6440821257) [approval-cue,revision-cue]: ## [2026-10-27 최상위 추가 설계] 자율 생태계 엔진 6.0 — 반사실적 정책 실험·전략적 협상·확률적 계획·형식 검증·안전한 자기 개선
+- [6456527527](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6456527527) [approval-cue,revision-cue]: ## 2026-10-28 사용자 최신 최종 정정 — 대회 포맷은 초기 시즌 출발 설정, 이후 자율 변경 허용
+- [6456688201](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6456688201) [approval-cue,revision-cue]: ## 최신 정책: 시즌/대회 일정은 초기 설정 + 자율 미래 진화, 휴식은 공정성 우선
+- [6457538398](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6457538398) [unreviewed]: ## 2026-10-28 코드 근거 교차 엔진 영향 감사 — 지역별 자율 시즌 구조 (미구현)
+- [6458117781](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6458117781) [unreviewed]: **2026-10-28 실제 코드 수정 1차:** [PR #315](https://github.com/lkh0802a/LOL-GM/pull/315) (DRAFT, actual engine files + acceptance test; 현재 CI 결과 확인 필요)
+- [6459267399](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6459267399) [approval-cue,revision-cue]: ## 2026-10-28 사용자 최신 확정 — 대회 최상위 분류 전면 재정의 (Split/Circuit/Calendar 분류 대체)
+- [6459532093](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6459532093) [approval-cue]: ## 2026-10-28 사용자 확정 — 자동 승격·강등 금지
+- [6459601795](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6459601795) [approval-cue]: ## 2026-10-28 추가 확정 — 1군·소유 2군의 동일 공식 지역 디비전 참가 불가
+- [6459926380](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6459926380) [unreviewed]: ## 2026-10-28 추가 확정 — 2군 보호 라이선스의 필요조건·자동 박탈
+- [6459955079](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6459955079) [unreviewed]: ## 2026-10-28 라이선스 발급 방식 추가 합의 — 1군 단독 / 1·2군 통합
+- [6460049339](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460049339) [unreviewed]: ## 2026-10-28 추가 확정 — 혼합 디비전의 2군/독립 구단 강등 보호 라이선스 배분 제약
+- [6460062655](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460062655) [approval-cue,revision-cue]: ## 2026-10-28 결정 변경 — 2군도 '일부만 보호' 금지 (앞선 배분 지시 정정)
+- [6460092768](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460092768) [revision-cue]: ## 2026-10-28 후속 결정 — 1군 라이선스 상실에 따른 2군 집단 충돌은 '1군 공석 충원' 우선
+- [6460119557](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460119557) [revision-cue]: ## 2026-10-28 추가 확정 — 라이선스 상실 효력은 반드시 '연간 시즌 종료 후'
+- [6460193934](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460193934) [revision-cue]: ## 2026-10-28 라이선스/리그 개편과 기술 사고 제외 규칙의 정합성 확정
+- [6460306910](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460306910) [unreviewed]: ## 2026-10-28 추가 결정 및 §2.7의 핵심 오해 정정
+- [6460415072](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460415072) [approval-cue]: ## 2026-10-28 사용자 최종 정정: 구형 국제대회 표시명 중단 + Open 참가 자격
+- [6460502670](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460502670) [unreviewed]: ## 2026-10-28 공식 지역리그 단일 체계 및 '1부·2부' 표기 확정
+- [6460567849](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460567849) [unreviewed]: ## 2026-10-28 공식 지역리그 플레이오프 확대 — 통합 시즌에서 선호 강화
+- [6460635852](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460635852) [unreviewed]: ## 2026-10-28 사용자 정정: LPL 진출전 언급은 규모·대진 아닌 구조적 예시
+- [6460895817](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6460895817) [revision-cue]: ## 독립 지역대회 개최사 AI 신규 프로젝트 #316 연동 — 공식 일정 절대 우선 보존
+- [6461475784](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6461475784) [unreviewed]: ## 실제 코드 반영 착수 (2026-10-28): 글로벌 선수 계약 만료/FA 날짜 — draft PR #318
+- [6462900346](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6462900346) [unreviewed]: ISSUE/PR: #234 / PR #318 (global FA dates), stacked Draft PR #319 https://github.com/lkh0802a/LOL-GM/pull/319 / fix/global-fa-worlds-final-gate-2
+- [6463020550](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6463020550) [unreviewed]: 2026-10-28 HEAD 후속 수용 기록 — stacked Draft PR #319 https://github.com/lkh0802a/LOL-GM/pull/319 (base PR #318, SHA f3d6b5fbdba7d176469c5f453ce29314d
+- [6463922493](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6463922493) [approval-cue]: ISSUE/PR: #234 / [Draft PR #320](https://github.com/lkh0802a/LOL-GM/pull/320) (stacked #318→#319→#320) / HEAD `d6c0c3fb9cd5ff8087ce19dc59396f3497
+- [6464423782](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6464423782) [unreviewed]: ## 2026-10-28 연동 지시 — 사무국/일정 엔진을 다른 도메인의 정본 이벤트와 연결
+- [6467799383](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6467799383) [approval-cue]: [2026-10-28 대회 엔진 10대 기능 사용자 승인] 새 개발 설계 [#323](https://github.com/lkh0802a/LOL-GM/issues/323) 정본 추가: 지역/국제 사무국이 실제 성과를 보고 대회 진화·형식·시드·공정성·규정 변경을
+- [6467951119](https://github.com/lkh0802a/LOL-GM/issues/234#issuecomment-6467951119) [approval-cue]: [2026-10-28 신규 대회 17+6 사용자 승인·작업 순서 갱신] [#323](https://github.com/lkh0802a/LOL-GM/issues/323) 전체 17기능+운영 보강 6항목 정본, [#242 최상단 실행표](https://github
+
+## Issue #235 — 17 comments
+- [6227426380](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6227426380) [unreviewed]: ## 2026-10-17 감사 후 우선 연결
+- [6227728085](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6227728085) [unreviewed]: ## Codex 부문별 상세 구현·검증 인수 지침 (2026-10-17)
+- [6244512620](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6244512620) [approval-cue,revision-cue]: ## 2026-10-18 선수 교체/주장 질문 및 랭크 관련 역할 경계
+- [6244601132](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6244601132) [approval-cue,revision-cue]: ## 2026-10-18 사용자 최종 정정 — 별도 주장(captain) 시스템 전면 제외
+- [6246162255](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6246162255) [approval-cue]: ## 2026-10-18 사용자 승인 #218A — 수동 밴픽 실시간 카운트다운 없음
+- [6289211008](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6289211008) [approval-cue,revision-cue]: ## 2026-10-20 사용자 승인 — AI 감독 개성의 전 시스템 다차원 원칙 연결
+- [6289713035](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6289713035) [revision-cue]: ## 2026-10-20 M03C·M04C·M06B·M09C~M12C 추가 확정 연결
+- [6290118219](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6290118219) [approval-cue,revision-cue]: ## 2026-10-20 M17~M28 중 전략/감독 판단·오더 영역 최종 확정
+- [6312051964](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6312051964) [revision-cue]: ## 2026-10-21 M49~M150 최종 확정 연결 — 감독/밴픽/Bo 전략
+- [6312591464](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6312591464) [revision-cue]: ## 2026-10-21 M177C~M182B 전술 AI·전장 정보/코칭 적응 상세화
+- [6315206962](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6315206962) [approval-cue]: ## 2026-10-21 사용자 일괄 승인 — [②·⑤·⑥] 전술 상성·5인 호흡·감독/코치의 합법적 준비 AI
+- [6315425861](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6315425861) [approval-cue]: ## 2026-10-21 승인 보강 — 12 선수 로테이션, 15 코치·분석가 업무 부하, 20 국제 전술 확산
+- [6390796313](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6390796313) [unreviewed]: ## 2026-10-25 정밀 전술/정보 감사 — 사이드 운영과 상대 숨은 성향 구분
+- [6390845449](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6390845449) [approval-cue]: ## 2026-10-25 사용자 교전 승패 정책 연계 — 전력 우위 ≠ 자동 교전 승리
+- [6390977545](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6390977545) [unreviewed]: ## 2026-10-25 전술 AI 필수 경기 계약 편입
+- [6391061744](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6391061744) [unreviewed]: ## 2026-10-25 가상 기술 사고 제거 · 전술 AI 정상 실패 보존
+- [6456924330](https://github.com/lkh0802a/LOL-GM/issues/235#issuecomment-6456924330) [approval-cue]: ## [고정 밴픽 규칙] Fearless / First Selection 영구 불변
