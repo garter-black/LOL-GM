@@ -9,6 +9,13 @@ const result=await runEngineFixture(String.raw`(()=>{
  const commit=(kind,writer)=>{const before=JSON.stringify(V2.db);if(kind==='day')v2Continue();else v2ReviewOffseasonAction(kind);const r=V2.managementReview;check(r&&(kind!=='day'||r.freeAgencyDay&&!r.annualClose)&&JSON.stringify(V2.db)===before,'검토 무작성 '+kind);const expected=JSON.parse(before);writer(expected);check(v2CommitManagement(r).ok&&JSON.stringify(V2.db)===JSON.stringify(expected),'기존 작성자 전체 값/시드/역사 동일 '+kind);check(!v2CommitManagement(r).ok,'중복 적용 무효 '+kind);V2.managementReview=null;const packed=packDB(V2.db);check(packDB(unpackDB(packed))===packed,'전체 저장 복원 '+kind);return packed;};
  const exclusive=packDB(V2.db);check(V2.db.world.contractWindow.outsideContactDate==='2027-12-07','실제 시즌의 2027 고정 FA 개방일');const expectedContractDays=(Date.parse('2027-12-07T00:00:00Z')-Date.parse(V2.db.worldDate+'T00:00:00Z'))/86400000;check(Number.isInteger(expectedContractDays)&&expectedContractDays>0&&expectedContractDays<366,'현재 계약 달력의 남은 일수');let exclusiveDays=0;while(v2ContractCalendar().ready&&exclusiveDays<expectedContractDays+1){const expected=JSON.parse(JSON.stringify(V2.db));advanceOffseasonContractDay(expected);v2Continue();check(v2CommitManagement(V2.managementReview).ok&&JSON.stringify(V2.db)===JSON.stringify(expected),'계약 만료 전 날짜 전체 결과');V2.managementReview=null;exclusiveDays++;}check(exclusiveDays===expectedContractDays&&V2.db.worldDate==='2027-12-07'&&freeAgencyDayState(V2.db).ready,'별도 우선기간 없이 실제 계약 만료 뒤 FA');
  const fa=packDB(V2.db),daily=V2.db.world.lastDailyTick,report=JSON.stringify(V2.db.world.report),ownedBefore=[...v2Team().roster];
+ {
+  const before=packDB(V2.db),expected=unpackDB(before),close=globalTransferMarketWindow(V2.db.world.year).closesOn;
+  v2ReviewOffseasonAction('annual');const review=V2.managementReview;
+  check(review?.annualClose&&review.lines.some(line=>line.includes(close))&&packDB(V2.db)===before,'조기 결산 검토의 실제 시장 마감일');
+  runOffseason(expected);check(v2CommitManagement(review).ok&&packDB(V2.db)===packDB(expected)&&V2.db.worldDate===close,'조기 결산의 28일 실제 작성자 및 검토 결과');
+  V2.db=unpackDB(before);V2.managementReview=null;
+ }
  v2ReviewOffseasonAction('day');let r=V2.managementReview;v2OpenAdvice();check(!V2.advice&&V2.managementReview===r,'중첩 금지');v2ClearTask();check(!V2.managementReview&&packDB(V2.db)===fa,'취소 게임 무작성');
  check(v2ContractCalendarView().includes('이적시장 개방'),'실제 시장 개방 표시');
  let faDays=0;while(freeAgencyDayState(V2.db).ready&&faDays<400){commit('day',advanceOffseasonFreeAgencyDay);faDays++;if(faDays===28)check(V2.db.worldDate===globalTransferMarketWindow(db.year).closesOn&&!globalTransferMarketState(V2.db.worldDate).open&&freeAgencyDayState(V2.db).ready&&v2ContractCalendarView().includes('이적시장 마감'),'28일 경계 뒤에도 연중 FA 진행');}

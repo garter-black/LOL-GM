@@ -23,6 +23,13 @@ const result=await runEngineFixture(String.raw`(()=>{
  }
  let actualDays=0,restores=0;
  for(const year of [2026,2027,2028]){
+  const {db,nid}=fixture(year),window=globalTransferMarketWindow(year),before=packDB(db),pending=db.world.negotiations[nid];
+  check(pending.status==='open','annual market test needs real pending proposal');
+  runOffseason(db);
+  check(db.worldDate===window.closesOn&&db.world.phase==='market'&&db.world.negotiations[nid].status==='expired','annual writer skipped actual 28-day market '+year);
+  check(unpackDB(packDB(db)).worldDate===window.closesOn&&packDB(db)!==before,'annual market closing save '+year);
+ }
+ for(const year of [2026,2027,2028]){
   let {db,nid,pid}=fixture(year);const window=globalTransferMarketWindow(year),period=aiMarketOfferPeriod(db).id,
    heldQuote=JSON.parse(JSON.stringify(currentAIMarketOffers(db).find(o=>o.status==='open')));
   const contracts=JSON.stringify(Object.values(db.players).map(p=>[p.id,p.team,p.contract]));

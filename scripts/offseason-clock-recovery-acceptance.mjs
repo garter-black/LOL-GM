@@ -16,6 +16,19 @@ const result = await runEngineFixture(String.raw`(()=>{
  const sourceLoad=Object.values(db.players).reduce((n,p)=>n+(p.medicalLoad||0),0);
  check(sourceLoad>0,'actual competition load required');
  check(advanceOffseasonContractWindow(db).ok&&db.world.contractWindow.stage==='fa','actual contract expiry writer');
+ {
+  const fast=unpackDB(packDB(db)),daily=unpackDB(packDB(db)),close=globalTransferMarketWindow(db.world.year).closesOn;
+  const failed=unpackDB(packDB(db)),before=packDB(failed),world=failed.world,players=failed.players,refresh=refreshAIMarketOffers;let days=0,threw=false;
+  try{refreshAIMarketOffers=(...args)=>{const result=refresh(...args);if(++days===3)throw Error('market day failure');return result};runOffseason(failed)}
+  catch(error){threw=error.message==='market day failure'}finally{refreshAIMarketOffers=refresh}
+  check(threw&&packDB(failed)===before&&failed.world===world&&failed.players===players,'annual market progression failure did not restore world');
+  const noProgress=unpackDB(packDB(db)),beforeNoProgress=packDB(noProgress),dayWriter=advanceOffseasonFreeAgencyDay;let refused=false;
+  try{advanceOffseasonFreeAgencyDay=()=>({ok:true});runOffseason(noProgress)}catch{refused=true}finally{advanceOffseasonFreeAgencyDay=dayWriter}
+  check(refused&&packDB(noProgress)===beforeNoProgress,'nonadvancing market writer looped or mutated state');
+  let count=0;while(daily.worldDate<close){check(advanceOffseasonFreeAgencyDay(daily,'system').ok,'actual market day');count++}
+  check(count===28,'market day count');runOffseason(daily);runOffseason(fast);
+  runOffseason(failed);check(fast.worldDate===close&&daily.worldDate===close&&packDB(fast)===packDB(daily)&&packDB(failed)===packDB(daily),'annual close skipped market days or changed actual writer output');
+ }
  db=unpackDB(packDB(db));const start=db.worldDate;
  check(start==='2027-12-07'&&seasonEnd<start,'actual FA clock after competitive season');
  const setDate=setWorldCalendarDate,recover=medicalOffseasonRecovery,trace=[];let clinicalComparisons=0,clinicalThrough=null;

@@ -55,10 +55,20 @@ function runOffseason(db){
     throw Error('응답 대기 중인 제안을 직접 취소하거나 연락을 확인한 뒤 결산하세요');
   const undo=pendingAnnualUndo(db);
   try{
-  const w=db.world,cw=initOffseasonContractWindow(db);
+  let w=db.world,cw=initOffseasonContractWindow(db);
   // Headless/AI callers historically advanced offseason in one call. Preserve
   // that contract while the interactive UI exposes both real window stages.
   if(cw?.stage==='exclusive')advanceOffseasonContractWindow(db);
+  w=db.world;cw=w.contractWindow;
+  const globalWindow=cw?.outsideContactDate===globalPlayerFAOpenDate(w.year)?globalTransferMarketWindow(w.year):null;
+  if(globalWindow&&cw.stage==='fa'){
+    while(db.worldDate<globalWindow.closesOn){
+      const previousDate=db.worldDate;
+      const day=advanceOffseasonFreeAgencyDay(db,'system');
+      if(!day?.ok||db.worldDate!==addDays(previousDate,1))throw Error(day?.msg||'이적시장 날짜를 진행할 수 없습니다');
+    }
+    w=db.world;cw=w.contractWindow;
+  }
   const rng=new RNG(w.seed+'/'+w.year,'offseason'), f=WORLD_CHANGE_FREQUENCY;
   const rep={year:w.year,growth:[],retired:[],signings:[],resign:[],expired:[],transfers:[],events:[]};
   const ev=t=>{rep.events.push(t);news(db,t)};
@@ -97,7 +107,7 @@ function runOffseason(db){
   // Consume the existing passive recovery interval without rewinding the live
   // world clock after contract dates have already advanced.
   if(!freeAgencyDateValid(db.worldDate))throw Error('연간 결산의 현재 날짜를 확인할 수 없습니다');
-  const defaultRolloverDate=`${db.year}-01-06`,medicalRolloverDate=db.worldDate>defaultRolloverDate?db.worldDate:defaultRolloverDate;
+  const defaultRolloverDate=globalWindow?db.worldDate:`${db.year}-01-06`,medicalRolloverDate=db.worldDate>defaultRolloverDate?db.worldDate:defaultRolloverDate;
   medicalOffseasonRecovery(db,medicalRolloverDate,cw?.seasonEndDate||undefined);
   setWorldCalendarDate(db,medicalRolloverDate);
   promotionRelegation(db,w,rng,ev);
