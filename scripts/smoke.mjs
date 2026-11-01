@@ -610,7 +610,13 @@ source += `\n(()=>{
   const matchIds=seasons.flatMap(s=>s.days.flatMap(d=>d.matches.map(m=>m.id)));
   if(!matchIds.length||new Set(matchIds).size!==matchIds.length) throw new Error('Match IDs are not unique');
 
-  const marketDb=unpackDB(packDB(db));runOffseason(marketDb);
+  // Drive an actual compact season to completion before annual settlement.
+  const marketCfg=defaultWorldConfig();marketCfg.regions=[regionCfg('NA',{teams:4,splits:1,legs:1,regularBo:1,playoffBo:1,playoffTake:2,format:'rr_po',div2:false,system:'franchise'})];marketCfg.internationals=[];
+  const marketDb=buildWorld(marketCfg),marketOwner=activeTeams(marketDb)[0];
+  startCareer(marketDb,marketOwner.id,'smoke-market-season');autoBuildInitialSquad(marketDb,marketOwner,new RNG('smoke-market-roster'));finalizeInitialRosters(marketDb);marketDb.world.manage='ai';
+  let marketDays=0;while(marketDb.world.phase==='season'&&marketDays++<500)playWorldDay(marketDb);
+  if(marketDb.world.phase!=='offseason')throw new Error('Market smoke season did not finish');
+  marketDb.world.manage='manual';runOffseason(marketDb);
   if(marketDb.world.phase!=='market')throw new Error('Offseason did not open transfer market');
   const preMarketSupply=talentSupplyErrors(marketDb);if(preMarketSupply.length)throw new Error('Pre-market labor supply failed: '+preMarketSupply.slice(0,5).join(' | '));
   if(!marketDb.world.report.rookieGlobal||!marketDb.world.report.rookies.every(x=>x.label&&x.tiers))throw new Error('Offseason rookie cohort report missing');
