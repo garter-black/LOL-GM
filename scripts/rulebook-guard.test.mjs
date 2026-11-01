@@ -10,7 +10,7 @@ test('published rulebook has unique, sourced rules and working local links',()=>
   const result=validateRulebook(original);
   assert.deepEqual(result.errors,[]);
   assert.equal(result.chapterCount,9);
-  assert(result.ruleCount>=103); // protect the reviewed baseline without blocking future approved additions
+  assert(result.ruleCount>=111); // protect the reviewed baseline without blocking future approved additions
 });
 test('duplicate ID cannot pass as a new approved clause',()=>{
   const file='docs/rulebook/20-CALENDAR.md';
@@ -43,7 +43,7 @@ test('immutable First Selection and draft policies cannot silently disappear',()
   assert.match(check(docs),/BROKEN_PIN: MATCH-002/);
 });
 test('publication version and changelog cannot silently diverge',()=>{
-  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.7.0','v9.9.9'));
+  const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.8.0','v9.9.9'));
   assert.match(check(docs),/CHANGELOG: no entry/);
 });
 test('approved youth compensation and club taxonomy cannot silently regress',()=>{
@@ -142,7 +142,7 @@ test('adjudication source type must reflect direct comment links',()=>{
 });
 test('adjudication summary cannot overcount reviewed clauses',()=>{
   const file='docs/rulebook-audit/CLAUSE_DECISION_MATRIX_2026_11_01.md';
-  const docs=changed(file,text=>text.replace('| 관련 원문 부분대조 | 103 |','| 관련 원문 부분대조 | 102 |'));
+  const docs=changed(file,text=>text.replace('| 관련 원문 부분대조 | 111 |','| 관련 원문 부분대조 | 110 |'));
   assert.match(check(docs),/MATRIX_SUMMARY: 관련 원문 부분대조/);
 });
 
@@ -178,4 +178,51 @@ test('COMP-011 may not omit the global transfer-window match ban for new indepen
   const file='docs/rulebook/10-COMPETITIONS.md';
   const docs=changed(file,text=>text.replace('세계 공통 경기 금지 기간의 검증을 통과해야 한다','세계 공통 경기 금지 기간을 무시하고 진행할 수 있다'));
   assert.match(check(docs),/BROKEN_PIN: COMP-011/);
+});
+
+
+test('an independent authorized event cannot be reclassified as an official calendar event',()=>{
+  const file='docs/rulebook/10-COMPETITIONS.md';
+  const docs=changed(file,text=>text.replace('공식 대회로 편입·전환할 수 없다','사무국 공인만으로 공식 대회로 편입할 수 있다'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-018/);
+});
+test('obsolete 87C must not force all tied teams into tiebreak matches',()=>{
+  const file='docs/rulebook/10-COMPETITIONS.md';
+  const docs=changed(file,text=>text.replace('모든 동률에 별도 결정전을 일률적으로 강제하지 않으며','모든 동률에 별도 결정전을 일률적으로 강제하며'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-019/);
+});
+test('new academy protection cannot be issued to selected academy teams only',()=>{
+  const file='docs/rulebook/10-COMPETITIONS.md';
+  const docs=changed(file,text=>text.replace('일부 2군만 선택해 신규 발급할 수 없다','일부 2군만 선택해 신규 발급할 수 있다'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-020/);
+});
+test('lawful individual loss of protection cannot revoke unrelated team licenses as a group',()=>{
+  const file='docs/rulebook/10-COMPETITIONS.md';
+  const docs=changed(file,text=>text.replace('잔여 구단의 보호권을 일괄 박탈하는 규칙이 아니다','잔여 구단의 보호권도 일괄 박탈한다'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-020/);
+});
+test('protection license cannot expire during the yearly official season',()=>{
+  const file='docs/rulebook/10-COMPETITIONS.md';
+  const docs=changed(file,text=>text.replace('모든 보호 라이선스 상실의 효력은 연간 경쟁 시즌 종료 이후에만 발생','보호 라이선스 상실은 지역 컵 중간에도 즉시 발생'));
+  assert.match(check(docs),/BROKEN_PIN: COMP-021/);
+});
+test('co-streaming and permanent free VOD cannot be turned into exclusive paid access',()=>{
+  const file='docs/rulebook/60-BUSINESS.md';
+  const docs=changed(file,text=>text.replace('모든 실제 경기의 다시보기(VOD)는 영구 무료 공개','모든 실제 경기의 다시보기(VOD)는 독점 유료 공개'));
+  assert.match(check(docs),/BROKEN_PIN: BIZ-015/);
+});
+test('elected player representatives cannot be replaced by appointed club agents',()=>{
+  const file='docs/rulebook/70-GOVERNANCE.md';
+  const docs=changed(file,text=>text.replace('구단별 현역 선수 대표 선출','구단장이 임명한 에이전트 대표'));
+  assert.match(check(docs),/BROKEN_PIN: GOV-010/);
+});
+test('legitimate office review cannot restore withdrawn random violation and sanction events',()=>{
+  const file='docs/rulebook/70-GOVERNANCE.md';
+  const docs=changed(file,text=>text.replace('불법 출전·무작위 규정 위반을 일부러 발생시키는 사후 징계·이의신청 게임 엔진 승인으로 확대하지 않는다','위반을 무작위로 발생시켜 사후 징계·이의신청 게임 엔진을 운영한다'));
+  assert.match(check(docs),/BROKEN_PIN: GOV-011/);
+});
+test('office leaders cannot ignore disclosure and recusal for conflicts',()=>{
+  const file='docs/rulebook/70-GOVERNANCE.md';
+  const docs=changed(file,text=>text.replace('공개하고 관련 심의·결정에서 회피','비밀로 하고 스스로 심의·결정'));
+  assert.match(check(docs),/BROKEN_PIN: GOV-012/);
 });
