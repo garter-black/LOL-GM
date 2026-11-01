@@ -126,6 +126,30 @@ const fixture=String.raw`(()=>{
   assert(day.ok&&db.worldDate==='2027-11-09'&&cw.stage==='exclusive',
     'exclusive window did not advance one real day');
 
+  // A restored save may reach the opening with its contract stage still
+  // pending. Settling it must not rewind the shared world clock.
+  let late=unpackDB(packDB(db));late.worldDate='2027-12-10';
+  const lateBefore=packDB(late),lateWorld=late.world,actualExpiry=finalizeExclusiveContractExpiry;
+  let failed=false;
+  try{
+    finalizeExclusiveContractExpiry=(...args)=>{actualExpiry(...args);throw Error('late settlement failure')};
+    advanceOffseasonContractWindow(late);
+  }catch(error){failed=error.message==='late settlement failure'}
+  finally{finalizeExclusiveContractExpiry=actualExpiry}
+  assert(failed&&packDB(late)===lateBefore&&late.world===lateWorld,
+    'late settlement failure changed saved world');
+  const lateResult=advanceOffseasonContractWindow(late);
+  assert(lateResult.ok&&late.worldDate==='2027-12-10'&&late.world.contractWindow.stage==='fa',
+    'late contract settlement rewound the world clock');
+  assert(late.players[ownRenew.id].team===mine.id&&late.players[target.id].team===mine.id&&
+    contractAgreementFor(late,target.id).status==='effective',
+    'late settlement lost a prior accepted agreement');
+  const lateSettled=packDB(late);
+  assert(advanceOffseasonContractWindow(late).ok&&packDB(late)===lateSettled,
+    'duplicate late settlement changed world state');
+  assert(unpackDB(lateSettled).worldDate==='2027-12-10',
+    'late settlement clock did not survive save/restore');
+
   // Standard expiry is the Monday before December's first Tuesday; FA opens the next UTC day.
   const settled=advanceOffseasonContractWindow(db);
   cw=db.world.contractWindow;
