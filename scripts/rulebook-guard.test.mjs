@@ -315,3 +315,16 @@ test('protected international events cannot disappear under a growth or low-audi
     assert.match(check(docs),/BROKEN_PIN: COMP-012/);
   }
 });
+
+test('save migration obligations distinguish development from the supported stable phase',()=>{
+  const file='docs/rulebook/00-CORE.md';
+  for(const [before,after] of [
+    ['안정화 단계에 진입하면 지원 대상 구버전의 호환 또는 명시적 마이그레이션을 필수 정책으로 강화','구버전 호환은 영원히 불필요하다'],
+    ['안정화 진입 시점과 지원 포맷은 명시','안정화 진입은 임의로 판정'],
+    ['슬롯 격리','슬롯 통합'],
+  ]){
+    const docs=changed(file,text=>text.replace(before,after));
+    assert.notEqual(docs[file],original[file]);
+    assert.match(check(docs),/BROKEN_PIN: CORE-009/);
+  }
+});
