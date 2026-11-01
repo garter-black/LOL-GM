@@ -12,6 +12,7 @@ export const CHAPTERS = Object.freeze([
   ['docs/rulebook/50-MATCH.md','MATCH'],
   ['docs/rulebook/60-BUSINESS.md','BIZ'],
   ['docs/rulebook/70-GOVERNANCE.md','GOV'],
+  ['docs/rulebook/80-EXPERIENCE.md','UI'],
 ]);
 export const DOCUMENTS = Object.freeze([
   ...CHAPTERS.map(([path])=>path),
@@ -36,6 +37,7 @@ export const POLICY_PINS = Object.freeze({
   'MATCH-002':[/Fearless Draft/,/해제/],
   'MATCH-003':[/First Selection/,/변경 대상이 아니다/],
   'GOV-004':[/과반/,/지역 대표/],
+  'UI-002':[/삭제/,/다른 슬롯/],
 });
 
 export function readDocuments(root=ROOT){
@@ -88,7 +90,7 @@ export function validateRulebook(docs){
     if(!agent.includes(required))add('CODEX_ENTRY',required);
   }
   if(!docs['docs/AI_RULEBOOK_GUIDE.md'].includes('비규범'))add('GUIDE_SCOPE','AI guide must not define new policy');
-  if(!docs['docs/rulebook/CHANGELOG.md'].includes('v0.1.0'))add('CHANGELOG','missing initial approved compilation');
+  if(!docs['docs/rulebook/CHANGELOG.md'].includes('v0.2.0'))add('CHANGELOG','missing initial approved compilation');
   return {errors,ruleCount:ids.size,chapterCount:CHAPTERS.length};
 }
 

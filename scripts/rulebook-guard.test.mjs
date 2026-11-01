@@ -9,8 +9,8 @@ const changed=(file,fn)=>({...original,[file]:fn(original[file])});
 test('published rulebook has unique, sourced rules and working local links',()=>{
   const result=validateRulebook(original);
   assert.deepEqual(result.errors,[]);
-  assert.equal(result.chapterCount,8);
-  assert(result.ruleCount>=71);
+  assert.equal(result.chapterCount,9);
+  assert(result.ruleCount>=85);
 });
 test('duplicate ID cannot pass as a new approved clause',()=>{
   const file='docs/rulebook/20-CALENDAR.md';
