@@ -282,3 +282,9 @@ test('international roster locks must not disappear on mid-season transfer',()=>
   const docs=changed(file,text=>text.replace('진행 중인 국제대회의 확정 명단을 소급 변경','진행 중인 국제대회의 명단을 자유롭게 변경'));
   assert.match(check(docs),/BROKEN_PIN: TRANS-011/);
 });
+
+test('matrix chapter total must match the real number of clauses',()=>{
+  const file='docs/rulebook-audit/CLAUSE_DECISION_MATRIX_2026_11_01.md';
+  const docs=changed(file,text=>text.replace('### CORE — 10개 조항','### CORE — 9개 조항'));
+  assert.match(check(docs),/MATRIX_CHAPTER_COUNT: CORE/);
+});
