@@ -26,6 +26,17 @@ const result=await runEngineFixture(String.raw`(()=>{
  const season=Object.values(db.world.seasons).find(s=>!s.done),day=season.days[season.cur];
  const originalDay=day.date;day.date='2027-12-07';db.worldDate='2027-12-06';
  const before=packDB(db),world=db.world,club=db.teams[team.id];let refused=false;
+ const early=unpackDB(before);early.worldDate='2027-12-04';
+ for(const date of ['2027-12-05','2027-12-06']){
+  const result=playWorldDay(early);check(result?.advanced&&early.worldDate===date,'pre-market daily progress blocked '+date);
+ }
+ const earlyBefore=packDB(early);let boundaryBlocked=false;
+ try{playWorldDay(early)}catch(error){boundaryBlocked=/28일.*이적시장/.test(error.message)}
+ check(boundaryBlocked&&packDB(early)===earlyBefore,'market boundary changed saved state');
+ const later=unpackDB(before),laterSeason=Object.values(later.world.seasons).find(s=>!s.done);laterSeason.days[laterSeason.cur].date='2028-01-04';
+ const laterBefore=packDB(later);boundaryBlocked=false;
+ try{playWorldDay(later)}catch(error){boundaryBlocked=/28일.*이적시장/.test(error.message)}
+ check(boundaryBlocked&&packDB(later)===laterBefore,'world clock skipped the market before a later fixture');
  try{playWorldDay(db)}catch(error){refused=/28일.*이적시장/.test(error.message)}
  check(refused,'actual daily official writer accepted a market fixture');
  check(packDB(db)===before&&db.world===world&&db.teams[team.id]===club,'blocked day mutated clock/roster/finance/history or object identity');

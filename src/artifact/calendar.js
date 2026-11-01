@@ -11,12 +11,12 @@ function setWorldCalendarDate(db,date){db.worldDate=date}
 function nextCalendarDate(db){
   const fixture=nextDate(db);
   if(fixture===null)return null;
-  const market=globalTransferMarketState(fixture);
-  if(market.open)throw new Error('28일 통합 이적시장 중에는 대회 경기를 진행할 수 없습니다: '+fixture+' ('+market.opensOn+'~'+market.closesOn+' 미만)');
   const previous=db.worldDate||`${db.year}-01-01`;
   if(previous>fixture)throw new Error('월드 날짜가 미진행 공식 경기일보다 늦습니다: '+previous+' > '+fixture);
-  if(previous===fixture)return fixture; // legacy saves may be parked on an unplayed match date
-  return addDays(previous,1);
+  const next=previous===fixture?fixture:addDays(previous,1); // legacy saves may be parked on an unplayed match date
+  const market=globalTransferMarketState(next);
+  if(market.open)throw new Error('28일 통합 이적시장 중에는 대회 경기를 진행할 수 없습니다: '+next+' ('+market.opensOn+'~'+market.closesOn+' 미만)');
+  return next;
 }
 function applyCalendarPatchEvents(db,date){
   const w=db.world;
