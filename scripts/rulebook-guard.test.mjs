@@ -145,3 +145,15 @@ test('adjudication summary cannot overcount reviewed clauses',()=>{
   const docs=changed(file,text=>text.replace('| 관련 원문 부분대조 | 95 |','| 관련 원문 부분대조 | 94 |'));
   assert.match(check(docs),/MATRIX_SUMMARY: 관련 원문 부분대조/);
 });
+
+
+test('balance hotfix cannot take effect before every worldwide official series ends',()=>{
+  const file='docs/rulebook/50-MATCH.md';
+  const docs=changed(file,text=>text.replace('전 세계의 해당 일자 공식 대회 경기와 세트가 모두 종료된 이후','해당 지역의 첫 공식 경기 종료 직후'));
+  assert.match(check(docs),/BROKEN_PIN: MATCH-008/);
+});
+test('unverifiable historical replay cannot be advertised as a perfect reproduction',()=>{
+  const file='docs/rulebook/80-EXPERIENCE.md';
+  const docs=changed(file,text=>text.replace('완전한 재현에 필요한 근거가 부족한 경우에는 재현의 한계를 명시','근거가 부족해도 전체 사건을 완벽하게 재현했다고 표시'));
+  assert.match(check(docs),/BROKEN_PIN: UI-007/);
+});
