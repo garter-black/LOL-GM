@@ -322,6 +322,8 @@ test('save migration obligations distinguish development from the supported stab
     ['안정화 단계에 진입하면 지원 대상 구버전의 호환 또는 명시적 마이그레이션을 필수 정책으로 강화','구버전 호환은 영원히 불필요하다'],
     ['안정화 진입 시점과 지원 포맷은 명시','안정화 진입은 임의로 판정'],
     ['슬롯 격리','슬롯 통합'],
+    ['비호환 전환·내보내기/고지를 명확히 기록','비호환 변경을 고지하지 않는다'],
+    ['원자적 마지막 성공 스냅샷·실패 복구','이전 저장을 무조건 삭제'],
   ]){
     const docs=changed(file,text=>text.replace(before,after));
     assert.notEqual(docs[file],original[file]);
