@@ -139,7 +139,13 @@ export function validateRulebook(docs){
     }
     matrixStatusCounts.set(status,(matrixStatusCounts.get(status)||0)+1);
   }
-  // Chapter headings are human-facing totals and must not drift from IDs.\n  for(const [,prefix] of CHAPTERS){\n    const m=matrix.match(new RegExp('^### '+prefix+' — (\\d+)개 조항
+  // Chapter headings are human-facing totals and must match the indexed rules.
+  for(const [,prefix] of CHAPTERS){
+    const m=matrix.match(new RegExp('^### '+prefix+' — (\\d+)개 조항$', 'm'));
+    const actual=[...ids.keys()].filter(id=>id.startsWith(prefix+'-')).length;
+    if(!m||Number(m[1])!==actual)add('MATRIX_CHAPTER_COUNT',prefix+' '+(m?.[1]??'missing')+' / '+actual);
+  }
+  for(const id of ids.keys())if(!matrixIds.has(id))add('MATRIX_MISSING',id);
   if(matrixIds.size!==ids.size)add('MATRIX_COUNT','matrix '+matrixIds.size+' / rules '+ids.size);
   const summaries=[
     ['관련 원문 부분대조','관련 원문 부분대조'],
