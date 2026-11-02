@@ -59,7 +59,6 @@ function registerMedicalOfficialReplacement(db,t,injured,p){
   localServiceRegistration(db,p,t,true);
 }
 function scheduledRegistrationForfeit(db,s,m){
-  if(!officialRegistrationEnabled(db))return null;
   const view=officialMatchView(db,s,m.a,m.b),counts=[m.a,m.b].map(id=>medicalAvailable(view,view.teams[id]));
   if(counts.every(n=>n>=5))return null;
   if(counts.every(n=>n<5)){

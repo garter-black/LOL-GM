@@ -120,8 +120,12 @@ source+=String.raw`(()=>{
           }
         }
       }
-      if(d%30===0)assert(teams.every(t=>medicalAvailable(db,t)>=5),
-        'medical random trial left a real club without a valid starting five');
+      if(d%30===0)for(const t of teams)if(medicalAvailable(db,t)<5){
+        assert(!validateStartingLineup(db,t).ok,
+          'medical shortage allowed an ineligible starting five');
+        assert((t.roster||[]).some(id=>medicalOut(db.players[id])),
+          'shortage had no recorded medical absence');
+      }
     }
     for(const k of Object.keys(stats))
       for(const field of Object.keys(stats[k]))stats[k][field]+=season[k][field];
@@ -191,7 +195,7 @@ source+=String.raw`(()=>{
     }},
     recoveryDays:{limitedCare:slow,improvedCare:fast,facilityOnly},
     severe:low.severe+highStress.severe,
-    protectedStartingFives:true,saveFormat:2
+    shortageLineupsRejected:true,saveFormat:2
   };
   console.log('D02_MEDICAL_BALANCE '+JSON.stringify(summary));
 })();`;

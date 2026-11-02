@@ -98,21 +98,22 @@ source+=String.raw`(()=>{
   ok(medicalContractRisk(db,observedFA)===0,
     'cleared temporary injury left a permanent market penalty');
   ok(manager.roster.length===5,'need a five-person starting baseline');
-  const p=db.players[manager.roster[0]],original=playerMod(p);
+  const p=db.players[manager.roster[0]];
   const initialCash=manager.finance.cash;
   manager.finance.cash=0; // An unaffordable free agent must not bypass the five-player floor.
   const limited=startMedicalEvent(db,p,'injury','severe',25,db.worldDate);
   manager.finance.cash=initialCash;
   ok(manager.roster.length===5,'unfunded emergency FA was added despite zero cash');
-  ok(limited&&!limited.out&&!medicalOut(p)&&limited.severity==='minor',
-    'incident left a five-person team unable to compete');
-  ok(playerMod(p)<original-.03,'limited participation did not hurt performance');
-  ok(validateStartingLineup(db,manager).ok,'protected fifth starter was incorrectly banned');
+  ok(limited&&limited.out&&medicalOut(p)&&limited.severity==='severe',
+    'roster shortage changed the actual severe injury');
+  ok(p.careerEvents.some(e=>e.type==='medical_start'&&e.severity==='severe'&&e.out),
+    'actual severe absence was not recorded in player history');
+  ok(!validateStartingLineup(db,manager).ok,'medically unavailable starter was allowed');
   ok(medicalPlanFor(db,p)==='rehab','injured player not automatically assigned rehab');
   p.medicalPlan='normal';const normalCare=medicalCare(db,p);
   p.medicalPlan='rehab';ok(medicalCare(db,p)>normalCare+.10,'rehab did not improve treatment rate');
   p.medicalPlan='rest';ok(medicalScrimRest(db,p),'manual rest did not exclude player from scrims');
-  ok(validateStartingLineup(db,manager).ok,'medical rest incorrectly blocked official match');
+  ok(!validateStartingLineup(db,manager).ok,'medical rest made an unavailable player eligible');
   ok(Object.keys(bestStartingLineup(db,manager,{},true)).length<5,
     'a five-person roster scheduled scrims despite medical rest');
   const baseline=db.players[manager.roster[1]];
@@ -136,14 +137,15 @@ source+=String.raw`(()=>{
     'legal emergency substitution did not occur');
   const another=db.players[club.roster.find(id=>id!==injured.id&&id!==substitute.id)];
   const guarded=startMedicalEvent(db,another,'burnout','severe',19,db.worldDate);
-  ok(guarded&&medicalAvailable(db,club)>=5,
-    'multiple absences removed the whole legal starting five');
+  ok(guarded?.out&&guarded.severity==='severe'&&medicalOut(another),
+    'another absence changed severity because of squad size');
   medicalExposure(db,substitute,'official',2);
   const load=substitute.medicalLoad;medicalExposure(db,substitute,'scrim',3);
   ok(substitute.medicalLoad>load&&substitute.medicalLoad>=4.9,
     'official and private work did not accumulate risk');
   const packed=packDB(db),restored=unpackDB(packed);
   ok(restored.players[injured.id].medical?.out&&
+    restored.players[p.id].medical?.out&&restored.players[p.id].medical?.severity==='severe'&&
     restored.players[p.id].medicalPlan==='rest'&&
     restored.players[substitute.id].medicalLoad===substitute.medicalLoad,
     'active health status / training load did not survive save roundtrip');
@@ -351,7 +353,7 @@ source+=String.raw`(()=>{
 
     ok(db.version===15,'world schema changed');
   console.log('D02_MEDICAL_ACCEPTANCE '+JSON.stringify({
-    fivePlayerFloor:true,emergencySubstitute:true,emergencyFA:true,shortCover:true,conditionalPay:true,faSupply:roleDepth,contractRisk:{acute:riskSevere,recovered:riskHealed,recurrent:riskRepeat},individualRest:true,rehab:true,format2Save:true,
+    fivePlayerFloor:true,actualSeverityPreserved:true,emergencySubstitute:true,emergencyFA:true,shortCover:true,conditionalPay:true,faSupply:roleDepth,contractRisk:{acute:riskSevere,recovered:riskHealed,recurrent:riskRepeat},individualRest:true,rehab:true,format2Save:true,
     dayIdempotent:true,offseasonRecovery:true,scars:scarCount,samples:600
   }));
 })();`;

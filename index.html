@@ -4722,9 +4722,11 @@ function startMedicalEvent(db,p,kind,level,days,date=db.worldDate,rng=null){
   const t=p.team&&db.teams[p.team];
   if(proposedOut&&t&&medicalAvailable(db,t)===5)
     medicalEmergencyCallup(db,t,p)||medicalEmergencyFASigning(db,t,p,days);
-  const enough=t&&medicalAvailable(db,t)>5;
-  const out=!!(proposedOut&&enough);
-  const severity=out?level:'minor';
+  // Medical severity is determined by the incident, not by whether the club
+  // can afford or register a replacement. A shortage is handled by the
+  // competition's existing availability/forfeit path.
+  const out=proposedOut;
+  const severity=level;
   const penalty=severity==='severe'?.14:severity==='moderate'?.09:kind==='illness'?.045:kind==='burnout'?.065:.055;
   const duration=Math.max(2,Math.round(days));
   p.medical={kind,site,severity,out,penalty,daysLeft:duration,
@@ -10917,7 +10919,6 @@ function registerMedicalOfficialReplacement(db,t,injured,p){
   localServiceRegistration(db,p,t,true);
 }
 function scheduledRegistrationForfeit(db,s,m){
-  if(!officialRegistrationEnabled(db))return null;
   const view=officialMatchView(db,s,m.a,m.b),counts=[m.a,m.b].map(id=>medicalAvailable(view,view.teams[id]));
   if(counts.every(n=>n>=5))return null;
   if(counts.every(n=>n<5)){

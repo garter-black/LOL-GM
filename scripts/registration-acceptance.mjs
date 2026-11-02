@@ -76,6 +76,19 @@ await runEngineFixture(String.raw`(()=>{
   const forfeit=scheduledRegistrationForfeit(db,intl,{a:parent.id,b:opponent.id,bo:3});
   check(forfeit?.rec.winner===opponent.id&&forfeit.rec.games.length===0&&forfeit.lines.length===0,'shortage fabricated games or crashed');
   for(const id of roster)delete db.players[id].medical;
+  // Older supported worlds use employment rosters rather than registration
+  // snapshots; a genuine medical shortage must still take the same result path.
+  const legacy=unpackDB(packDB(db));delete legacy.world.registrationVersion;
+  for(const id of legacy.teams[parent.id].roster)legacy.players[id].medical={out:true,daysLeft:20};
+  const legacyForfeit=scheduledRegistrationForfeit(legacy,legacy.world.seasons.REG_INT,{a:parent.id,b:opponent.id,bo:3});
+  check(legacyForfeit?.rec.winner===opponent.id&&legacyForfeit.rec.games.length===0&&legacyForfeit.lines.length===0,
+    'legacy medical shortage fabricated a game or ignored the forfeit');
+  const legacySeason=legacy.world.seasons.REG_INT,legacyMatch=legacySeason.days[0].matches[0],
+    actualForfeit=scheduledRegistrationForfeit(legacy,legacySeason,legacyMatch);
+  commitScheduledSeries(legacy,legacySeason,legacyMatch,actualForfeit);
+  const legacyRestored=unpackDB(packDB(legacy)),restoredResult=legacyRestored.world.seasons.REG_INT.days[0].matches[0].res;
+  check(restoredResult?.forfeit&&restoredResult.winner===opponent.id&&restoredResult.games.length===0,
+    'actual shortage result or saved history was not preserved');
   const em=unpackDB(packDB(db)),coverTeam=activeTeams(em,'KR',1)[0],coverFor=em.players[coverTeam.roster[0]],
     cover=genPlayer(em,new RNG('registration-medical','fixture'),{region:'KR',role:coverFor.role,age:22,base:50});
   for(const [id,p] of Object.entries(em.players))if(!p.team&&id!==cover.id)delete em.players[id];
