@@ -62,13 +62,26 @@ export function formatSearch(path,term,r){
  return out.join('\n')+'\n';
 }
 
-function liveIssue(){
- let data;
+async function liveIssue(){
+ let data,ghError='';
  try{
   const raw=execFileSync('gh',['issue','view','242','--repo',REPO,'--json','number,title,state,body'],{
    encoding:'utf8',stdio:['ignore','pipe','pipe'],timeout:15_000,maxBuffer:1_500_000});
   data=JSON.parse(raw);
- }catch(e){throw Error('GitHub #242 조회 실패: gh 설치·인증·네트워크 확인 또는 --queue-file 입력 ('+e.message+')')}
+ }catch(e){ghError=e.message;}
+ if(!data){
+  // Public-repository fallback: no new dependency or GitHub CLI auth required.
+  const headers={'Accept':'application/vnd.github+json','User-Agent':'LOL-GM-Codex-Context'};
+  const token=process.env.GH_TOKEN||process.env.GITHUB_TOKEN;
+  if(token)headers.Authorization='Bearer '+token;
+  try{
+   const response=await fetch('https://api.github.com/repos/'+REPO+'/issues/242',{
+    headers,signal:AbortSignal.timeout(15_000)});
+   if(!response.ok)throw Error('HTTP '+response.status);
+   const issue=await response.json();
+   data={number:issue.number,state:issue.state,body:issue.body,title:issue.title};
+  }catch(e){throw Error('실시간 #242 조회 실패 (gh: '+ghError+'; REST: '+e.message+'). 직접 GitHub 확인 또는 --queue-file 수동 입력 필요');}
+ }
  if(data.number!==242||String(data.state).toUpperCase()!=='OPEN')throw Error('#242 번호·상태 불일치: 자동 착수 중단');
  return data.body;
 }
@@ -83,7 +96,7 @@ async function safeDoc(path){
 
 async function main(args){
  if(args.length===1&&args[0]==='--queue'){
-  console.log(formatCurrentQueue(extractCurrentQueue(liveIssue())).trimEnd());return;
+  console.log(formatCurrentQueue(extractCurrentQueue(await liveIssue())).trimEnd());return;
  }
  if(args.length===2&&args[0]==='--queue-file'){
   const info=await stat(args[1]);if(!info.isFile()||info.size>1_000_000)throw Error('오프라인 이슈 입력 파일이 너무 큼');
