@@ -46,6 +46,10 @@ test('emergency replacement requires explicit tournament permission',()=>{
   const docs=changed('docs/rulebook/50-MATCH.md',text=>text.replace('대회가 해당 예외를 명시적으로 허용한 경우에만 의료 확인과 등록 심사','대회의 명시적 허용 없이 등록'));
   assert.match(check(docs),/BROKEN_PIN: MATCH-004/);
 });
+test('accommodation cannot impose daily manual assignment',()=>{
+  const docs=changed('docs/rulebook/40-PLAYERS.md',text=>text.replace('매일 숙소를 수동 배치하도록 강제하거나 방송·기술 장비 관리 업무를 다시 도입하지 않는다','매일 숙소를 수동 배치한다'));
+  assert.match(check(docs),/BROKEN_PIN: PLAYER-007/);
+});
 test('publication version and changelog cannot silently diverge',()=>{
   const docs=changed('docs/rulebook/README.md',text=>text.replace('v0.10.0','v9.9.9'));
   assert.match(check(docs),/CHANGELOG: no entry/);
